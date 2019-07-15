@@ -1,0 +1,19 @@
+{
+  "name": "elastic.ventures",
+  "version": "1.0.0",
+  "description": "ev corp site; see EV-LICENSE.txt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/elastic.ventures"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typed": "^0.3.3",
+    "vue-typed-js": "^0.1.2"
+  }
+}
