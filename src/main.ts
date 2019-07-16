@@ -11,10 +11,15 @@ Vue.use(VueAnalytics, {
   id: 'UA-54542129-1'
 })
 
+
 import './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+
+
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
 
 Vue.config.productionTip = false
 
