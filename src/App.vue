@@ -1,11 +1,8 @@
 <template>
   <v-app>
-
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>
-          welcome..
-        </span>
+        <span>welcome..</span>
         <!--
           <span class="font-weight-light">MATERIAL DESIGN</span>
         -->
@@ -20,106 +17,90 @@
         <span class="mr-2">Latest Release</span>
       </v-btn>
       -->
-    <v-menu offset-y>
-      <template v-slot:activator="{ on }">
-        <v-btn
-          color="secondary"
-          dark
-          v-on="on"
-        >
-          Menu
-        </v-btn>
-      </template>
-      <v-list>
-        <v-list-item
-          v-for="(item, index) in items"
-          :key="index"
-          @click="greet"
-        >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>        
+      <v-menu offset-y>
+        <template v-slot:activator="{ on }">
+          <v-btn color="secondary" dark v-on="on">Menu</v-btn>
+        </template>
+        <v-list>
+          <v-list-item v-for="(item, index) in items" :key="index" @click="greet">
+            <v-list-item-title>{{ item.title }}</v-list-item-title><br>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-toolbar>
 
-
-    <v-parallax dark height="300" src="img/background-circuit1.jpg">
-    <h1>Elastic.Ventures</h1>
-      <v-img
+    <v-content>
+      <v-parallax dark height="300" src="img/background-circuit1.jpg">
+        <h1>Elastic.Ventures</h1>
+        <v-img
           :src="require('./assets/elasticventures_text_svg.svg')"
           class="my-3"
           contain
           height="100"
         ></v-img>
-    </v-parallax>
-
-
-    <v-content>
-            <HelloWorld/>
-            <AboutEV />
-            <EVCrew />
-            <GrowPotBot />
-            <Robotics />
-            <Ubuntu />
+      </v-parallax>
+      <HelloWorld />
+      <AboutEV />
+      <EVCrew />
+      <GrowPotBot />
+      <Robotics />
+      <Ubuntu />
     </v-content>
 
     <v-footer>
       <Footer />
     </v-footer>
-
   </v-app>
 </template>
 
 <script>
-// this loads the Vuetifyxx homepage. 
-import HelloWorld from './components/HelloVuetify.vue'
+// this loads the Vuetifyxx homepage.
+import HelloWorld from "./components/HelloVuetify.vue";
 
-import AboutEV from './components/AboutEV.vue';
+import AboutEV from "./components/AboutEV.vue";
 /* 
 import B2bCbd from './components/B2bCbd.vue';
 import Careers from './components/Careers.vue';
 */
 
-import EVCrew from './components/EVCrew.vue';
-import GrowPotBot from './components/GrowPotBot.vue';
-import Robotics from './components/Robotics.vue';
-import Ubuntu from './components/Ubuntu.vue';
+import EVCrew from "./components/EVCrew.vue";
+import GrowPotBot from "./components/GrowPotBot.vue";
+import Robotics from "./components/Robotics.vue";
+import Ubuntu from "./components/Ubuntu.vue";
 
-import Footer from './components/Footer.vue'
-
-
+import Footer from "./components/Footer.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HelloWorld,
     AboutEV,
     EVCrew,
-    GrowPotBot, 
-    Robotics, 
-/*    B2bCbd,
+    GrowPotBot,
+    Robotics,
+    /*    B2bCbd,
     Careers, */
-    Ubuntu, 
+    Ubuntu,
     Footer
   },
   data: () => ({
-    items : [
-      { title: 'Click Me' },
-      { title: 'Click Me' },
-      { title: 'Click Me' },
-      { title: 'Click Me 2' },
+    items: [
+      { title: "Click Me" },
+      { title: "Click Me" },
+      { title: "Click Me" },
+      { title: "Click Me 2" }
     ]
   }),
   // define methods under the `methods` object
   methods: {
-    greet: function (event) {
+    greet: function(event) {
       // `this` inside methods points to the Vue instance
-      alert('Hello ' + this.name + '!')
+      alert("Hello " + this.name + "!");
       // `event` is the native DOM event
       if (event) {
-        alert(event.target.tagName)
+        alert(event.target.tagName);
       }
     }
   }
-}
+};
 </script>
