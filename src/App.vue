@@ -34,7 +34,7 @@
         <v-list-item
           v-for="(item, index) in items"
           :key="index"
-          @click=""
+          @click="greet"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -85,6 +85,17 @@ export default {
       { title: 'Click Me' },
       { title: 'Click Me 2' },
     ]
-  })
+  }),
+  // define methods under the `methods` object
+  methods: {
+    greet: function (event) {
+      // `this` inside methods points to the Vue instance
+      alert('Hello ' + this.name + '!')
+      // `event` is the native DOM event
+      if (event) {
+        alert(event.target.tagName)
+      }
+    }
+  }
 }
 </script>
