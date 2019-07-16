@@ -1,5 +1,11 @@
 <template>
   <v-app>
+    <v-navigation-drawer>
+    <!--
+      !study
+    -->
+    </v-navigation-drawer>
+
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
         <span>welcome..</span>
@@ -30,15 +36,11 @@
     </v-toolbar>
 
     <v-content>
-      <v-parallax dark height="300" src="img/background-circuit1.jpg">
-        <h1>Elastic.Ventures</h1>
-        <v-img
-          :src="require('./assets/elasticventures_text_svg.svg')"
-          class="my-3"
-          contain
-          height="100"
-        ></v-img>
-              <vue-particles
+
+      <v-parallax dark height="275" src="img/background-circuit1.jpg">
+      <h1>Elastic.Ventures</h1>
+
+      <vue-particles
         color="#ffffff"
         :particleOpacity="0.7"
         linesColor="#ffffff"
@@ -47,21 +49,39 @@
         :particleSize="5"
         :linesWidth="2"
         :lineLinked="true"
-        :lineOpacity="0.4"
+        :lineOpacity="0.5"
         :linesDistance="150"
-        :moveSpeed="3"
+        :moveSpeed="4"
         :hoverEffect="true"
         hoverMode="grab"
         :clickEffect="true"
         clickMode="push"
       >
       </vue-particles>
+
+
+        <v-img
+          position="top"
+          :src="require('./assets/elasticventures_text_svg.svg')"
+          class="my-3"
+          contain
+          height="100"
+        />
+
       </v-parallax>
+
+
       <HelloWorld />
+      <v-divider />
+      
       <AboutEV />
       <EVCrew />
+
+      <v-divider />
       <GrowPotBot />
       <Robotics />
+
+      <v-divider />
       <Ubuntu />
     </v-content>
 
