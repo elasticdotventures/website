@@ -28,7 +28,7 @@
 
 <script>
 // this loads the Vuetifyxx homepage. 
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloVuetify.vue'
 import Footer from './components/Footer.vue'
 
 export default {
