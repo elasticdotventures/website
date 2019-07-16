@@ -20,17 +20,22 @@
     <v-content>
       <HelloWorld/>
     </v-content>
+    <v-footer>
+      <Footer />
+    </v-footer>
   </v-app>
 </template>
 
 <script>
 // this loads the Vuetifyxx homepage. 
 import HelloWorld from './components/HelloWorld.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    Footer
   },
   data () {
     return {
