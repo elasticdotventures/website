@@ -1,4 +1,4 @@
-
+<template>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -26,4 +26,4 @@
 		<li><a href="#service">Service</a></li>
 		-->
 					<li><a href="#contact">Contact</a></li>
-                    
+</template>

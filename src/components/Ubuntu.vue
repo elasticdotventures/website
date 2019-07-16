@@ -1,3 +1,4 @@
+<template>
 	<!-- Section: Charity -->
 	<section id="charity" class="home-section text-center">
 		<div class="heading-about">
@@ -25,3 +26,4 @@
 		</div>
 	</section>
 
+</template>

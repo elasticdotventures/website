@@ -1,3 +1,4 @@
+<template>
 				<h3>The Team</h3>
 
 				<div class="col-xs-9 col-sm-4 col-md-4">
@@ -115,5 +116,4 @@
 					</div>
 				</div>
 
-
-
+</template>

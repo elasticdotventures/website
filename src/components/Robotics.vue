@@ -1,3 +1,4 @@
+<template>
 	<!-- Section: RoboVend -->
 	<section id="robotparts" class="home-section text-center">
 		<div class="heading-about">
@@ -45,3 +46,4 @@
 			</div>
 		</div>
 	</section>
+</template>

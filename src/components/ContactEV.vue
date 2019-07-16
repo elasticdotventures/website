@@ -1,3 +1,4 @@
+<template>
 				<div class="col-lg-4">
 					<div class="widget-contact">
 						<h5>Main Office</h5>
@@ -37,3 +38,4 @@
 				</div>
 			</div>
 
+</template>

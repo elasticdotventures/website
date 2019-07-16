@@ -1,3 +1,4 @@
+<template>
 								<h2>About us</h2>
 								<p>
 									Elastic Ventures, Inc. "EV" is a California S Corp was established in 2014 as a professional consulting and services company.
@@ -40,26 +41,9 @@
 									Usually nautical "pirate crew" of chemical, mechanical, electrical, integrated material
 									and smart software engineers (who can be notiriously difficult to intrinsically motivate if organizational goals are not aligned). 
 								</p>
-								<p></p>
-									We place an emphasis on Safety, 				
+								<p>
+									EV places an emphasis on Safety, 				
 									Durability in the field; and post-use recyclability with open design and right to repair maintaining a Github repo http://github.com/elasticdotventures
 									with artifacts.  
 								</p>
-								</p>
-									From a fabrication standpoint EV has formed a resource sharing agreement with Troublemaker.site in China. Shenzhen, CN. is China's
-									silicon valley; one of the only places in the world where the street market sells cell phone in parts for repair "the factory". 
-									TroubleMaker is the only western makerspace in the massive HuaQuiangBei electronics market with a working Google & Facebook 
-									wifi; making it a wonderful western refuge of best of the best scientists and engineers from around the world in a wondefully collaborative 
-									mentoring "pay it forward" environment. We now have access to their network of manufacturers and are working with them to take Chinese
-									market designs and develop better western (not wechat plugin) market.  To this extent; we have several projects coming to market shortly 
-									and were planning to ship this Xmas 2020. 
-							</p>
-							
-									After 4 years along with hundreds of fast-failed business plans searching for an
-									illusive "liquid oxygen" idea that could be combined
-									with our "spark" to make an explosive BOOM! Now - if you draw a Venn diagram with
-									circles for Robotics, AI,
-									Food, Cannabis Medicine; that business opportunity in the center where all the
-									circles touch --
-									that's the bullseye mark for our first service robotics kit "GrowPotBot".
-									</p>
+|</template>

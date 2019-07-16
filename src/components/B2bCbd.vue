@@ -1,4 +1,4 @@
-
+<template>
 	<!-- Section: B2Bcbd.us -->
 	<section id="b2bcbdus" class="home-section text-center">
 		<div class="heading-about">
@@ -41,3 +41,4 @@
 			</div>
 		</div>
 	</section>
+</template>

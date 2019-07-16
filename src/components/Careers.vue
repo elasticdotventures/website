@@ -1,3 +1,4 @@
+<template>
 	<!-- Section: Careers -->
 	<section id="careers" class="home-section text-center">
 		<div class="heading-about">
@@ -74,3 +75,4 @@
 		</div>
 	</section>
 
+</template>

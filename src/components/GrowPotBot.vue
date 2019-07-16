@@ -1,3 +1,4 @@
+<template>
 	<!-- Section: GrowPotBot -->
 	<section id="growpotbot" class="home-section text-center">
 		<div class="heading-about">
@@ -41,3 +42,4 @@
 		</div>
 	</section>
 
+</template>
