@@ -22,7 +22,8 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+// this loads the Vuetifyxx homepage. 
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
