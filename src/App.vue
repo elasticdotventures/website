@@ -1,39 +1,42 @@
 <template>
   <v-app>
-    <v-navigation-drawer>
+    <v-navigation-drawer
+      v-model="drawer"
+      fixed
+      right
+      app
+    >
     <!--
       !study
     -->
+       <v-list dense>
+        <v-list-tile @click="">
+          <v-list-tile-action>
+            <v-icon>home</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Home</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="">
+          <v-list-tile-action>
+            <v-icon>contact_mail</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Contact</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
     </v-navigation-drawer>
-
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>welcome..</span>
-        <!--
-          <span class="font-weight-light">MATERIAL DESIGN</span>
-        -->
-      </v-toolbar-title>
+   <v-toolbar color="cyan" dark fixed app>
       <v-spacer></v-spacer>
-      <!--
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-      -->
-      <v-menu offset-y>
-        <template v-slot:activator="{ on }">
-          <v-btn color="secondary" dark v-on="on">Menu</v-btn>
-        </template>
-        <v-list>
-          <v-list-item v-for="(item, index) in items" :key="index" @click="greet">
-            <v-list-item-title>{{ item.title }}</v-list-item-title><br>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     </v-toolbar>
+    
+    <!--
+      vtoolbar-old
+    -->
 
     <v-content>
 
@@ -122,6 +125,7 @@ export default {
     Footer
   },
   data: () => ({
+     drawer: null, 
     items: [
       { title: "Click Me" },
       { title: "Click Me" },
