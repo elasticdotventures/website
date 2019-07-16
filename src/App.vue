@@ -19,8 +19,18 @@
       </v-btn>
     </v-toolbar>
 
-    <v-parallax dark height="200" src="img/background-circuit1.jpg">
+    <v-parallax dark height="300" src="img/background-circuit1.jpg">
     <h1>Elastic.Ventures</h1>
+  
+
+      <v-img
+          :src="require('./assets/elasticventures_text_svg.svg')"
+          class="my-3"
+          contain
+          height="100"
+        ></v-img>
+
+
     </v-parallax>
 
 
@@ -37,6 +47,8 @@
 // this loads the Vuetifyxx homepage. 
 import HelloWorld from './components/HelloVuetify.vue'
 import Footer from './components/Footer.vue'
+
+
 
 export default {
   name: 'App',

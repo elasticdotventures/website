@@ -1,6 +1,8 @@
 <template>
   <div class="home">
+    <!--
     <img alt="Vue logo" src="../assets/logo.png">
+    -->
     <HelloWorld msg="Welcome to Elastic.Ventures"/>
     <h1>views/Home.vue</h1>
   </div>

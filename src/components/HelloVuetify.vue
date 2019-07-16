@@ -33,12 +33,14 @@
       -->
 
       <v-flex xs12>
-        <v-img
+        <!--
+          <v-img
           :src="require('../assets/logo.svg')"
           class="my-3"
           contain
           height="200"
         ></v-img>
+        -->
 
         
           <router-link to="/">Go to Home</router-link>
@@ -49,11 +51,11 @@
 
       <v-flex mb-4>
         <h1 class="display-2 font-weight-bold mb-3">
-          <span style="font-family: 'Press Start 2P', cursive">
-          Welcome to components/HelloVuetify.vue
+          <span style="font-size: 10pt; font-family: 'Press Start 2P', cursive">
+        Press Start Player 2.
           </span>
-          <span style="font-family: 'Nasa'">
-          Elastic.ventures
+          <span style="font-size: 10pt; font-family: 'Nasa'">
+        Nasa Font
           </span>
         </h1>
         <p class="subheading font-weight-regular">
