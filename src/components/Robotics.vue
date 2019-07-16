@@ -1,13 +1,12 @@
 <template>
+		<v-container>
+		<v-layout>
+			<v-flex xs12>
+
+
 	<!-- Section: RoboVend -->
-	<section id="robotparts" class="home-section text-center">
-		<div class="heading-about">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="wow bounceInDown" data-wow-delay="0.4s">
-							<div class="section-heading">
 								<h2>Upcoming: <a target="_blank" href="#">Harmonized Robotics Mfg.</a></h2>
+								
 								<h4>Residential & Light Industry Robotics Parts & Accessories</h4>
 								<p>
 									Cybernetics is the industry of building cloud connected or distributed AI
@@ -24,7 +23,8 @@
 									the goal.
 									We believe this approach will rapidly speed up robotic development for
 									companies, schools and research all over the world.
-									<p></p>
+								</p>
+								<p>
 									Manufacturing at the moment non-existant cross-industry connector pieces and
 									sub-assembly kits for intelligent low voltage robotics.
 									Beyond GrowPotBot we intend to produce some-assembly-required kits for
@@ -39,11 +39,8 @@
 									selling the product (as used; final sale) on eBay to another person in the
 									same area with a full warranty.
 								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+			</v-flex>
+		</v-layout>
+		</v-container>
+
 </template>

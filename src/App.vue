@@ -56,6 +56,11 @@
 
     <v-content>
             <HelloWorld/>
+            <AboutEV />
+            <EVCrew />
+            <GrowPotBot />
+            <Robotics />
+            <Ubuntu />
     </v-content>
 
     <v-footer>
@@ -68,6 +73,18 @@
 <script>
 // this loads the Vuetifyxx homepage. 
 import HelloWorld from './components/HelloVuetify.vue'
+
+import AboutEV from './components/AboutEV.vue';
+/* 
+import B2bCbd from './components/B2bCbd.vue';
+import Careers from './components/Careers.vue';
+*/
+
+import EVCrew from './components/EVCrew.vue';
+import GrowPotBot from './components/GrowPotBot.vue';
+import Robotics from './components/Robotics.vue';
+import Ubuntu from './components/Ubuntu.vue';
+
 import Footer from './components/Footer.vue'
 
 
@@ -76,6 +93,13 @@ export default {
   name: 'App',
   components: {
     HelloWorld,
+    AboutEV,
+    EVCrew,
+    GrowPotBot, 
+    Robotics, 
+/*    B2bCbd,
+    Careers, */
+    Ubuntu, 
     Footer
   },
   data: () => ({

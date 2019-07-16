@@ -7,7 +7,7 @@
 					<div class="col-lg-8 col-lg-offset-2">
 						<div class="wow bounceInDown" data-wow-delay="0.4s">
 							<div class="section-heading">
-								<h2>Active Project: <a target="_blank" href="http://b2bcbd.us">b2bCBD.us</a></a>
+								<h2>Active Project: <a target="_blank" href="http://b2bcbd.us">b2bCBD.us</a>
 								</h2>
 								<i class="fa fa-2x fa-angle-down"></i>
 								<p>
@@ -21,8 +21,8 @@
 									their dues" and study concurrently while receiving a
 									hands-on education in AI, cybernetics, robotics, and integrated
 									manufacturing.
-
-									<p></p>
+								</p><p>
+								
 									Industries like CBD have a variety of interesting
 									opportunities for automation (because they have no legacy systems; they will
 									adopt robotics earlier).
