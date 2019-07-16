@@ -49,7 +49,12 @@
 
       <v-flex mb-4>
         <h1 class="display-2 font-weight-bold mb-3">
+          <span style="font-family: 'Press Start 2P', cursive">
           Welcome to components/HelloVuetify.vue
+          </span>
+          <span style="font-family: 'Nasa'">
+          Elastic.ventures
+          </span>
         </h1>
         <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,

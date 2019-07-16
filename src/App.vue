@@ -21,7 +21,6 @@
 
     <v-parallax dark height="200" src="img/background-circuit1.jpg">
     <h1>Elastic.Ventures</h1>
-    
     </v-parallax>
 
 
