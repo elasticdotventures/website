@@ -2,7 +2,9 @@
   <v-app>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>App.vue</span>
+        <span>
+          welcome..
+        </span>
         <!--
           <span class="font-weight-light">MATERIAL DESIGN</span>
         -->
@@ -17,8 +19,14 @@
       </v-btn>
     </v-toolbar>
 
+    <v-parallax dark height="200" src="img/background-circuit1.jpg">
+    <h1>Elastic.Ventures</h1>
+    
+    </v-parallax>
+
+
     <v-content>
-      <HelloWorld/>
+            <HelloWorld/>
     </v-content>
     <v-footer>
       <Footer />
