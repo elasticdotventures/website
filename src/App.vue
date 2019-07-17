@@ -112,7 +112,7 @@ import Footer from "./components/Footer.vue";
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    // HelloWorld,
     AboutEV,
     EVCrew,
     GrowPotBot,
