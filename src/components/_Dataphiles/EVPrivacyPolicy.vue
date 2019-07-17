@@ -1,22 +1,4 @@
-<style>
-    #ppBody {
-        font-size: 11pt;
-        width: 100%;
-        margin: 0 auto;
-        text-align: justify;
-    }
 
-    #ppHeader {
-        font-family: verdana;
-        font-size: 21pt;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .ppConsistencies {
-        display: none;
-    }
-</style>
 <template>
     <v-container>
 
@@ -248,6 +230,6 @@
     <div class='innerText'>30661 valley center rd.</div>valley center, ca 92082 <div class='innerText'>usa</div>
     <div class='innerText'>hello@elastic.ventures</div>
     <div class='innerText'><br>Last Edited on 2018-02-26</div>
-    </div>
+    
     </v-container>
 </template>
