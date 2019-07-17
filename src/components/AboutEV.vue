@@ -24,8 +24,11 @@ export default {
 </script>
 
 <template>
-  <v-container>
-    <v-layout row wrap>
+  <v-container fluid>
+    <!--
+    fluid Removes viewport size breakpoints      
+    -->
+    <v-layout xs12 row wrap>
       <h2><font style="font-family: nasa">About EV</font></h2>
 
       <v-flex xs12>

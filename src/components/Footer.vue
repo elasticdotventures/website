@@ -3,7 +3,7 @@
     <!--
 	icons https://material.io/tools/icons/?style=outline
     -->
-    <v-icon>copyright</v-icon>
+    &nbsp; <v-icon>copyright</v-icon>
 2019 - Elastic Ventures, Inc.
     <!--
 	<v-icon>facebook</v-icon>
@@ -14,10 +14,8 @@
 
     <v-dialog v-if="showTermsOfService"></v-dialog>
 
-    <EVPrivacyPolicy v-if="showPrivacyPolicy" />
-
     <div class="text-xs-center">
-      <v-dialog v-model="dialog" width="500">
+      <v-dialog v-model="dialog" width="600">
         <template v-slot:activator="{ on }">
           <v-btn v-on="on">
             <v-icon>bookmark</v-icon>Terms of Service &amp; Privacy Policy
@@ -28,7 +26,9 @@
           <v-card-title class="headline grey lighten-2" primary-title>Privacy Policy</v-card-title>
 
           <v-card-text>
-            <EVTermsOfService />
+            <!--
+              <EVTermsOfService />
+            -->
             <EVPrivacyPolicy />
           </v-card-text>
 
@@ -45,12 +45,12 @@
 </template>
 
 <script>
-import EVTermsOfService from "./_Dataphiles/EVTermsOfService.vue";
+// import EVTermsOfService from "./_Dataphiles/EVTermsOfService.vue";
 import EVPrivacyPolicy from "./_Dataphiles/EVPrivacyPolicy.vue";
 
 export default {
   components: {
-    EVTermsOfService,
+    // EVTermsOfService,
     EVPrivacyPolicy
   },
   data() {

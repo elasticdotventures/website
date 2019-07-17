@@ -74,15 +74,18 @@
 
         </v-parallax>
 
-      <v-divider />
 
       <AboutEV />
 
-      <v-divider />
+      <v-container>
+        <v-divider />
+      </v-container>
 
       <EVCrew />
 
-      <v-divider />
+      <v-container>
+        <v-divider />
+      </v-container>
 
 <!--
       <v-divider />
@@ -92,7 +95,13 @@
       <v-divider />
       <Ubuntu />
 -->
-    🚧👷‍♀️👷‍♂️ This website is (perpetually) under construction.  😁
+      <v-container fluid>
+          <v-layout row wrap>
+            <v-flex>
+      🚧👷‍♀️👷‍♂️ This website is (perpetually) under construction.  😁
+        </v-flex>
+        </v-layout>
+      </v-container>
 
     </v-content>
 
@@ -113,9 +122,9 @@ import Careers from './components/Careers.vue';
 */
 
 import EVCrew from "./components/EVCrew.vue";
-import GrowPotBot from "./components/GrowPotBot.vue";
-import Robotics from "./components/Robotics.vue";
-import Ubuntu from "./components/Ubuntu.vue";
+//import GrowPotBot from "./components/GrowPotBot.vue";
+//import Robotics from "./components/Robotics.vue";
+//import Ubuntu from "./components/Ubuntu.vue";
 
 import Footer from "./components/Footer.vue";
 
@@ -125,11 +134,11 @@ export default {
     // HelloWorld,
     EVCrew,
     AboutEV,
-    GrowPotBot,
-    Robotics,
+ //   GrowPotBot,
+ //   Robotics,
     /*    B2bCbd,
     Careers, */
-    Ubuntu,
+  //  Ubuntu,
     Footer
   },
   data: () => ({
