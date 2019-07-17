@@ -1,9 +1,8 @@
 <template>
   <v-app>
+
+    <!--
     <v-navigation-drawer v-model="drawer" fixed right app>
-      <!--
-      !study
-      -->
       <v-list dense>
         <v-list-tile @click="greet">
           <v-list-tile-action>
@@ -13,6 +12,7 @@
             <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
         <v-list-tile @click="greet">
           <v-list-tile-action>
             <v-icon>contact_mail</v-icon>
@@ -23,19 +23,19 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar color="cyan" fixed app>
+    <v-toolbar color="#3061e1" fixed app>
       <v-spacer></v-spacer>
-      <v-toolbar-title>Navigation</v-toolbar-title>
+      <v-toolbar-title>Menu 👉</v-toolbar-title>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     </v-toolbar>
-
+    -->
     <!--
       vtoolbar-old
     -->
 
     <v-content>
 
-        <v-parallax dark height="275" src="img/background-circuit1.jpg">
+        <v-parallax dark height="200" src="img/background-staticflow.jpg">
       <v-layout
             column
             align-center
@@ -45,6 +45,7 @@
           >
             <h1 class="white--text mb-2 display-1 text-xs-center">
               <font  style="font-family: nasa">
+              <!-- https://vuetifyjs.com/en/framework/typography -->
               Elastic.Ventures
               </font>
             </h1>
@@ -76,14 +77,21 @@
       <v-divider />
 
       <AboutEV />
+
+      <v-divider />
+
       <EVCrew />
 
+<!--
       <v-divider />
       <GrowPotBot />
       <Robotics />
 
       <v-divider />
       <Ubuntu />
+-->
+    🚧👷‍♀️👷‍♂️ This website is (perpetually) under construction.  😁
+
     </v-content>
 
     <v-footer>
@@ -94,7 +102,7 @@
 
 <script>
 // this loads the Vuetifyxx homepage.
-import HelloWorld from "./components/HelloVuetify.vue";
+// import HelloWorld from "./components/HelloVuetify.vue";
 
 import AboutEV from "./components/AboutEV.vue";
 /* 
@@ -113,8 +121,8 @@ export default {
   name: "App",
   components: {
     // HelloWorld,
-    AboutEV,
     EVCrew,
+    AboutEV,
     GrowPotBot,
     Robotics,
     /*    B2bCbd,
