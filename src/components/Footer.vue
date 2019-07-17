@@ -5,7 +5,6 @@
     -->
     <v-icon>copyright</v-icon>
 2019 - Elastic Ventures, Inc.
-
     <!--
 	<v-icon>facebook</v-icon>
 	<v-icon>twitter</v-icon>
@@ -13,28 +12,25 @@
 	<v-icon>instagram</v-icon>
     -->
 
-    <v-dialog v-if="showTermsOfService">
-    </v-dialog>
+    <v-dialog v-if="showTermsOfService"></v-dialog>
 
     <EVPrivacyPolicy v-if="showPrivacyPolicy" />
 
     <div class="text-xs-center">
       <v-dialog v-model="dialog" width="500">
         <template v-slot:activator="{ on }">
-
-    <v-btn v-on="on">
-      <v-icon>bookmark</v-icon> Terms of Service &amp; Privacy Policy 
-    </v-btn>
-
+          <v-btn v-on="on">
+            <v-icon>bookmark</v-icon>Terms of Service &amp; Privacy Policy
+          </v-btn>
         </template>
 
         <v-card>
           <v-card-title class="headline grey lighten-2" primary-title>Privacy Policy</v-card-title>
 
           <v-card-text>
-      		<EVTermsOfService />
-			<EVPrivacyPolicy />
-		  </v-card-text>
+            <EVTermsOfService />
+            <EVPrivacyPolicy />
+          </v-card-text>
 
           <v-divider></v-divider>
 
@@ -59,9 +55,7 @@ export default {
   },
   data() {
     return {
-      dialog: false,
-      showTermsOfService: false,
-      showPrivacyPolicy: false
+      dialog: false
     };
   }
 };
