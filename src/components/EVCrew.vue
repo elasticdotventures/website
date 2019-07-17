@@ -5,7 +5,7 @@
 <template>
   <v-container fluid grid-list-md align-start>
     <v-title>
-      <h3>The Team</h3>
+      <h2><font style="font-family: nasa">EV Crew</font></h2>
     </v-title>
     <!--
       phone_iphoneExtra small	xs	small to large handset	< 600px
@@ -16,7 +16,7 @@ tvExtra large	xl	4k and ultra-wides	> 1904px*
     -->
 
     <v-layout pa-3 mb-2 align-center row wrap>
-      <v-flex d-flex xs12 sm3 md3 child-flex>
+      <v-flex d-flex grow xs2 sm6 md3 child-flex>
         <v-card :key="who.thumb" v-for="who in humans">
         
           <v-avatar size="150" class="avatar">

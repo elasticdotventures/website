@@ -26,7 +26,7 @@ export default {
 <template>
   <v-container>
     <v-layout row wrap>
-      <h2>About EV</h2>
+      <h2><font style="font-family: nasa">About EV</font></h2>
 
       <v-flex xs12>
           Elastic Ventures, Inc. "EV" is a California S Corp was established in 2014 as a professional consulting and services company.
@@ -42,7 +42,8 @@ export default {
 
         <v-flex xs12>
           EV's modern science hunting for "Dark Swan" innovations 
-          using a common automation "Intelligent Automation" bot-assited sales & support system.
+          using a common automation IA ("Intelligent Amplification") using 
+          bot-assistance. 
         </v-flex>
 
         <v-flex xs12 d-none>
@@ -75,7 +76,7 @@ export default {
           abroad experience for international collaboration. 
           We provide bonuses based on 🍰 culture and team success. 
         </v-flex>
-      </v-flex>
+      
     </v-layout>
   </v-container>
 </template>

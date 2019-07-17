@@ -82,6 +82,8 @@
 
       <EVCrew />
 
+      <v-divider />
+
 <!--
       <v-divider />
       <GrowPotBot />
