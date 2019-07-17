@@ -7,6 +7,11 @@
 
   <h3>The Team</h3>
 
+    <v-flex>
+      <v-card>
+      </v-card>
+    </v-flex>
+
 
     <v-flex>
       <v-card xs4>
@@ -78,23 +83,8 @@
           <p class="subtitle">San Diego, California USA</p>
       </v-card>
     </v-flex>
-    <v-flex>
-      <v-card>
-          <div class="avatar">
-            <img
-              width="75"
-              src="img/team/dvizma-v1-300x300-whitebg.png"
-              alt
-              class="img-responsive img-circle"
-            />
-          </div>
-          <h4>Dvizma Sinha</h4>
-          <p class="subtitle">Electronics Wizard</p>
-          <p class="subtitle">Prototype Design Review</p>
-          <p class="subtitle">India</p>
 
-      </v-card>
-    </v-flex>
+
     <v-flex>
       <v-card>
 
