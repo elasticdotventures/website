@@ -18,6 +18,8 @@
     }
 </style>
 <template>
+    <v-container>
+
     <div id='ppHeader'>elastic.ventures Privacy Policy</div>
     <div id='ppBody'>
         <div class='ppConsistencies'>
@@ -247,4 +249,5 @@
     <div class='innerText'>hello@elastic.ventures</div>
     <div class='innerText'><br>Last Edited on 2018-02-26</div>
     </div>
+    </v-container>
 </template>

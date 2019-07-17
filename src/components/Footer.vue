@@ -20,8 +20,8 @@
 </template>
 
 <script>
-//import EVTermsOfService from "components/_Dataphiles/EVTermsOfService.vue";
-//import EVPrivacyPolicy from "components/_Dataphiles/EVPrivacyPolicy.vue";
+import EVTermsOfService from "./_Dataphiles/EVTermsOfService.vue";
+import EVPrivacyPolicy from "./_Dataphiles/EVPrivacyPolicy.vue";
 
 export default {
   data() {
