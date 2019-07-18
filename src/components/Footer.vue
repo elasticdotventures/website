@@ -10,14 +10,46 @@
 	<v-icon>twitter</v-icon>
 	<v-icon>linkedin</v-icon>
 	<v-icon>instagram</v-icon>
-    -->
 
-    <v-dialog v-if="showTermsOfService"></v-dialog>
+
+  <div v-if="Math.random() > 0.5">
+  Now you see me
+</div>
+<div v-else>
+  Now you don't
+</div>
+
+    -->
+  
+    <div class="text-xs-center">
+   <v-btn href="https://github.com/elasticdotventures/eva.c0re">
+      <v-icon>bookmark</v-icon>      
+      github
+    </v-btn>
+    </div>
 
     <div class="text-xs-center">
       <v-dialog v-model="dialog" width="600">
+
         <template v-slot:activator="{ on }">
+          <!--
+          😉 v-slot:activator 
+
+          https://vuejs.org/v2/guide/components-slots.html#Scoped-Slots
+          https://vuejs.org/v2/api/#v-on
+
+          the activator slot in the component binds the data object from the render function so that its 
+          available in the parent scope. 
+      
+https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth
+
+Originally posted by @YuqiaoS in #6823 (comment)
+          -->
           <v-btn v-on="on">
+            <!--
+              v-on: Listen for a custom event on the current vm. Events can be triggered by vm.$emit. The callback will receive all the additional arguments passed into these event-triggering methods.
+            -->
+      
             <v-icon>bookmark</v-icon>Terms of Service &amp; Privacy Policy
           </v-btn>
         </template>
