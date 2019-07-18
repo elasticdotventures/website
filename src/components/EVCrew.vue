@@ -173,19 +173,30 @@ let humans = [
         "Documentation Writing & Review"
         ],
     location: "Indonesia"
-  }
-  /* 
+  },
   {
     name: "TroubleMaker.site",
     channel: "#troublemaker",
-    thumb: "",
+    thumb: "/img/team/TM-LOGO_WHITE-EDGE_250x250px.png",
     url: "https://troublemaker.site",
-    isPartner: true,
+    isAdvisor: true,
     abouts: [
       'Fabrication','Manufacturing','China Logistics'
     ],
     location: "Shenzhen, CN."
   },
+  {
+    name:"EV Assistant",
+    channel: "#bot_eva",
+    isAdvisor: true, 
+    thumb: "/img/team/eva-southpark-v1-200x200-whitebg.png",
+    abouts: [
+      'Metrics & CI Delivery',
+      'Async Meeting Facilitator',
+      'AR Video Plugin (In Development)'
+    ]
+  },
+  /* 
   {
     mark karpeles
   },
