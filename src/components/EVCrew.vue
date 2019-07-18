@@ -51,7 +51,7 @@ tvExtra large	xl	4k and ultra-wides	> 1904px*
           align-center:   align items to the center
           justify-center:  justify-content to center
       -->
-      <v-flex xs12 sm4 d-flex  v-for="who in humans" >
+      <v-flex xs12 sm4 d-flex :key="who.name" v-for="who in humans" >
         <!--
         v-flex properties: 
           order-xs5     
@@ -92,50 +92,111 @@ tvExtra large	xl	4k and ultra-wides	> 1904px*
 </template>
 
 <script>
+// write humans to a file
+// load file and display
+// move human to vue-x; 
+// access in other components
+// work with filter map applications
+// review jest
+// develop unit test for human file (is present, has json)
+// 
 let humans = [
   {
     name: "Brian Horakh",
+    channel: "#cyberpunks",
     thumb: "img/team/brianh.png",
+    location: "Melbourne, Australia",
     abouts: [
       "Fearless Leader",
       "Fullstack Dev & Engineer",
-      "Melbourne Australia"
+      "Business Tooling & Networking"
       // 'LinkedIn: https://www.linkedin.com/company/elasticdotventures'
     ]
   },
   {
     name: "Fabio Chechin",
+    channel: "#salesvikings",
     thumb: "img/team/fabio2-300x300-whitebg.png",
-    abouts: ["Sales Viking", "Digital Nomad", "#Airstream USA"]
+    abouts: [
+        "VP of Worldwide Sales",
+        "Business Development",
+        "Client Relationship"
+        ],
+    location: "Washington, CA. USA"
   },
   {
     name: "Margaret Woodfield",
+    channel: "#ops",
     thumb: "img/team/margaret-v1-300x300-whitebg.png",
-    abouts: ["Operations Yogi", "Digital Nomad", "#Airstream, USA"]
+    abouts: [
+        "VP of Operations", 
+        "#human resources",
+        "Organizational Process"
+        ],
+    location: "Washington, CA. USA"
   },
   {
     name: "Jay Shore",
     isAdvisor: true,
     thumb: "img/team/jay-200x200-whitebg.png",
-    abouts: ["Cannabis & CBD Markets", "710decibels.com", "San Diego, CA. USA"]
+    company: "MarketMakers",
+    url: "http://710decibels.com",
+    abouts: [
+        "Limited Partnerships",
+        "Concept Engineering & Formulation",
+        "Business Development",
+        "Cannabis & CBD Markets", 
+        ],
+    location: "San Diego, CA. USA"
   },
   {
     name: "Colin Hankins",
+    channel: "#Touit",
     isAdvisor: true,
+    url: "http://touit.com",
     thumb: "img/team/colinhankins-780x780-whitebg.png",
     abouts: [
-      "Electronics Wizard",
-      "PCB, VSLI, signal processing",
-      "San Diego, CA. USA"
-    ]
+      "Design Review and Validation",
+      "Electronics &amp; Sensor Design",
+      "Embedded Systems Software",
+      "PCB, VSLI, signal processing"
+    ],
+     location: "San Diego, CA. USA"
   },
   {
     name: "Tamara Hartenthaler",
     isAdvisor: true,
     thumb: "img/team/tamara-730x730.png",
-    abouts: ["Innovation Consultant", "Troubleshooter", "Digital Nomad"]
+    abouts: [
+        "Innovation Consultant", 
+        "Process Analyst",
+        "Documentation Writing & Review"
+        ],
+    location: "Indonesia"
+  }
+  /* 
+  {
+    name: "TroubleMaker.site",
+    channel: "#troublemaker",
+    thumb: "",
+    url: "https://troublemaker.site",
+    isPartner: true,
+    abouts: [
+      'Fabrication','Manufacturing','China Logistics'
+    ],
+    location: "Shenzhen, CN."
   },
-/*  {
+  {
+    mark karpeles
+  },
+  {
+
+  },
+  {
+    name: "Superior Inflatables",
+    isPartner: true,
+  }
+  {
     name: "PJ Peckham",
     thumb: "img/team/pj-v1.png",
     abouts: [
@@ -156,8 +217,12 @@ let humans = [
     abouts: [
     ]
   },
-  // edvard
-  // 
+  {
+    name: "edvard",
+    thumb: "",
+    abouts: [
+    ]
+  }
 */
 
 
