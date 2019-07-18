@@ -34,6 +34,8 @@
         <template v-slot:activator="{ on }">
           <!--
           😉 v-slot:activator 
+          ^^^ NOT WELL DOCUMENTED.  FIX! 
+          https://github.com/vuetifyjs/vuetify/issues/6866
 
           https://vuejs.org/v2/guide/components-slots.html#Scoped-Slots
           https://vuejs.org/v2/api/#v-on
