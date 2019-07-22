@@ -16,6 +16,14 @@ var methods = {
     }
 };
 
+/*
+
+🏫 https://blog.bitsrc.io/how-to-build-vue-components-like-a-pro-fd89fd4d524d
+vue-class-component reduces the component development process by allowing developers to add data properties and handlers directly as properties to the class
+
+
+*/
+
 export default {
     methods
 };
@@ -146,22 +154,46 @@ The size controls the increment of the property:
 <div v-else>
   Now you don't
 </div>
-      -->
+
+        <v-flex xs12>
+          EV provides a boutique <v-link url="https://www.scaledagile.com/partner-opportunities/why-partner/">SAFE</v-link>
+          <v-link>SCRUM</v-link>-style consultancy practice and organizationally gamified participation and continuous improvement pipeline "hivemind" program
+          using bots to implement organizationally diverse change simultaenously and reward efficient use of software automation rather than creating work for works sake. 
+            <eva-try>
+                <eva-reveal>
+          Similiar to, but independently created from the SAFE framework as an open-source worldwide cyber-organization that rewards efficiency which is measured through metrics and definable goals or tasks.         
+          Focusing on the mastery of enlightenment our method starts with a course on adaptive thinking, creating a better tomorrow starting today, literally right now. 
+                  <eva-reveal />
+            <eva-try>
+        </v-flex>
 
         <v-flex xs12 d-none>
-          EV's modern science hunting for "Dark Swan" using an internally developed async slack culture,
+          EV's spent it's youth as a privately funded venture <eva-try delimiter="|">hunting|searching</eva-try>
+             for <eva-try delimiter="|">Dark Swan|Unicorn|Life Improving</eva-try> developments in the academic community and 
+          identifying <eva-try>#opportunities</eva-try> in <eva-try>communication advancement|forward thinking</eva-try>. 
+            <eva-reveal />
+        </v-flex>
+
+      -->
+
+
+        <ev-flex xs12>
+💀 !todo vuetify display helper // how to create? alias reveal to d-none 
+
+          using an internally developed async slack culture,
           organizational framework for automation IA ("Intelligent Amplification") 
           with highly opinionated tooling, automated builds, business process validation and 
           friendly bot-assistance. 
-        </v-flex>
+            <eva-reveal />
+        </ev-flex>
 
         <v-flex xs12 d-none>
           The business plan (broadly): 🤓🙏🌎😁💖🤖
           EV practices concious engineering, only projects that don't hurt people or the planet.
           Frequently ideas that are universal 'no brainers' using enviroment sustainability 
           "leave no trace" or ideally better than before yei (we all of us, even the machines) arrived.
-
         </v-flex>
+
         <v-flex d-none>
           The EV founder @b has prior experience in emerging technologies artificial intelligence, documentation and testing,
           IOT sensor design fabrication, early open source & cloud, first to market e-commerce saas & client/server mobile apps.

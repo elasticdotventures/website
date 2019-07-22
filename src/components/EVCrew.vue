@@ -196,22 +196,32 @@ let humans = [
       'AR Video Plugin (In Development)'
     ]
   },
+  {
+    name: "PJ Peckham",
+    thumb: "img/team/pj-v1.png",
+    abouts: [
+      'Fabricator',
+      'Electrician',
+      'Logistics'
+    ]
+  },
   /* 
+  {
+    name: "Bob Mullaney"
+    abouts : [
+      
+    ]
+  },
+  {
+    name: "Superior Inflatables",
+    channel: "#superior"
+    isPartner: true,
+  },
   {
     mark karpeles
   },
   {
 
-  },
-  {
-    name: "Superior Inflatables",
-    isPartner: true,
-  }
-  {
-    name: "PJ Peckham",
-    thumb: "img/team/pj-v1.png",
-    abouts: [
-    ]
   },
   {
     name: "Anthony Howl",

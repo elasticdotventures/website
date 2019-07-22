@@ -125,6 +125,7 @@ import EVCrew from "./components/EVCrew.vue";
 //import GrowPotBot from "./components/GrowPotBot.vue";
 //import Robotics from "./components/Robotics.vue";
 //import Ubuntu from "./components/Ubuntu.vue";
+// import ContactEV from "./components/ContactEV.vue";
 
 import Footer from "./components/Footer.vue";
 
@@ -132,19 +133,22 @@ export default {
   name: "App",
   components: {
     // HelloWorld,
-    EVCrew,
-    AboutEV,
+    EVCrew,     // yei directory (loading from file, etc.)
+    AboutEV,    // adaptive content
+
+// 🚀 ready for inclusion (post navigation; <ev-crew> element need adaptive content rewrite)
  //   GrowPotBot,
  //   Robotics,
     /*    B2bCbd,
     Careers, */
   //  Ubuntu,
-    Footer
+    // ContactEV,
+    Footer      // #compliance
   },
   data: () => ({
     drawer: null,
     items: [
-      { title: "Click Me" },
+      { title: "Click Me" },    // 🦨
       { title: "Click Me" },
       { title: "Click Me" },
       { title: "Click Me 2" }

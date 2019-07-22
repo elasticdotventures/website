@@ -1,4 +1,28 @@
+<!--
+
+https://alligator.io/vuejs/vuetify-validate-empty-fields/
+
+-->
+
 <template>
+
+
+<v-form>
+  <v-text-field
+    v-model='gator.login'
+    label='Login'
+    :rules='loginRules'
+    required
+  ></v-text-field>
+  <v-text-field
+    v-model='gator.email'
+    :rules='emailRules'
+    label='E-mail'
+    required
+  ></v-text-field>
+</v-form> 
+
+
 				<div class="col-lg-4">
 					<div class="widget-contact">
 						<h5>Main Office</h5>

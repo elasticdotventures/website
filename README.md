@@ -5,9 +5,67 @@ this is a test readme.
 We have organizationally adopted a number of forward thinking "post scarcity economic" organizational models. 
 Please review them below. 
 
-#1. Safety First
-Safety First is rule #1 at Elastic.Ventures. 
+# 💀 Safety First
+Safety First is rule 1. #compliance at Elastic.Ventures. 
+GIT: Please test your changes and submit them on a branch or as a pull request.
+@b runs the ./sync.sh while @eva is down; but the long term goal is to have a three 🍰 and it ships mentality. 
 
+# Layout
+src/
+dist/
+node_modules/
+
+# First Steps
+```bash
+cd ~/projects
+git clone ssh://github.com/elasticdotventures/eva.c0re
+
+```
+
+## Project setup
+```
+npm install
+# create node_modules directory (download dependencies from Internet)
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+# 👆 local webserver starts point browser at http://localhost:8080 (hint: you can also access via a local phone on the same network)
+```
+
+### Compiles and minifies for production
+```
+npm run build
+# creates a dist fold
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files; checks for cosmetic defects
+```
+npm run lint
+```
+
+### Run your unit tests (a subset of tests)
+```
+npm run test:unit
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+
+# Before ./sync.sh 
+sync.sh is the deploy script -- requires aws-cli .. see [github://elasticdotventures/eva.c0re/_Cyberpunks/notes-aws-cli.md] notes in #cyberpunks.
+
+# 🦨 ------- Line of Demarcation ------
+# everything below this line is scaffold; no longer used.  You can move modules here; and the automated test system will "deskunk" the code before it goes to production.
 
 # Art License || Branding Policy
 										EV may, with new releases include collectible stickers "art" in our packaging which include authorized 
@@ -107,35 +165,3 @@ Safety First is rule #1 at Elastic.Ventures.
 
 
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
