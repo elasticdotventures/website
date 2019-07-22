@@ -35,7 +35,9 @@
 
     <v-content>
 
-        <v-parallax dark height="200" src="img/background-staticflow.jpg">
+      <!-- background over the particles -->
+      <v-parallax dark height="200" src="img/background-staticflow.jpg">
+
       <v-layout
             column
             align-center
@@ -43,13 +45,14 @@
             style="font-family: nasa" 
             class="fish"
           >
+            <vue-typed-js :strings="['ELASTIC.VENTURES']">
             <h1 class="white--text mb-2 display-1 text-xs-center">
-              <font  style="font-family: nasa">
-              <!-- https://vuetifyjs.com/en/framework/typography -->
-              Elastic.Ventures
+              <font class="typing" style="font-family: cevtauri">
               </font>
             </h1>
-            <div class="subheading mb-3 text-xs-center">Est. 2014; cybernetics and smart software.</div>
+            </vue-typed-js>
+
+            <div class="subheading mb-3 text-xs-center">Est. 2014; a cybernetics and smart software consultancy.</div>
           </v-layout>
 
           <vue-particles
@@ -95,10 +98,19 @@
       <v-divider />
       <Ubuntu />
 -->
+
+
+
       <v-container fluid>
           <v-layout row wrap>
             <v-flex>
-      🚧👷‍♀️👷‍♂️ This website is (perpetually) under construction.  😁
+
+<!--
+<vue-typed-js :strings="[' 🚧👷‍♀️👷‍♂️  😁 This website is (perpetually) under construction. ', 'Please contact us.']">
+  <h1 class="typing"></h1>
+</vue-typed-js>
+-->
+
         </v-flex>
         </v-layout>
       </v-container>
@@ -114,6 +126,8 @@
 <script>
 // this loads the Vuetifyxx homepage.
 // import HelloWorld from "./components/HelloVuetify.vue";
+ 
+import VueTypedJs from './vue-typed-js/components/VueTypedJs.vue' 
 
 import AboutEV from "./components/AboutEV.vue";
 /* 
@@ -133,6 +147,7 @@ export default {
   name: "App",
   components: {
     // HelloWorld,
+    VueTypedJs,
     EVCrew,     // yei directory (loading from file, etc.)
     AboutEV,    // adaptive content
 
@@ -169,6 +184,7 @@ export default {
 </script>
 
 	<style>
+  /* alignment test on EV text over particle */
 	.fishes
 	{
 		position:absolute;

@@ -23,12 +23,13 @@
     .text-none - Sets text-transform to none
     .text-uppercase - Sets text-transform to uppercase
 
-explanations: xs,sm,md,lg,xl
-phone_iphone Extra small	xs	small to large handset	< 600px
-tablet Small	sm	small to medium tablet	600px > < 960px
-laptop Medium	md	large tablet to laptop	960px > < 1264*
-desktop_windows Large	lg	desktop	1264 > < 1904px*
-tvExtra large	xl	4k and ultra-wides	> 1904px*
+
+flex explanations: xs,sm,md,lg,xl  (device size)
+* xs phone_iphone Extra small	xs	small to large handset	< 600px
+* sm tablet Small	sm	small to medium tablet	600px > < 960px
+* md laptop Medium	md	large tablet to laptop	960px > < 1264*
+* lg desktop_windows Large	lg	desktop	1264 > < 1904px*
+* xl tvExtra large	xl	4k and ultra-wides	> 1904px*
 
 -->
 
@@ -40,9 +41,9 @@ tvExtra large	xl	4k and ultra-wides	> 1904px*
         align-start
     -->
 
-    <v-title>
+    <v-subheader>
       <h2><font style="font-family: nasa">EV Crew</font></h2>
-    </v-title>
+    </v-subheader>
 
     <v-layout row wrap>
       <!--
@@ -198,11 +199,12 @@ let humans = [
   },
   {
     name: "PJ Peckham",
-    thumb: "img/team/pj-v1.png",
+    isAdvisor: true,
+    thumb: "/img/team/pj-720x720-transparent.png",
     abouts: [
       'Fabricator',
       'Electrician',
-      'Logistics'
+      'Construction'
     ]
   },
   /* 
@@ -245,9 +247,9 @@ let humans = [
     ]
   }
 */
-
-
 ];
+
+
 
 export default {
   data() {

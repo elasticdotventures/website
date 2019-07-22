@@ -176,7 +176,7 @@ The size controls the increment of the property:
 
       -->
 
-
+<!--
         <ev-flex xs12>
 💀 !todo vuetify display helper // how to create? alias reveal to d-none 
 
@@ -186,6 +186,7 @@ The size controls the increment of the property:
           friendly bot-assistance. 
             <eva-reveal />
         </ev-flex>
+        -->
 
         <v-flex xs12 d-none>
           The business plan (broadly): 🤓🙏🌎😁💖🤖

@@ -11,11 +11,13 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "d3": "^5.9.7",
+    "typed.js": "^2.0.10",
     "vue": "^2.6.10",
     "vue-analytics": "^5.17.0",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3",
+    "vue-typed-js": "^0.1.2",
     "vuetify": "^1.5.16",
     "vuex": "^3.0.1"
   },
