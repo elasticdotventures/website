@@ -249,9 +249,13 @@ let humans = [
 */
 ];
 
+// import VueTypedJs from '../vue-typed-js/components/VueTypedJs.vue' 
 
 
 export default {
+  components: {
+      // VueTypedJs
+  },
   data() {
     return {
       humans

@@ -5,34 +5,6 @@ Created: 201907
 
 notes:
 
--->
-<script>
-
-
-var methods = {
-    emitClick: function() {
-        this.$emit("click");
-        
-    }
-};
-
-/*
-
-🏫 https://blog.bitsrc.io/how-to-build-vue-components-like-a-pro-fd89fd4d524d
-vue-class-component reduces the component development process by allowing developers to add data properties and handlers directly as properties to the class
-
-
-*/
-
-export default {
-    methods
-};
-
-
-</script>
-
-<template>
-  <!--
     vuetify-spacing notes:
     https://vuetifyjs.com/en/framework/spacing
 
@@ -81,7 +53,9 @@ The size controls the increment of the property:
     4 - sets the spacing to $spacer * 1.5
     5 - sets the spacing to $spacer * 3
 
-  -->
+-->
+
+<template>
 
   <v-container fluid>
 
@@ -188,11 +162,14 @@ The size controls the increment of the property:
         </ev-flex>
         -->
 
-        <v-flex xs12 d-none>
-          The business plan (broadly): 🤓🙏🌎😁💖🤖
+        <v-flex xs12>
+        <vue-typed-js :strings="['blabla']">
+          
+          <font class="typed"> The business plan (broadly): 🤓🙏🌎😁💖🤖</font>
           EV practices concious engineering, only projects that don't hurt people or the planet.
           Frequently ideas that are universal 'no brainers' using enviroment sustainability 
           "leave no trace" or ideally better than before yei (we all of us, even the machines) arrived.
+        </vue-typed-js>
         </v-flex>
 
         <v-flex d-none>
@@ -222,3 +199,38 @@ The size controls the increment of the property:
     </v-layout>
   </v-container>
 </template>
+
+
+
+<script>
+
+
+var methods = {
+    emitClick: function() {
+        this.$emit("click");
+        
+    }
+};
+
+/*
+
+🏫 https://blog.bitsrc.io/how-to-build-vue-components-like-a-pro-fd89fd4d524d
+vue-class-component reduces the component development process by allowing developers to add data properties and handlers directly as properties to the class
+
+
+*/
+
+
+// import VueTypedJs from '../vue-typed-js/components/VueTypedJs.vue' 
+
+export default {
+    components: {
+      // 'vue-typed-js': VueTypedJs
+    },
+    methods
+};
+
+
+</script>
+
+

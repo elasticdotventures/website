@@ -51,8 +51,13 @@
               </font>
             </h1>
             </vue-typed-js>
+          
+            
+            <div class="subheading mb-3 text-xs-center">
+              Est. 2014; a cybernetics and smart software 
+            </div>
+                                            
 
-            <div class="subheading mb-3 text-xs-center">Est. 2014; a cybernetics and smart software consultancy.</div>
           </v-layout>
 
           <vue-particles
@@ -81,6 +86,7 @@
       <AboutEV />
 
       <v-container>
+
         <v-divider />
       </v-container>
 
@@ -126,8 +132,23 @@
 <script>
 // this loads the Vuetifyxx homepage.
 // import HelloWorld from "./components/HelloVuetify.vue";
- 
+
+// text effects
 import VueTypedJs from './vue-typed-js/components/VueTypedJs.vue' 
+
+
+/* 
+ 🚀 https://github.com/SabatinoMasala/vue-text-glitch
+ NOTE: glitch was too difficult to read, maintained here for posterity; possibly useful elsewhere. 
+
+import Glitch from 'vue-glitch';
+ import VueTextGlitch from 'vue-text-glitch'
+
+  <div class="subheading mb-3 text-xs-center"
+     <VueTextGlitch steps="100" text="glitch is too hard to read" highlight1="#FF00FF" highlight2="#FF0000"></VueTextGlitch>
+  </div>
+*/
+
 
 import AboutEV from "./components/AboutEV.vue";
 /* 
@@ -147,7 +168,7 @@ export default {
   name: "App",
   components: {
     // HelloWorld,
-    VueTypedJs,
+    VueTypedJs, 
     EVCrew,     // yei directory (loading from file, etc.)
     AboutEV,    // adaptive content
 
@@ -163,7 +184,7 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      { title: "Click Me" },    // 🦨
+      { title: "Click Me" },    // 👈🦨
       { title: "Click Me" },
       { title: "Click Me" },
       { title: "Click Me 2" }
@@ -171,6 +192,7 @@ export default {
   }),
   // define methods under the `methods` object
   methods: {
+    // 🦨 not used 👇
     greet: function(event) {
       // `this` inside methods points to the Vue instance
       alert("Hello " + this.name + "!");
