@@ -38,6 +38,10 @@ export default {
 }
 </script>
 
+<!--
+🦨 note: moved <style> to App.vue for harmonization with other effects. 
+(this is default)
+
 <style lang="scss">
 .typed-element {
   display: flex;
@@ -53,3 +57,5 @@ export default {
   50% { opacity: 0.0; }
 }
 </style>
+
+-->

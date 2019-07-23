@@ -1,3 +1,5 @@
+
+
 import VueTypedJs from './components/VueTypedJs.vue'
 
 // Install the components
@@ -30,4 +32,4 @@ if (GlobalVue) {
   GlobalVue.use(plugin)
 }
 
-console.log('components/VueTypedJS')
+// console.log('components/VueTypedJS')

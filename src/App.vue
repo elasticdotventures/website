@@ -1,3 +1,153 @@
+<style lang="scss">
+
+  @font-face {
+      font-family: 'nasa';
+      src: url('./eva.c0re/_Pretty/ttf/nasalization-rg.ttf');
+  }
+  @font-face {
+      font-family: 'cevtauri';
+      src: url('./eva.c0re/_Pretty/font-cevtauri/cevtauri-v2.woff');
+  }
+  @font-face {
+    font-family: 'forgetica';
+    src: url('./eva.c0re/_Pretty/ttf/SansForgetica-Regular.otf')
+  }
+  @font-face {
+    font-family: 'player2';
+    src: url('./eva.c0re/_Pretty/ttf/press_start_2p/PressStart2P.ttf')
+  }
+
+/* 
+🚀 these fonts are all hideous. 
+@font-face {
+  🦨: 'only lower case';
+  font-family: 'ev_font_a';
+  src: url('./eva.c0re/_Pretty/ttf/404maciej_retrocraze/retroblaze.ttf');
+}
+@font-face {
+  font-family: 'ev_font_b';
+  src: url('./eva.c0re/_Pretty/ttf/404maciej_retrocraze/retrocraze.ttf');
+}
+@font-face {
+  font-family: 'ev_font_c';
+  src: url('./eva.c0re/_Pretty/ttf/codeman38_press-start-1/prstart.ttf');
+}
+@font-face {
+  font-family: 'ev_font_d';
+  src: url('./eva.c0re/_Pretty/ttf/genshichi-yasui_g7-makaimura/makaimura.TTF');
+}
+@font-face {
+  🦨: 'only upper case';
+  font-family: 'ev_font_e';
+  src: url('./eva.c0re/_Pretty/ttf/genshichi-yasui_g7-star-force/Star_Force_TTF.ttf');
+}
+*/
+@font-face {
+  font-family: 'ev_timer';
+  src: url('./eva.c0re/_Pretty/ttf/heaven-castro_cursed-timer-ulil/CursedTimerULiL.ttf');
+}
+
+
+
+  /* title font ELASTIC.VENTURES */
+  .header_h1 {
+    font-family: cevtauri, nasa, arial; 
+    // need to inherit white--text mb-2 display-1 text-xs-center
+  }
+
+  h3 {
+    font-size: 1em; 
+  }
+
+  /* establish z-layers for header */
+	.layer-z1
+	{
+		position:absolute;
+		top: 25px;
+		left: 25px;
+		z-index: -1;
+	}
+	.layer-z2
+	{
+		position:absolute;
+		top: 25px;
+		left: 25px;
+		z-index: 2;
+	}
+
+/* 
+  TypedJs Styles 
+ <link rel="stylesheet" href="/img/vue-typed-js.css"/>
+*/ 
+.typed-element {
+  display: flex;
+  align-items: center;
+}
+.typed-element .typed-cursor {
+    opacity: 1;
+    animation: typedjsBlink 0.75s infinite;
+}
+@keyframes typedjsBlink {
+50% {
+    opacity: 10.0;
+}
+}
+
+/* 
+🚀 TypedJS: src/vue-typed-js  
+^^^ note: default distro DOES NOT WORK via npm; must build (requires webpack)
+!todo rename vue-typed-js to ev-typed-js
+/TypedJs  
+*/ 
+
+
+$ant-colors: gold, #031337,#2ad,  #bbb, #b2bcbd;
+
+.ant-text--line1 {
+   // from .display-1
+   // @b 🦨👎 there is probably a better way to inherit .display-1
+  font-size: 34px !important;
+  font-weight: 400;
+  line-height: 40px !important;
+  letter-spacing: normal !important;
+ }
+
+$ant-max: 5;
+$stroke-step: 1%;   // how long is the ant size
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  font-family: cevtauri, nasa, Arial, Helvetica, sans-serif;
+  stroke-dasharray: $stroke-step $stroke-step * ($ant-max - 1);
+  stroke-width: 2px;
+
+  // 
+  animation: stroke-offset 5s linear infinite; 
+  
+  @for $item from 1 through $ant-max {
+    $stroke-color: nth($ant-colors, $item);
+    
+    &:nth-child(#{$item}) {
+      stroke: $stroke-color;
+      stroke-dashoffset: $stroke-step * $item;
+      }
+    }
+  }
+
+@keyframes stroke-offset {
+  50% {
+    stroke-dashoffset: $stroke-step * $ant-max;  
+    stroke-dasharray: 0 $stroke-step * $ant-max*5;
+  }
+}
+
+
+
+
+
+</style>
+
 <template>
   <v-app>
 
@@ -43,20 +193,49 @@
             align-center
             justify-center
             style="font-family: nasa" 
-            class="fish"
           >
-            <vue-typed-js :strings="['ELASTIC.VENTURES']">
+
+          <div class="layer-z1">
             <h1 class="white--text mb-2 display-1 text-xs-center">
-              <font class="typing" style="font-family: cevtauri">
+            <vue-typed-js :strings="['ELASTIC.VENTURES']">
+              <font class="typing header_h1">
               </font>
-            </h1>
             </vue-typed-js>
-          
+            </h1>
+
+
             
             <div class="subheading mb-3 text-xs-center">
-              Est. 2014; a cybernetics and smart software 
+            <vue-typed-js :strings="['est. 2014; cybernetics and smart software']">
+              <h3 class="typing" style="color: #bbd; font-family: ev_timer, nasa, forgetica; font-size: 20pt;"></h3>
+            </vue-typed-js>    
             </div>
-                                            
+          
+
+          </div>
+
+        
+          <div class="layer-z1" v-on:hover="visible">
+          <h1>
+          <svg width="700">
+            <symbol id="ant-text">
+              <text class="ant-text--line1" text-anchor="left" x="0%" y="20%">ELASTIC.VENTURES</text>
+            </symbol>
+            
+            <g class="g-ants">
+              <use xlink:href="#ant-text" class="text-copy"></use>     
+              <use xlink:href="#ant-text" class="text-copy"></use>     
+              <use xlink:href="#ant-text" class="text-copy"></use>     
+              <use xlink:href="#ant-text" class="text-copy"></use>     
+              <use xlink:href="#ant-text" class="text-copy"></use>     
+            </g>
+            
+          </svg>
+          </h1>
+          </div>
+
+
+
 
           </v-layout>
 
@@ -80,6 +259,7 @@
           </vue-particles>
 
 
+
         </v-parallax>
 
 
@@ -90,9 +270,11 @@
         <v-divider />
       </v-container>
 
+
       <EVCrew />
 
       <v-container>
+
         <v-divider />
       </v-container>
 
@@ -205,23 +387,7 @@ export default {
 };
 </script>
 
-	<style>
-  /* alignment test on EV text over particle */
-	.fishes
-	{
-		position:absolute;
-		top: 10px;
-		left: 10px;
-		z-index: 1;
-	}
-	.fish
-	{
-		position:absolute;
-		top: 25px;
-		left: 25px;
-		z-index: 2;
-	}
-	</style>
+
 
 
 <!--
