@@ -2,49 +2,57 @@
 
   @font-face {
       font-family: 'nasa';
-      src: url('./eva.c0re/_Pretty/ttf/nasalization-rg.ttf');
+      /* src: url('./c0re/_Pretty/ttf/nasalization-rg.ttf'); */
+      src: url('./assets/nasalization-rg.ttf')
   }
   @font-face {
       font-family: 'cevtauri';
-      src: url('./eva.c0re/_Pretty/font-cevtauri/cevtauri-v2.woff');
+      /* src: url('./c0re/_Pretty/font-cevtauri/cevtauri-v2.woff'); */
+      src: url('./assets/cevtauri-v2.woff');
   }
+
+  /* 
+  🦨 not used: 
   @font-face {
     font-family: 'forgetica';
-    src: url('./eva.c0re/_Pretty/ttf/SansForgetica-Regular.otf')
+    src: url('./c0re/_Pretty/ttf/SansForgetica-Regular.otf') 
+    src: url('./assets/SansForgetica-Regular.otf')
   }
   @font-face {
     font-family: 'player2';
-    src: url('./eva.c0re/_Pretty/ttf/press_start_2p/PressStart2P.ttf')
+    src: url('./c0re/_Pretty/ttf/press_start_2p/PressStart2P.ttf')
   }
+*/
 
 /* 
 🚀 these fonts are all hideous. 
 @font-face {
   🦨: 'only lower case';
   font-family: 'ev_font_a';
-  src: url('./eva.c0re/_Pretty/ttf/404maciej_retrocraze/retroblaze.ttf');
+  src: url('./c0re/_Pretty/ttf/404maciej_retrocraze/retroblaze.ttf');
 }
 @font-face {
   font-family: 'ev_font_b';
-  src: url('./eva.c0re/_Pretty/ttf/404maciej_retrocraze/retrocraze.ttf');
+  src: url('./c0re/_Pretty/ttf/404maciej_retrocraze/retrocraze.ttf');
 }
 @font-face {
   font-family: 'ev_font_c';
-  src: url('./eva.c0re/_Pretty/ttf/codeman38_press-start-1/prstart.ttf');
+  src: url('./c0re/_Pretty/ttf/codeman38_press-start-1/prstart.ttf');
 }
 @font-face {
   font-family: 'ev_font_d';
-  src: url('./eva.c0re/_Pretty/ttf/genshichi-yasui_g7-makaimura/makaimura.TTF');
+  src: url('./c0re/_Pretty/ttf/genshichi-yasui_g7-makaimura/makaimura.TTF');
 }
 @font-face {
   🦨: 'only upper case';
   font-family: 'ev_font_e';
-  src: url('./eva.c0re/_Pretty/ttf/genshichi-yasui_g7-star-force/Star_Force_TTF.ttf');
+  src: url('./c0re/_Pretty/ttf/genshichi-yasui_g7-star-force/Star_Force_TTF.ttf');
 }
 */
 @font-face {
   font-family: 'ev_timer';
-  src: url('./eva.c0re/_Pretty/ttf/heaven-castro_cursed-timer-ulil/CursedTimerULiL.ttf');
+  /* src: url('./c0re/_Pretty/ttf/heaven-castro_cursed-timer-ulil/CursedTimerULiL.ttf'); */
+  src: url('./assets/CursedTimerULiL.ttf');
 }
 
 

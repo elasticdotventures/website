@@ -5,11 +5,25 @@ vs ctrl+/ = split window
 🔗 https://docs.microsoft.com/en-us/visualstudio/ide/identifying-and-customizing-keyboard-shortcuts-in-visual-studio?view=vs-2019
 
 # @b FrontendTasks()
-🚀 import desired nes.css components into App.vue;
 🚀 consolidate common display elements into _Pretty 
+🍰 write humans to a file
+// load file and display
+// move human to vue-x; 
+// access in other components
+// work with filter map applications
+// review jest
+// develop unit test for human file (is present, has json)
+// 
+
 
 # @b BackendTasks()
 evsite migrate humans to json. 
+* need to load humans from:
+    * static files /c0re/filename
+    * json
+    * graphql
+    * json-rpc?
+* how does deployment work? 
 * still need effect
 https://css-tricks.com/intro-to-vue-5-animations/
 
@@ -17,6 +31,8 @@ https://css-tricks.com/intro-to-vue-5-animations/
 @b vue() notes
 
 netninja tutorial https://www.youtube.com/watch?v=jgw82b5Y2MU
+^^^ video 3/?? https://www.youtube.com/watch?v=PjR97QzOrJM
+
 CSS animations (multi-part not complete. )
 img {
     transform: rotateZ(-90deg) translateY(200px)
