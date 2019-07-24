@@ -1,6 +1,11 @@
 module.exports = {
   publicPath: '/',
-    chainWebpack: (config) => {
+  chainWebpack: (config) => {
         config.resolve.symlinks(false)
-          }
+  },
+  devServer: {
+    clientLogLevel: 'debug',
+    compress: false,
+    contentBase: './dist'
+  }
 }
