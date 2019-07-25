@@ -115,7 +115,7 @@ let humans = [
     ]
   },
   {
-    name: "Fabio Chechin",
+    name: "Fabio Checchin",
     channel: "#salesvikings",
     thumb: "img/team/fabio2-300x300-whitebg.png",
     abouts: [
