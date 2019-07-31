@@ -6,15 +6,17 @@
 
 			<v-form ref="form">
 
-			<h1>Contact Form xx</h1>
+			<h1>Contact Form</h1>
+      <i>😢 please email us!</i>
 
+<!--
           <v-text-field
             v-model="model"
             :counter="max"
             :rules="rules"
             label="First name"
           ></v-text-field>
-
+-->
         </v-form>
 
 

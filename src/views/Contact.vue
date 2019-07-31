@@ -1,3 +1,8 @@
+<style>
+overline {
+    font-family: nasa;
+}
+</style>
 <template>
   <v-content id="contact">
 
@@ -7,67 +12,28 @@
 
 
 						<v-container>
-							Email:
+							<h2 body-2>Email:</h2>
 							<a href="mailto:hello@elastic.ventures">hello@elastic.ventures</a>
-						</v-container>
-
-						<v-container>
-							Phone:
+							<h2 body-2>Phone:</h2>
 							<a href="callto://+13477083850">+1-347-708-3850</a>
-						</v-container>
 
-						<v-title>Mailing Address</v-title>
-
-						<v-container>
+						<h2 body-2>Mailing Address</h2>
 							<strong>Elastic Ventures, Inc.</strong><br>
 							30661 Valley Center Rd.<br>
 							San Diego, CA. 92082<br>
 						</v-container>
 
-						<v-container style="background-color: #b2b ">
+						<v-container>
 
-<v-list>
-    <v-list-item-group>
-    <v-list-item v-for="(item,i) in socials" :key="i"
+    <v-btn flat dark class="text-none text--overline" v-for="(item,i) in socials" :key="i"
     >
-    <v-button>
-        <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-            <v-list-item-title>
-                {{ item.alt }}
-            </v-list-item-title>
-        </v-list-item-content>
-    </v-button>
-    </v-list-item>
-    </v-list-item-group>
-</v-list>
+            &nbsp;
+            {{ item.alt }}
 
-                        <v-icon>mdi-facebook</v-icon>
+        </v-btn>
 
-
-
-							<strong>Social</strong><br>
-
-                            <v-icon>facebook</v-icon>
-                            <v-icon>linkedin</v-icon>
-                            <v-icon>github</v-icon>
-							<ul class="company-social">
-								<li class="social-facebook"><a href="" target="_blank"><i
-											class="fa fa-facebook"></i></a></li>
-								<li class="social-linkedin"><a href=""
-										target="_blank"><i class="li li-facebook"></i></a></li>
-								<li class="social-github"><a href="http://github.com/elasticdotventures"
-										target="_blank"><i class="li li-github"></i></a></li>
-								<li>WeChat: elastic_ventures</li>
-								
-								
-                            <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                            <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</v-container>
+	</v-container>
     
       </v-parallax>
 

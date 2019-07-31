@@ -30,7 +30,7 @@
   src: url('./assets/CursedTimerULiL.ttf');
 }
  
-v-toolbar-items {
+v-btn {
    font-size: 12pt;
    font-weight: bold; 
    font-family: nasa;
@@ -42,6 +42,7 @@ v-toolbar-items {
  nav li.router-link-exact-active {
    background-color: yellowgreen;
    cursor: pointer;
+   color: blue;
  }
 
 </style>
@@ -62,13 +63,21 @@ v-toolbar-items {
     <h2>EV Logo</h2>
     <v-spacer />
     <v-toolbar-items>
-      <router-link active-class="active" exact to="/">Home</router-link> 
+      <router-link active-class="active" exact to="/">
+        <v-btn flat >Home</v-btn>
+      </router-link> 
       <v-spacer> | </v-spacer>
-      <router-link active-class="active"  to="/about">About</router-link>
+      <router-link active-class="active"  to="/about">
+        <v-btn flat >About</v-btn>
+      </router-link>
       <v-spacer> | </v-spacer>
-      <router-link active-class="active"  to="/projects">Projects</router-link>
+      <router-link active-class="active"  to="/projects">
+        <v-btn flat >Projects</v-btn>
+      </router-link>
       <v-spacer> | </v-spacer>
-      <router-link active-class="active"  to="/contact">Contact</router-link>
+      <router-link active-class="active"  to="/contact">
+        <v-btn flat>Contact</v-btn>
+      </router-link>
 
       <v-spacer v-if="$store.trustMe"> | </v-spacer>
       <router-link v-if="$store.trustMe" active-class="active"  to="/intranet">Intranet</router-link>
