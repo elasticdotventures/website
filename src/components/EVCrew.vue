@@ -251,7 +251,6 @@ const Log = Vue.log();
 
 // const axios = require('axios');
 
-// NOTE: the plan is to load crew data from crew.json via hapi backend; but that's nto working yet. 
 var api = "http://localhost:3000/c0re/crew.json"
 // cake wtf --
 // https://github.com/imcvampire/vue-axios#readme
