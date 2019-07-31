@@ -48,8 +48,10 @@ v-toolbar-items {
 
 <template>
   <v-app id="app">
-
-    <v-toolbar dark elevation="12" 
+    <!--
+      app makes the toolbar dock to the top
+    -->
+    <v-toolbar app dark elevation="12" 
       style="font-family: nasa" 
       class="secondary--text font-weight-heavy" 
       src="assets/sky.jpg">
@@ -67,6 +69,10 @@ v-toolbar-items {
       <router-link active-class="active"  to="/projects">Projects</router-link>
       <v-spacer> | </v-spacer>
       <router-link active-class="active"  to="/contact">Contact</router-link>
+
+      <v-spacer v-if="$store.trustMe"> | </v-spacer>
+      <router-link v-if="$store.trustMe" active-class="active"  to="/intranet">Intranet</router-link>
+      
     </v-toolbar-items>
 
     </v-toolbar>
@@ -124,6 +130,7 @@ export default {
       // `this` inside methods points to the Vue instance
       alert("Hello " + this.name + "!");
       // `event` is the native DOM event
+      $store.trustMe = 1; 
       if (event) {
         alert(event.target.tagName);
       }
