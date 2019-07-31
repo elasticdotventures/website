@@ -157,108 +157,45 @@ $stroke-step: 1%;   // how long is the ant size
 </style>
 
 <template>
-  <v-app>
+  <v-app id="app">
 
     <v-content>
     <h2>App.vue router-view</h2>
 
     <div id="nav">
-      App: 
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/projects">Projects</router-link> |
-      <router-link to="/contact">Contact</router-link>
+      <router-link to="/about">About</router-link>
     </div>
-
     <router-view />
+    <h2>/App.vue router-view</h2>
     </v-content>
   
-    <!--
-    <v-navigation-drawer v-model="drawer" fixed right app>
-      <v-list dense>
-        <v-list-tile @click="greet">
-          <v-list-tile-action>
-            <v-icon>home</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-list-tile @click="greet">
-          <v-list-tile-action>
-            <v-icon>contact_mail</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Contact</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar color="#3061e1" fixed app>
-      <v-spacer></v-spacer>
-      <v-toolbar-title>Menu 👉</v-toolbar-title>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-    </v-toolbar>
-    -->
-    <!--
-      vtoolbar-old
-    -->
-
-    <v-content>
-      <AboutEV />
-
-      <v-container>
-
-        <v-divider />
-      </v-container>
-
-
-
-
-      <v-container fluid>
-          <v-layout row wrap>
-            <v-flex>
-
-<!--
-<vue-typed-js :strings="[' 🚧👷‍♀️👷‍♂️  😁 This website is (perpetually) under construction. ', 'Please contact us.']">
-  <h1 class="typing"></h1>
-</vue-typed-js>
--->
-
-        </v-flex>
-        </v-layout>
-      </v-container>
-
-    </v-content>
-
-    <v-footer>
-      <Footer />
-    </v-footer>
   </v-app>
+ 
+ 
+
 </template>
+
+
 
 <script>
 // this loads the Vuetifyxx homepage.
 // import HelloWorld from "./components/HelloVuetify.vue";
 
-import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
   components: {
     // HelloWorld,
-// 🚀 ready for inclusion (post navigation; <ev-crew> element need adaptive content rewrite)
- //   GrowPotBot,
- //   Robotics,
-    /*    B2bCbd,
-    Careers, */
-  //  Ubuntu,
-    // ContactEV,
-    Footer      // #compliance
   },
   data: () => ({
     drawer: null,
+    links: [
+      { icon: 'dashboard', text:'dashboard', route: '/' },
+      { icon: 'folder', text:'page1', route: '/page1' },
+      { icon: 'folder', text:'page2', route: '/page2' },
+      { icon: 'folder', text:'page3', route: '/page3' },
+    ],
     items: [
       { title: "Click Me" },    // 👈🦨
       { title: "Click Me" },

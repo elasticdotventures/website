@@ -1,6 +1,7 @@
 
 
 import Vue from 'vue'
+import './plugins/vuetify'
 
 // vue.use docs:
 // 🤓 https://vuejs.org/v2/guide/plugins.html
@@ -10,6 +11,7 @@ import Vue from 'vue'
 // disable tracking i.e. 'gdpr'
 // Vue.$ga.disable()
 // Vue.$ga.enable()
+/*
 import VueAnalytics from 'vue-analytics'
 Vue.use(VueAnalytics, {
   id: 'UA-54542129-1'
@@ -18,9 +20,7 @@ Vue.use(VueAnalytics, {
 import { VueTypedJs } from 'vue-typed-js'; 
 Vue.use(VueTypedJs);
 
-import VueParticles from 'vue-particles'
-Vue.use(VueParticles)
-
+*/
 Vue.config.productionTip = false
 
 import './plugins/vuetify'

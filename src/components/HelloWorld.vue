@@ -1,178 +1,6 @@
-<style lang="scss">
-
-  @font-face {
-      font-family: 'nasa';
-      /* src: url('./c0re/_Pretty/ttf/nasalization-rg.ttf'); */
-      src: url('./assets/nasalization-rg.ttf')
-  }
-  @font-face {
-      font-family: 'cevtauri';
-      /* src: url('./c0re/_Pretty/font-cevtauri/cevtauri-v2.woff'); */
-      src: url('./assets/cevtauri-v2.woff');
-  }
-
-  /* 
-  🦨 not used: 
-  @font-face {
-    font-family: 'forgetica';
-    src: url('./c0re/_Pretty/ttf/SansForgetica-Regular.otf') 
-    src: url('./assets/SansForgetica-Regular.otf')
-  }
-  @font-face {
-    font-family: 'player2';
-    src: url('./c0re/_Pretty/ttf/press_start_2p/PressStart2P.ttf')
-  }
-*/
-
-/* 
-🚀 these fonts are all hideous. 
-@font-face {
-  🦨: 'only lower case';
-  font-family: 'ev_font_a';
-  src: url('./c0re/_Pretty/ttf/404maciej_retrocraze/retroblaze.ttf');
-}
-@font-face {
-  font-family: 'ev_font_b';
-  src: url('./c0re/_Pretty/ttf/404maciej_retrocraze/retrocraze.ttf');
-}
-@font-face {
-  font-family: 'ev_font_c';
-  src: url('./c0re/_Pretty/ttf/codeman38_press-start-1/prstart.ttf');
-}
-@font-face {
-  font-family: 'ev_font_d';
-  src: url('./c0re/_Pretty/ttf/genshichi-yasui_g7-makaimura/makaimura.TTF');
-}
-@font-face {
-  🦨: 'only upper case';
-  font-family: 'ev_font_e';
-  src: url('./c0re/_Pretty/ttf/genshichi-yasui_g7-star-force/Star_Force_TTF.ttf');
-}
-*/
-@font-face {
-  font-family: 'ev_timer';
-  /* src: url('./c0re/_Pretty/ttf/heaven-castro_cursed-timer-ulil/CursedTimerULiL.ttf'); */
-  src: url('./assets/CursedTimerULiL.ttf');
-}
-
-
-
-  /* title font ELASTIC.VENTURES */
-  .header_h1 {
-    font-family: cevtauri, nasa, arial; 
-    // need to inherit white--text mb-2 display-1 text-xs-center
-  }
-
-  h3 {
-    font-size: 1em; 
-  }
-
-  /* establish z-layers for header */
-	.layer-z1
-	{
-		position:absolute;
-		top: 25px;
-		left: 25px;
-		z-index: -1;
-	}
-	.layer-z2
-	{
-		position:absolute;
-		top: 25px;
-		left: 25px;
-		z-index: 2;
-	}
-
-/* 
-  TypedJs Styles 
- <link rel="stylesheet" href="/img/vue-typed-js.css"/>
-*/ 
-.typed-element {
-  display: flex;
-  align-items: center;
-}
-.typed-element .typed-cursor {
-    opacity: 1;
-    animation: typedjsBlink 0.75s infinite;
-}
-@keyframes typedjsBlink {
-50% {
-    opacity: 10.0;
-}
-}
-
-/* 
-🚀 TypedJS: src/vue-typed-js  
-^^^ note: default distro DOES NOT WORK via npm; must build (requires webpack)
-!todo rename vue-typed-js to ev-typed-js
-/TypedJs  
-*/ 
-
-
-$ant-colors: gold, #031337,#2ad,  #bbb, #b2bcbd;
-
-.ant-text--line1 {
-   // from .display-1
-   // @b 🦨👎 there is probably a better way to inherit .display-1
-  font-size: 34px !important;
-  font-weight: 400;
-  line-height: 40px !important;
-  letter-spacing: normal !important;
- }
-
-$ant-max: 5;
-$stroke-step: 1%;   // how long is the ant size
-
-.text-copy {
-  fill: none;
-  stroke: white;
-  font-family: cevtauri, nasa, Arial, Helvetica, sans-serif;
-  stroke-dasharray: $stroke-step $stroke-step * ($ant-max - 1);
-  stroke-width: 2px;
-
-  // 
-  animation: stroke-offset 5s linear infinite; 
-  
-  @for $item from 1 through $ant-max {
-    $stroke-color: nth($ant-colors, $item);
-    
-    &:nth-child(#{$item}) {
-      stroke: $stroke-color;
-      stroke-dashoffset: $stroke-step * $item;
-      }
-    }
-  }
-
-@keyframes stroke-offset {
-  50% {
-    stroke-dashoffset: $stroke-step * $ant-max;  
-    stroke-dasharray: 0 $stroke-step * $ant-max*5;
-  }
-}
-
-
-
-
-
-</style>
-
 <template>
   <v-app>
 
-    <v-content>
-    <h2>App.vue router-view</h2>
-
-    <div id="nav">
-      App: 
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/projects">Projects</router-link> |
-      <router-link to="/contact">Contact</router-link>
-    </div>
-
-    <router-view />
-    </v-content>
-  
     <!--
     <v-navigation-drawer v-model="drawer" fixed right app>
       <v-list dense>
@@ -184,7 +12,6 @@ $stroke-step: 1%;   // how long is the ant size
             <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-
         <v-list-tile @click="greet">
           <v-list-tile-action>
             <v-icon>contact_mail</v-icon>
@@ -206,13 +33,69 @@ $stroke-step: 1%;   // how long is the ant size
     -->
 
     <v-content>
+
+      <!-- background over the particles -->
+      <v-parallax dark height="200" src="img/background-staticflow.jpg">
+
+      <v-layout
+            column
+            align-center
+            justify-center
+            style="font-family: nasa" 
+            class="fish"
+          >
+            <vue-typed-js :strings="['ELASTIC.VENTURES']">
+            <h1 class="white--text mb-2 display-1 text-xs-center">
+              <font class="typing" style="font-family: cevtauri">
+              </font>
+            </h1>
+            </vue-typed-js>
+
+            <div class="subheading mb-3 text-xs-center">Est. 2014; a cybernetics and smart software consultancy.</div>
+          </v-layout>
+
+          <vue-particles
+            color="#ffffff"
+            :particleOpacity="0.7"
+            linesColor="#ffffff"
+            :particlesNumber="80"
+            shapeType="circle"
+            :particleSize="5"
+            :linesWidth="2"
+            :lineLinked="true"
+            :lineOpacity="0.5"
+            :linesDistance="150"
+            :moveSpeed="4"
+            :hoverEffect="true"
+            hoverMode="grab"
+            :clickEffect="true"
+            clickMode="push"
+          >
+          </vue-particles>
+
+
+        </v-parallax>
+
+
       <AboutEV />
 
       <v-container>
-
         <v-divider />
       </v-container>
 
+      <EVCrew />
+
+      <v-container>
+        <v-divider />
+      </v-container>
+
+<!--
+      <v-divider />
+      <GrowPotBot />
+      <Robotics />
+      <v-divider />
+      <Ubuntu />
+-->
 
 
 
@@ -241,13 +124,26 @@ $stroke-step: 1%;   // how long is the ant size
 <script>
 // this loads the Vuetifyxx homepage.
 // import HelloWorld from "./components/HelloVuetify.vue";
-
+ 
+import VueTypedJs from './vue-typed-js/components/VueTypedJs.vue' 
+import AboutEV from "./components/AboutEV.vue";
+/* 
+import B2bCbd from './components/B2bCbd.vue';
+import Careers from './components/Careers.vue';
+*/
+import EVCrew from "./components/EVCrew.vue";
+//import GrowPotBot from "./components/GrowPotBot.vue";
+//import Robotics from "./components/Robotics.vue";
+//import Ubuntu from "./components/Ubuntu.vue";
+// import ContactEV from "./components/ContactEV.vue";
 import Footer from "./components/Footer.vue";
-
 export default {
   name: "App",
   components: {
     // HelloWorld,
+    VueTypedJs,
+    EVCrew,     // yei directory (loading from file, etc.)
+    AboutEV,    // adaptive content
 // 🚀 ready for inclusion (post navigation; <ev-crew> element need adaptive content rewrite)
  //   GrowPotBot,
  //   Robotics,
@@ -260,7 +156,7 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      { title: "Click Me" },    // 👈🦨
+      { title: "Click Me" },    // 🦨
       { title: "Click Me" },
       { title: "Click Me" },
       { title: "Click Me 2" }
@@ -268,7 +164,6 @@ export default {
   }),
   // define methods under the `methods` object
   methods: {
-    // 🦨 not used 👇
     greet: function(event) {
       // `this` inside methods points to the Vue instance
       alert("Hello " + this.name + "!");
@@ -281,7 +176,23 @@ export default {
 };
 </script>
 
-
+	<style>
+  /* alignment test on EV text over particle */
+	.fishes
+	{
+		position:absolute;
+		top: 10px;
+		left: 10px;
+		z-index: 1;
+	}
+	.fish
+	{
+		position:absolute;
+		top: 25px;
+		left: 25px;
+		z-index: 2;
+	}
+	</style>
 
 
 <!--

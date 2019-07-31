@@ -157,55 +157,26 @@ $stroke-step: 1%;   // how long is the ant size
 </style>
 
 <template>
-  <v-app>
+  <v-app id="app">
 
     <v-content>
     <h2>App.vue router-view</h2>
 
     <div id="nav">
-      App: 
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/projects">Projects</router-link> |
-      <router-link to="/contact">Contact</router-link>
+      <router-link to="/about">About</router-link>
     </div>
 
     <router-view />
+    <h2>/App.vue router-view</h2>
     </v-content>
   
-    <!--
-    <v-navigation-drawer v-model="drawer" fixed right app>
-      <v-list dense>
-        <v-list-tile @click="greet">
-          <v-list-tile-action>
-            <v-icon>home</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
 
-        <v-list-tile @click="greet">
-          <v-list-tile-action>
-            <v-icon>contact_mail</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Contact</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar color="#3061e1" fixed app>
-      <v-spacer></v-spacer>
-      <v-toolbar-title>Menu 👉</v-toolbar-title>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-    </v-toolbar>
-    -->
-    <!--
-      vtoolbar-old
-    -->
+
 
     <v-content>
+
+
       <AboutEV />
 
       <v-container>
@@ -213,6 +184,22 @@ $stroke-step: 1%;   // how long is the ant size
         <v-divider />
       </v-container>
 
+
+      <EVCrew />
+
+      <v-container>
+
+        <v-divider />
+      </v-container>
+
+<!--
+      <v-divider />
+      <GrowPotBot />
+      <Robotics />
+
+      <v-divider />
+      <Ubuntu />
+-->
 
 
 
@@ -226,6 +213,7 @@ $stroke-step: 1%;   // how long is the ant size
 </vue-typed-js>
 -->
 
+
         </v-flex>
         </v-layout>
       </v-container>
@@ -238,9 +226,40 @@ $stroke-step: 1%;   // how long is the ant size
   </v-app>
 </template>
 
+
+
 <script>
 // this loads the Vuetifyxx homepage.
 // import HelloWorld from "./components/HelloVuetify.vue";
+
+// text effects
+import VueTypedJs from './vue-typed-js/components/VueTypedJs.vue' 
+
+
+/* 
+ 🚀 https://github.com/SabatinoMasala/vue-text-glitch
+ NOTE: glitch was too difficult to read, maintained here for posterity; possibly useful elsewhere. 
+
+import Glitch from 'vue-glitch';
+ import VueTextGlitch from 'vue-text-glitch'
+
+  <div class="subheading mb-3 text-xs-center"
+     <VueTextGlitch steps="100" text="glitch is too hard to read" highlight1="#FF00FF" highlight2="#FF0000"></VueTextGlitch>
+  </div>
+*/
+
+
+import AboutEV from "./components/AboutEV.vue";
+/* 
+import B2bCbd from './components/B2bCbd.vue';
+import Careers from './components/Careers.vue';
+*/
+
+import EVCrew from "./components/EVCrew.vue";
+//import GrowPotBot from "./components/GrowPotBot.vue";
+//import Robotics from "./components/Robotics.vue";
+//import Ubuntu from "./components/Ubuntu.vue";
+// import ContactEV from "./components/ContactEV.vue";
 
 import Footer from "./components/Footer.vue";
 
@@ -248,6 +267,10 @@ export default {
   name: "App",
   components: {
     // HelloWorld,
+    // VueTypedJs, 
+    EVCrew,     // yei directory (loading from file, etc.)
+    AboutEV,    // adaptive content
+
 // 🚀 ready for inclusion (post navigation; <ev-crew> element need adaptive content rewrite)
  //   GrowPotBot,
  //   Robotics,
@@ -259,6 +282,12 @@ export default {
   },
   data: () => ({
     drawer: null,
+    links: [
+      { icon: 'dashboard', text:'dashboard', route: '/' },
+      { icon: 'folder', text:'page1', route: '/page1' },
+      { icon: 'folder', text:'page2', route: '/page2' },
+      { icon: 'folder', text:'page3', route: '/page3' },
+    ],
     items: [
       { title: "Click Me" },    // 👈🦨
       { title: "Click Me" },

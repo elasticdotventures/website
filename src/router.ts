@@ -27,10 +27,26 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import('./views/About.vue')
+    },
+    {
+      path: '/projects',
+      name: 'projects',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('./views/Projects.vue')
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('./views/Contact.vue')
     },
 
-    // some test routes
+    // 🦨 some test routes, these don't currently work -- 
     {
       path: '/page1',
       name: 'Page 1',

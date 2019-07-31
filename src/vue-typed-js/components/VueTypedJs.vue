@@ -1,10 +1,36 @@
+
 <template>
+
   <div class="typed-element" ref="typedElement">
     <slot></slot>
   </div>
 </template>
 
 <script>
+/* 
+🦨 note: moved <style> to App.vue for harmonization with other effects. 
+(this is default)
+
+
+<style lang="scss">
+.typed-element {
+  display: flex;
+  align-items: center;
+
+  .typed-cursor {
+    opacity: 1;
+    animation: typedjsBlink 0.7s infinite;
+  }
+}
+
+@keyframes typedjsBlink{
+  50% { opacity: 0.0; }
+}
+</style>
+
+*/
+
+
 import Typed from 'typed.js'
 import { props, getEventHandlers } from '../config/typed-component.config'
 
@@ -37,25 +63,3 @@ export default {
   },
 }
 </script>
-
-<!--
-🦨 note: moved <style> to App.vue for harmonization with other effects. 
-(this is default)
-
-<style lang="scss">
-.typed-element {
-  display: flex;
-  align-items: center;
-
-  .typed-cursor {
-    opacity: 1;
-    animation: typedjsBlink 0.7s infinite;
-  }
-}
-
-@keyframes typedjsBlink{
-  50% { opacity: 0.0; }
-}
-</style>
-
--->

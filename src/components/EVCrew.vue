@@ -52,6 +52,13 @@ flex explanations: xs,sm,md,lg,xl  (device size)
           align-center:   align items to the center
           justify-center:  justify-content to center
       -->
+      <v-flex xs12 sm4 d-flex v-if="!humans.length">
+          <v-card>
+          <font color="red">No humans</font>
+          <button v-on:click="alert('hello');">load</button>
+          </v-card>
+      </v-flex>
+
       <v-flex xs12 sm4 d-flex :key="who.name" v-for="who in humans" >
         <!--
         v-flex properties: 
@@ -206,8 +213,11 @@ let humans = [
       'Electrician',
       'Construction'
     ]
-  },
+  }];
+
   /* 
+
+!🦨
   {
     name: "Bob Mullaney"
     abouts : [
@@ -224,32 +234,72 @@ let humans = [
   },
   {
 
-  },
-  {
-    name: "Anthony Howl",
-    thumb: "",
-    abouts: [
-      "Electronics Wizard",
-      "PCB, VSLI, signal processing",
-      "San Diego, CA. USA"
-    ]
-  },
-  {
-    name: "Paul Spallini",
-    thumb: "",
-    abouts: [
-    ]
-  },
-  {
-    name: "edvard",
-    thumb: "",
-    abouts: [
-    ]
-  }
-*/
-];
+import Vue from 'vue'
 
+// 
+import axios from 'axios'
+// import VueAxios from 'vue-axios'
+// Vue.use(VueAxios, axios)
+
+// let humans = require('./assets/crew.json');
 // import VueTypedJs from '../vue-typed-js/components/VueTypedJs.vue' 
+let humans = [];
+
+import VueLog from '@dreipol/vue-log';
+Vue.use(VueLog);
+const Log = Vue.log();
+
+// const axios = require('axios');
+
+// NOTE: the plan is to load crew data from crew.json via hapi backend; but that's nto working yet. 
+var api = "http://localhost:3000/c0re/crew.json"
+// cake wtf --
+// https://github.com/imcvampire/vue-axios#readme
+
+// Make a request for a user with a given ID
+axios.get('http://localhost:3000/json/crew.json',{
+  responseType: 'blob',
+  'Content-Encoding': undefined
+})
+  .then(function (response) {
+    // handle success
+    // !why does response.data become garbled in the browser. ?? 🚀🍰😣
+    // but work in axios.js
+    // 👆 works in vscode. 
+    Log.debug(JSON.stringify(response.data));    
+    // humans = JSON.parse(response.data);
+
+    
+    Log.info('success')
+  })
+  .catch(function (error) {
+    // handle error
+    Log.info('err' + error)
+    Log.error(error);
+  })
+  .finally(function () {
+    // always executed
+    Log.info('always')
+  });
+
+
+function isJson(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+ 
+
+/*
+const axios = require('axios');
+const ax = axios.create({
+  baseURL: 'http://localhost:3000'
+})
+humans = ax.get('/c0re/crew.json')
+*/
 
 
 export default {
