@@ -17,9 +17,6 @@ Vue.use(VueAnalytics, {
   id: 'UA-54542129-1'
 })
 
-//import { VueTypedJs } from 'vue-typed-js'; 
-//Vue.use(VueTypedJs);
-
 Vue.config.productionTip = false
 
 import './plugins/vuetify'
