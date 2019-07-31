@@ -152,8 +152,7 @@ $stroke-step: 1%;   // how long is the ant size
 
           </v-layout>
 
-<!--
-          <vue-particles
+         <vue-particles
             color="#ffffff"
             :particleOpacity="0.7"
             linesColor="#ffffff"
@@ -171,7 +170,7 @@ $stroke-step: 1%;   // how long is the ant size
             clickMode="push"
           >
           </vue-particles>
--->
+
 
 
         </v-parallax>
@@ -187,10 +186,11 @@ import { Component, Vue } from 'vue-property-decorator';
 import VueParticles from 'vue-particles';
 Vue.use(VueParticles);
 
+
 // text effects
+// 🦨 import VueTypedJs from './vue-typed-js/components/VueTypedJs.vue' 
 import { VueTypedJs } from 'vue-typed-js'; 
-// import VueTypedJs from './vue-typed-js/components/VueTypedJs.vue' 
-// Vue.use(VueTypedJs);
+Vue.use(VueTypedJs);
 
 
 
@@ -198,7 +198,7 @@ import { VueTypedJs } from 'vue-typed-js';
   name: "HelloElasticVentures",
   components: {
     VueTypedJs,
-    VueParticles
+    // VueParticles
   },
 })
 export default class HelloElasticVentures extends Vue {}

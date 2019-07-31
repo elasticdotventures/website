@@ -62,6 +62,7 @@
     <router-view />
     <v-btn v-on:click="greet()">Greet me</v-btn>
 
+
         </v-flex>
         </v-layout>
       </v-container>
@@ -78,6 +79,9 @@
 <script type="ts">
 // this loads the Vuetifyxx homepage.
 // import HelloWorld from "./components/HelloVuetify.vue";
+import Vue from 'vue'
+
+
 
 import Footer from "./components/Footer.vue";
 
