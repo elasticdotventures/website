@@ -9,6 +9,8 @@
   </div>
 
   <HelloWorld msg="Elastic.Ventures" />
+
+  <AboutEV />
   
   </v-content>
 </template>
@@ -17,9 +19,11 @@
 
 import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloElasticVentures.vue'; 
+import AboutEV from '@/components/AboutEV.vue'; 
 
 @Component({
   components: {
+   AboutEV, 
    HelloWorld
   },
 })

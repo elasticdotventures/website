@@ -163,13 +163,14 @@ The size controls the increment of the property:
         -->
 
         <v-flex xs12 d-none>
-        <vue-typed-js :strings="['blabla']">
-          
+        <!--
+        <vue-typed-js :strings="['blabla']">          
           <font class="typed"> The business plan (broadly): 🤓🙏🌎😁💖🤖</font>
           EV practices concious engineering, only projects that don't hurt people or the planet.
           Frequently ideas that are universal 'no brainers' using enviroment sustainability 
           "leave no trace" or ideally better than before yei (we all of us, even the machines) arrived.
         </vue-typed-js>
+        -->
         </v-flex>
 
         <v-flex d-none>

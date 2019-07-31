@@ -1,27 +1,16 @@
 <style lang="scss">
-  @font-face {
-      font-family: 'nasa';
-      /* src: url('./c0re/_Pretty/ttf/nasalization-rg.ttf'); */
-      src: url('../assets/nasalization-rg.ttf')
-  }
-  @font-face {
-      font-family: 'cevtauri';
-      /* src: url('./c0re/_Pretty/font-cevtauri/cevtauri-v2.woff'); */
-      src: url('../assets/cevtauri-v2.woff');
-  }
-@font-face {
-  font-family: 'ev_timer';
-  /* src: url('./c0re/_Pretty/ttf/heaven-castro_cursed-timer-ulil/CursedTimerULiL.ttf'); */
-  src: url('../assets/CursedTimerULiL.ttf');
-}
+
+
   /* title font ELASTIC.VENTURES */
   .header_h1 {
     font-family: cevtauri, nasa, arial; 
     // need to inherit white--text mb-2 display-1 text-xs-center
   }
+
   h3 {
     font-size: 1em; 
   }
+
   /* establish z-layers for header */
 	.layer-z1
 	{
@@ -37,6 +26,7 @@
 		left: 25px;
 		z-index: 2;
 	}
+
 /* 
   TypedJs Styles 
  <link rel="stylesheet" href="/img/vue-typed-js.css"/>
@@ -54,11 +44,15 @@
     opacity: 10.0;
 }
 }
+/* 👆 /vue-typed-js styles */
+
 
 /* 
-🚀 ant- prefix denotes the "ant pixels" on logo effect. 
+🚀 Ant effect; pixels on font. 
 */ 
+
 $ant-colors: gold, #031337,#2ad,  #bbb, #b2bcbd;
+
 .ant-text--line1 {
    // from .display-1
    // @b 🦨👎 there is probably a better way to inherit .display-1
@@ -67,14 +61,17 @@ $ant-colors: gold, #031337,#2ad,  #bbb, #b2bcbd;
   line-height: 40px !important;
   letter-spacing: normal !important;
  }
+
 $ant-max: 5;
 $stroke-step: 1%;   // how long is the ant size
+
 .text-copy {
   fill: none;
   stroke: white;
   font-family: cevtauri, nasa, Arial, Helvetica, sans-serif;
   stroke-dasharray: $stroke-step $stroke-step * ($ant-max - 1);
   stroke-width: 2px;
+
   // 
   animation: stroke-offset 5s linear infinite; 
   
@@ -87,20 +84,22 @@ $stroke-step: 1%;   // how long is the ant size
       }
     }
   }
+
 @keyframes stroke-offset {
   50% {
     stroke-dashoffset: $stroke-step * $ant-max;  
     stroke-dasharray: 0 $stroke-step * $ant-max*5;
   }
 }
+
+
 </style>
 
 <template>
-     
-    <v-content>
+  <v-container>
 
       <!-- background over the particles -->
-      <v-parallax dark height="200" src="img/background-staticflow.jpg">
+      <v-parallax dark height="210" src="img/background-staticflow.jpg">
 
       <v-layout
             column
@@ -129,7 +128,7 @@ $stroke-step: 1%;   // how long is the ant size
           </div>
 
         
-          <div class="layer-z1" v-on:hover="visible">
+          <div class="layer-z1">
           <h1>
           <svg width="700">
             <symbol id="ant-text">
@@ -153,6 +152,7 @@ $stroke-step: 1%;   // how long is the ant size
 
           </v-layout>
 
+<!--
           <vue-particles
             color="#ffffff"
             :particleOpacity="0.7"
@@ -171,34 +171,62 @@ $stroke-step: 1%;   // how long is the ant size
             clickMode="push"
           >
           </vue-particles>
-
+-->
 
 
         </v-parallax>
 
-
-    </v-content>
+    </v-container>
 </template>
+
+
+<script lang="ts">
+
+import { Component, Vue } from 'vue-property-decorator';
+
+import VueParticles from 'vue-particles';
+Vue.use(VueParticles);
+
+// text effects
+import { VueTypedJs } from 'vue-typed-js'; 
+// import VueTypedJs from './vue-typed-js/components/VueTypedJs.vue' 
+// Vue.use(VueTypedJs);
+
+
+
+@Component({
+  name: "HelloElasticVentures",
+  components: {
+    VueTypedJs,
+    VueParticles
+  },
+})
+export default class HelloElasticVentures extends Vue {}
+</script>
+
+
+<!--
+ 🚀 https://github.com/SabatinoMasala/vue-text-glitch
+ NOTE: glitch was too difficult to read, maintained here for posterity; possibly useful elsewhere. 
+
+import Glitch from 'vue-glitch';
+ import VueTextGlitch from 'vue-text-glitch'
+
+  <div class="subheading mb-3 text-xs-center"
+     <VueTextGlitch steps="100" text="glitch is too hard to read" highlight1="#FF00FF" highlight2="#FF0000"></VueTextGlitch>
+  </div>
+
+
 
 <script>
 // this loads the Vuetifyxx homepage.
 // import HelloWorld from "./components/HelloVuetify.vue";
-// text effects
-import VueTypedJs from 'vue-typed-js' 
-/* 
- 🚀 https://github.com/SabatinoMasala/vue-text-glitch
- NOTE: glitch was too difficult to read, maintained here for posterity; possibly useful elsewhere. 
-import Glitch from 'vue-glitch';
- import VueTextGlitch from 'vue-text-glitch'
-  <div class="subheading mb-3 text-xs-center"
-     <VueTextGlitch steps="100" text="glitch is too hard to read" highlight1="#FF00FF" highlight2="#FF0000"></VueTextGlitch>
-  </div>
-*/
+
 export default {
-  name: "App",
   components: {
     // HelloWorld,
     VueTypedJs, 
+    'vue-particles':VueParticles
   },
   data: () => ({
     drawer: null,
@@ -224,4 +252,4 @@ export default {
 };
 </script>
 
-
+-->

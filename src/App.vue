@@ -24,207 +24,42 @@
   }
 */
 
-/* 
-🚀 these fonts are all hideous. 
-@font-face {
-  🦨: 'only lower case';
-  font-family: 'ev_font_a';
-  src: url('./c0re/_Pretty/ttf/404maciej_retrocraze/retroblaze.ttf');
-}
-@font-face {
-  font-family: 'ev_font_b';
-  src: url('./c0re/_Pretty/ttf/404maciej_retrocraze/retrocraze.ttf');
-}
-@font-face {
-  font-family: 'ev_font_c';
-  src: url('./c0re/_Pretty/ttf/codeman38_press-start-1/prstart.ttf');
-}
-@font-face {
-  font-family: 'ev_font_d';
-  src: url('./c0re/_Pretty/ttf/genshichi-yasui_g7-makaimura/makaimura.TTF');
-}
-@font-face {
-  🦨: 'only upper case';
-  font-family: 'ev_font_e';
-  src: url('./c0re/_Pretty/ttf/genshichi-yasui_g7-star-force/Star_Force_TTF.ttf');
-}
-*/
 @font-face {
   font-family: 'ev_timer';
   /* src: url('./c0re/_Pretty/ttf/heaven-castro_cursed-timer-ulil/CursedTimerULiL.ttf'); */
   src: url('./assets/CursedTimerULiL.ttf');
 }
-
-
-
-  /* title font ELASTIC.VENTURES */
-  .header_h1 {
-    font-family: cevtauri, nasa, arial; 
-    // need to inherit white--text mb-2 display-1 text-xs-center
-  }
-
-  h3 {
-    font-size: 1em; 
-  }
-
-  /* establish z-layers for header */
-	.layer-z1
-	{
-		position:absolute;
-		top: 25px;
-		left: 25px;
-		z-index: -1;
-	}
-	.layer-z2
-	{
-		position:absolute;
-		top: 25px;
-		left: 25px;
-		z-index: 2;
-	}
-
-/* 
-  TypedJs Styles 
- <link rel="stylesheet" href="/img/vue-typed-js.css"/>
-*/ 
-.typed-element {
-  display: flex;
-  align-items: center;
-}
-.typed-element .typed-cursor {
-    opacity: 1;
-    animation: typedjsBlink 0.75s infinite;
-}
-@keyframes typedjsBlink {
-50% {
-    opacity: 10.0;
-}
-}
-
-/* 
-🚀 TypedJS: src/vue-typed-js  
-^^^ note: default distro DOES NOT WORK via npm; must build (requires webpack)
-!todo rename vue-typed-js to ev-typed-js
-/TypedJs  
-*/ 
-
-
-$ant-colors: gold, #031337,#2ad,  #bbb, #b2bcbd;
-
-.ant-text--line1 {
-   // from .display-1
-   // @b 🦨👎 there is probably a better way to inherit .display-1
-  font-size: 34px !important;
-  font-weight: 400;
-  line-height: 40px !important;
-  letter-spacing: normal !important;
- }
-
-$ant-max: 5;
-$stroke-step: 1%;   // how long is the ant size
-
-.text-copy {
-  fill: none;
-  stroke: white;
-  font-family: cevtauri, nasa, Arial, Helvetica, sans-serif;
-  stroke-dasharray: $stroke-step $stroke-step * ($ant-max - 1);
-  stroke-width: 2px;
-
-  // 
-  animation: stroke-offset 5s linear infinite; 
-  
-  @for $item from 1 through $ant-max {
-    $stroke-color: nth($ant-colors, $item);
-    
-    &:nth-child(#{$item}) {
-      stroke: $stroke-color;
-      stroke-dashoffset: $stroke-step * $item;
-      }
-    }
-  }
-
-@keyframes stroke-offset {
-  50% {
-    stroke-dashoffset: $stroke-step * $ant-max;  
-    stroke-dasharray: 0 $stroke-step * $ant-max*5;
-  }
-}
-
-
-
-
-
 </style>
 
 <template>
-  <v-app>
+  <v-app id="app">
 
-    <v-content>
-    <h2>App.vue router-view</h2>
-
-    <div id="nav">
-      App: 
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/projects">Projects</router-link> |
+    <v-toolbar dark elevation="12"  src="assets/sky.jpg">
+    <!--
+      v-toolbar-title
+      v-toolbar-items
+    -->
+    <h2>EV Logo</h2>
+    <v-spacer />
+    <v-toolbar-items>
+      <router-link to="/">Home</router-link> 
+      <v-spacer>|</v-spacer>
+      <router-link to="/about">About</router-link>
+      <v-spacer>|</v-spacer>
+      <router-link to="/projects">Projects</router-link>
+      <v-spacer>|</v-spacer>
       <router-link to="/contact">Contact</router-link>
-    </div>
+    </v-toolbar-items>
 
-    <router-view />
-    </v-content>
-  
-    <!--
-    <v-navigation-drawer v-model="drawer" fixed right app>
-      <v-list dense>
-        <v-list-tile @click="greet">
-          <v-list-tile-action>
-            <v-icon>home</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-list-tile @click="greet">
-          <v-list-tile-action>
-            <v-icon>contact_mail</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Contact</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar color="#3061e1" fixed app>
-      <v-spacer></v-spacer>
-      <v-toolbar-title>Menu 👉</v-toolbar-title>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     </v-toolbar>
-    -->
-    <!--
-      vtoolbar-old
-    -->
-
-    <v-content>
-      <AboutEV />
-
-      <v-container>
-
-        <v-divider />
-      </v-container>
-
-
-
+  
+     <v-content>
 
       <v-container fluid>
           <v-layout row wrap>
             <v-flex>
 
-<!--
-<vue-typed-js :strings="[' 🚧👷‍♀️👷‍♂️  😁 This website is (perpetually) under construction. ', 'Please contact us.']">
-  <h1 class="typing"></h1>
-</vue-typed-js>
--->
+    <router-view />
 
         </v-flex>
         </v-layout>
@@ -235,6 +70,7 @@ $stroke-step: 1%;   // how long is the ant size
     <v-footer>
       <Footer />
     </v-footer>
+
   </v-app>
 </template>
 
@@ -248,13 +84,6 @@ export default {
   name: "App",
   components: {
     // HelloWorld,
-// 🚀 ready for inclusion (post navigation; <ev-crew> element need adaptive content rewrite)
- //   GrowPotBot,
- //   Robotics,
-    /*    B2bCbd,
-    Careers, */
-  //  Ubuntu,
-    // ContactEV,
     Footer      // #compliance
   },
   data: () => ({
