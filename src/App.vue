@@ -94,8 +94,15 @@ v-btn {
             <v-flex>
 
     <router-view />
-    <v-btn v-on:click="greet()">Greet me</v-btn>
+    <v-btn v-on:click="greet($event)">Greet me</v-btn>
 
+    <!--
+      note: the $emit('chat-start') appears in vue debugger events; but nothing is listening. 
+      https://vuejs.org/v2/guide/events.html
+    -->
+    <v-btn v-on:click="$emit('startChat');">Chat</v-btn>
+
+    <v-btn>increment {{ store.data.count }}</v-btn>
 
         </v-flex>
         </v-layout>
@@ -114,24 +121,26 @@ v-btn {
 // this loads the Vuetifyxx homepage.
 // import HelloWorld from "./components/HelloVuetify.vue";
 import Vue from 'vue'
-
-
-
 import Footer from "./components/Footer.vue";
 
 export default {
+  /*
+  A non-prop attribute is an HTML attribute that is passed to a component, 
+  but does not have a corresponding prop defined.
+
+  If you do not want the root element of a component to inherit attributes, you can set 
+  inheritAttributes: false
+
+  This can be especially useful in combination with the $attrs instance property.
+  The $attrs contains attribute names and values passed to a component, such as:
+
+  */
+  inheritAttributes: false, 
   name: "App",
   components: {
     Footer      // #compliance
   },
   data: () => ({
-    drawer: null,
-    items: [
-      { title: "Click Me" },    // 👈🦨
-      { title: "Click Me" },
-      { title: "Click Me" },
-      { title: "Click Me 2" }
-    ]
   }),
   // define methods under the `methods` object
   methods: {
@@ -140,11 +149,14 @@ export default {
       // `this` inside methods points to the Vue instance
       alert("Hello " + this.name + "!");
       // `event` is the native DOM event
-      $store.trustMe = 1; 
+      // $store.trustMe = 1; 
       if (event) {
         alert(event.target.tagName);
       }
     }
+  },
+  computed: {
+    // 
   }
 };
 </script>

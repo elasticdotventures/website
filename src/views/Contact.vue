@@ -37,7 +37,7 @@ overline {
       </v-parallax>
 
 
-    <ContactForm to="ops+hello@elastic.ventures" />
+    <ContactForm sendto="ops+hello@elastic.ventures"></ContactForm>
 
   </v-content>
 </template>

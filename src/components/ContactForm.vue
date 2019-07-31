@@ -8,7 +8,10 @@
 
 			<h1>Contact Form</h1>
       <i>😢 please email us!</i>
-
+      <!--
+      {{ sendto }}
+      -->
+      
 <!--
           <v-text-field
             v-model="model"
@@ -62,6 +65,7 @@ import { Component, Vue } from 'vue-property-decorator';
 // import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
 @Component({
+  props: ['sendto'],
   components: {
   },
 })
