@@ -61,6 +61,7 @@ v-btn {
       v-toolbar-items
     -->
     <h2>EV Logo</h2>
+    <!-- v-spacer consumes all available horizontal space -->
     <v-spacer />
     <v-toolbar-items>
       <router-link active-class="active" exact to="/">

@@ -27,8 +27,7 @@ overline {
 
     <v-btn flat dark class="text-none text--overline" v-for="(item,i) in socials" :key="i"
     >
-            <v-icon>{{ item.icon }}</v-icon>
-            &nbsp;
+            <v-icon left>{{ item.icon }}</v-icon>
             {{ item.alt }}
 
         </v-btn>
