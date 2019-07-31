@@ -29,12 +29,30 @@
   /* src: url('./c0re/_Pretty/ttf/heaven-castro_cursed-timer-ulil/CursedTimerULiL.ttf'); */
   src: url('./assets/CursedTimerULiL.ttf');
 }
+ 
+v-toolbar-items {
+   font-size: 12pt;
+   font-weight: bold; 
+   font-family: nasa;
+}
+
+ .active, 
+ nav li:hover,
+ nav li.router-link-active,
+ nav li.router-link-exact-active {
+   background-color: yellowgreen;
+   cursor: pointer;
+ }
+
 </style>
 
 <template>
   <v-app id="app">
 
-    <v-toolbar dark elevation="12"  src="assets/sky.jpg">
+    <v-toolbar dark elevation="12" 
+      style="font-family: nasa" 
+      class="secondary--text font-weight-heavy" 
+      src="assets/sky.jpg">
     <!--
       v-toolbar-title
       v-toolbar-items
@@ -42,13 +60,13 @@
     <h2>EV Logo</h2>
     <v-spacer />
     <v-toolbar-items>
-      <router-link to="/">Home</router-link> 
-      <v-spacer>|</v-spacer>
-      <router-link to="/about">About</router-link>
-      <v-spacer>|</v-spacer>
-      <router-link to="/projects">Projects</router-link>
-      <v-spacer>|</v-spacer>
-      <router-link to="/contact">Contact</router-link>
+      <router-link active-class="active" exact to="/">Home</router-link> 
+      <v-spacer> | </v-spacer>
+      <router-link active-class="active"  to="/about">About</router-link>
+      <v-spacer> | </v-spacer>
+      <router-link active-class="active"  to="/projects">Projects</router-link>
+      <v-spacer> | </v-spacer>
+      <router-link active-class="active"  to="/contact">Contact</router-link>
     </v-toolbar-items>
 
     </v-toolbar>
