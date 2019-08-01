@@ -20,6 +20,7 @@
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3",
+    "vue-router-sitemap": "0.0.4",
     "vue-text-glitch": "^1.0.1",
     "vue-typed-js": "^0.1.2",
     "vuetify": "^1.5.5",
