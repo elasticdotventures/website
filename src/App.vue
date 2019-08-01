@@ -102,8 +102,9 @@ v-btn {
     -->
     <v-btn v-on:click="$emit('startChat');">Chat</v-btn>
 
-    <v-btn>increment {{ store.data.count }}</v-btn>
+    <v-btn @click="change_trustMe(!trustMe)">Trust Me: {{ trustMe }}</v-btn>
 
+    <v-btn @click="increment()">increment {{count}} {{localCount}} {{countAlias}} {{countPlusLocalState}} </v-btn>
         </v-flex>
         </v-layout>
       </v-container>
@@ -118,46 +119,64 @@ v-btn {
 </template>
 
 <script type="ts">
-// this loads the Vuetifyxx homepage.
-// import HelloWorld from "./components/HelloVuetify.vue";
 import Vue from 'vue'
 import Footer from "./components/Footer.vue";
+// import store from 'vuex';
+// 🦨 import { store } from './store'  
+// import { mapState, mapGetters, Store } from 'vuex'     // https://vuex.vuejs.org/guide/state.html
+import Vuex, { mapState, mapMutations, Store } from 'vuex'; 
+// 👆 https://scrimba.com/p/pnyzgAP/ckMZp4HN
 
 export default {
   /*
+  
+  NOTES: inheritAttributes: false
   A non-prop attribute is an HTML attribute that is passed to a component, 
   but does not have a corresponding prop defined.
 
   If you do not want the root element of a component to inherit attributes, you can set 
-  inheritAttributes: false
+  
 
   This can be especially useful in combination with the $attrs instance property.
   The $attrs contains attribute names and values passed to a component, such as:
 
+  //  inheritAttributes: false, 
   */
-  inheritAttributes: false, 
   name: "App",
   components: {
     Footer      // #compliance
   },
-  data: () => ({
-  }),
-  // define methods under the `methods` object
+
+  // define new functions under the `methods` object
+  // receives $event, value
   methods: {
-    // 🦨 not used 👇
+    // 🦨 not used 👇, just for testing.  
+    ...mapMutations(['increment','change_trustMe']),
     greet: function(event) {
-      // `this` inside methods points to the Vue instance
-      alert("Hello " + this.name + "!");
-      // `event` is the native DOM event
-      // $store.trustMe = 1; 
-      if (event) {
-        alert(event.target.tagName);
-      }
+      alert("Hello"); 
     }
   },
+  // contains local state (separate from VueX)
+  data() {
+    return {
+      localCount: 4
+    }
+  },
+  // computed: mapState({}) 
   computed: {
-    // 
+    // 👇 mapState pulls from src\store.ts (vuex)
+    ...mapState(['count','trustMe']),
+    // additional local functions: 
+    countPlusLocalState (state) {
+      return state.count + this.localCount
+    },
+    // countAlias: 'countPlusLocalState'
+    // countAlias: 'count', 🦨 ^^^ can't alias to a mapState property (didn't work?!)
+    countAlias (state) {
+      return state.count; 
+    }
   }
+
 };
 </script>
 

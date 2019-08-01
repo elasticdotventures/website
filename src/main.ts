@@ -30,4 +30,9 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
+// a good (or skunky?) way to fire initialization events? 
+// store.commit('increment')
+
+// store.commit('change_trustMe',3)
+
 
