@@ -4,13 +4,21 @@ https://router.vuejs.org/
 
 
     Nested route/view mapping
+    ^^^ 🍰
     Modular, component-based router configuration
+    ^^^ 🍰
     Route params, query, wildcards
+    ^^^ 🍰
     View transition effects powered by Vue.js' transition system
+    ^^^ 🍰
     Fine-grained navigation control
+    ^^^ 🍰
     Links with automatic active CSS classes
+    ^^^ 🍰
     HTML5 history mode or hash mode, with auto-fallback in IE9
+    ^^^ how the URI is formatted. 
     Customizable Scroll Behavior
+    ^^^ 🍰
 
 CODE EXAMPLES:
 https://github.com/vuejs/vue-router/tree/dev/examples
@@ -95,6 +103,7 @@ export default new Router({
       component: component3,
     },
     // this will globally redirect all unknowns. 
+    // 🍰 really want to log all bad routes, need to dive deeper into routing later. 
     // { path: '*', redirect: '/' }
   ]
 })

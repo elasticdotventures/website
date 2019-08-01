@@ -53,14 +53,14 @@ v-btn {
       app makes the toolbar dock to the top
     -->
     <v-toolbar app dark elevation="12" 
-      style="font-family: nasa" 
+      style="font-family: nasa; " 
       class="secondary--text font-weight-heavy" 
       src="assets/sky.jpg">
     <!--
       v-toolbar-title
       v-toolbar-items
     -->
-    <h2>EV Logo</h2>
+    <h2>EV.BetaSite</h2>
     <!-- v-spacer consumes all available horizontal space -->
     <v-spacer />
     <v-toolbar-items>
@@ -180,3 +180,24 @@ export default {
 };
 </script>
 
+<style>
+.v-btn {
+  border: solid 5px #b2b;
+    clip-path: polygon( 
+    calc(0% + 5px) calc(0% + 5px), /* top left */
+    calc(100% - 5px) calc(0% + 5px), /* top right */
+    calc(100% - 5px) calc(100% - 5px), /* bottom right */
+    calc(0% + 5px) calc(100% - 5px) /* bottom left */
+  );
+  transition: border-width 0.6s linear;
+}
+
+.v-btn:hover { 
+  border-width: 10px; 
+  border: dashed #00c;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+.border-button:hover { box-shadow: 0px 0px 0px 10px #FC5185; }
+
+</style>
