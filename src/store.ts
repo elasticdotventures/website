@@ -3,7 +3,6 @@
 Some thoughts
 * 🍰 log state mutations to update Google Analytics, verify operation. 
 
-
 🤓 n00b notes:
 https://flaviocopes.com/vuex/
 

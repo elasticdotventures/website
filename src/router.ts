@@ -35,6 +35,17 @@ let component3 = {
   template:`<div class="title">Page 3</div>`
 }
 
+/*
+
+vue-router uses path-to-regexp as its path matching engine, 
+so it supports many advanced matching patterns such as optional dynamic segments, 
+zero or more / one or more requirements, and even custom regex patterns.
+
+notes: 
+https://github.com/pillarjs/path-to-regexp
+{ path: 'poetry/:id(\\d+)', name: 'poetrycard', component: PoetryCard }
+
+*/
 export default new Router({
   routes: [
     {
@@ -83,6 +94,7 @@ export default new Router({
       name: 'Page Three',
       component: component3,
     },
-    { path: '*', redirect: '/' }
+    // this will globally redirect all unknowns. 
+    // { path: '*', redirect: '/' }
   ]
 })
