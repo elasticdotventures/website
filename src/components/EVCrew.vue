@@ -1,3 +1,4 @@
+
 <!--
  vuetify notes
 
@@ -41,6 +42,7 @@ flex explanations: xs,sm,md,lg,xl  (device size)
         align-start
     -->
 
+
     <v-subheader>
       <h2><font style="font-family: nasa">EV Crew</font></h2>
     </v-subheader>
@@ -82,12 +84,14 @@ flex explanations: xs,sm,md,lg,xl  (device size)
         </v-card>
 
         <!-- to="" will designate the component tag to router-link --> 
-        <v-card v-if="who.isAdvisor" hover to="" :key="who.name">        
+        <v-card v-if="who.isAdvisor" hover to="" :key="who.name" class="svg-wrapper">        
+
+
           <v-avatar size="75" class="avatar">
             <v-img width="75" :src="who.thumb" :alt="who.name" class="img-responsive img-circle" />
           </v-avatar>
-          <v-card-title>
-            <font style="font-family: nasa">{{ who.name }}</font>
+          <v-card-title style="font-family: nasa">>
+          {{ who.name }}
           </v-card-title>
           <v-card-text>
             <div :key="txt" v-for="txt in who.abouts">{{ txt }}</div>
@@ -312,3 +316,4 @@ export default {
   }
 };
 </script>
+
