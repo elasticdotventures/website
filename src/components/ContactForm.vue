@@ -1,3 +1,36 @@
+<!--
+NOTES: 
+https://blog.webf.zone/vue-js-forms-components-and-considerations-d81b3ffe9efb
+
+Form best practices. 
+* form element for backward compatibility
+* label for accessibility.<template>
+
+* consider fieldset
+https://www.w3schools.com/tags/tag_fieldset.asp
+^^^ does this apply to vuetify? 
+
+Minimum and Viable Styling for state
+    Default —input control is untouched
+    Error — when validation has failed for given input
+    Focus and blur state
+    Disabled state
+    Read-only state (different from disabled state)
+
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>
+
+-->
+
 <template>
 	<v-container id="ContactForm">
 
@@ -10,6 +43,9 @@
       <i>😢 please email us!</i>
       <!--
       {{ sendto }}
+
+
+
       -->
       
 <!--

@@ -127,6 +127,10 @@ import Footer from "./components/Footer.vue";
 import Vuex, { mapState, mapMutations, Store } from 'vuex'; 
 // 👆 https://scrimba.com/p/pnyzgAP/ckMZp4HN
 
+// for Vue-rx testing. (not used yet)
+import VueRx from 'vue-rx'
+Vue.use(VueRx)
+
 export default {
   /*
   
