@@ -72,7 +72,7 @@ v-btn {
         <v-btn flat >About</v-btn>
       </router-link>
       <v-spacer> | </v-spacer>
-      <router-link active-class="active"  to="/projects">
+      <router-link v-if="trustMe" active-class="active"  to="/projects">
         <v-btn flat >Projects</v-btn>
       </router-link>
       <v-spacer> | </v-spacer>
@@ -100,11 +100,16 @@ v-btn {
       note: the $emit('chat-start') appears in vue debugger events; but nothing is listening. 
       https://vuejs.org/v2/guide/events.html
     -->
-    <v-btn v-on:click="$emit('startChat');">Chat</v-btn>
+    <v-btn v-on:click="startChat">Chat</v-btn>
 
     <v-btn @click="change_trustMe(!trustMe)">Trust Me: {{ trustMe }}</v-btn>
 
     <v-btn @click="increment()">increment {{count}} {{localCount}} {{countAlias}} {{countPlusLocalState}} </v-btn>
+
+    <v-btn v-stream:click="plus$">v-stream:click +</v-btn>
+    <!-- alt-syntax 
+      <button v-stream:click="{ subject: plus$, data: someData }">+</button
+    -->
         </v-flex>
         </v-layout>
       </v-container>
@@ -127,9 +132,39 @@ import Footer from "./components/Footer.vue";
 import Vuex, { mapState, mapMutations, Store } from 'vuex'; 
 // 👆 https://scrimba.com/p/pnyzgAP/ckMZp4HN
 
+
+// error on console.log 
+// Vue.$observables.msg.subscribe(msg => console.log(msg))
+// Vue.$observables.msg.subscribe(msg => Vue.$log.debug()); 
+
+import VueLogger from 'vuejs-logger';
+
 // for Vue-rx testing. (not used yet)
-import VueRx from 'vue-rx'
-Vue.use(VueRx)
+import { Observable } from 'rxjs';
+import 'rxjs/add/observable/interval'
+import 'rxjs/add/operator/filter'
+
+const isProduction = process.env.NODE_ENV === 'production';
+ 
+const VueLoggerOptions = {
+    isEnabled: true,
+    logLevel : isProduction ? 'error' : 'debug',
+    stringifyArguments : false,
+    showLogLevel : true,
+    showMethodName : true,
+    separator: '|',
+    showConsoleColors: true
+};
+ 
+Vue.use(VueLogger, VueLoggerOptions);
+/* 
+Usage: 
+  logLevels :  ['debug', 'info', 'warn', 'error', 'fatal']
+  Vue.$log.debug('log from function outside component.');
+  Vue.$log.info('log from function outside component.');
+  ^^^ must be used inside a method. 
+*/ 
+// messageObservable = new Observable();
 
 export default {
   /*
@@ -147,6 +182,34 @@ export default {
   //  inheritAttributes: false, 
   */
   name: "App",
+  /*
+  RX JS offers "observables"
+  provide Rx observables with the `subscriptions` option
+  
+https://www.youtube.com/watch?v=0Jo_Q8NYd3I
+
+import { Observable } from 'rxjs'
+
+Vue.component('foo', {
+  subscriptions: function () {
+    return {
+      msg: new Observable(...)
+    }
+  }
+})
+
+const vm = new Vue({
+  subscriptions: {
+    msg: messageObservable
+  }
+})
+
+vm.$observables.msg.subscribe(msg => console.log(msg))
+
+   subscriptions: {
+    msg: messageObservable
+  },
+  */ 
   components: {
     Footer      // #compliance
   },
@@ -154,24 +217,53 @@ export default {
   // define new functions under the `methods` object
   // receives $event, value
   methods: {
+    /* 
+    Methods to be mixed into the Vue instance. 
+    You can access these methods directly on the VM instance, 
+    or use them in directive expressions. 
+    All methods will have their this context automatically bound to the Vue instance.
+    */ 
     // 🦨 not used 👇, just for testing.  
     ...mapMutations(['increment','change_trustMe']),
+    startChat: function(event) {
+      Vue.$log.info("Hello World" + JSON.stringify(event)) // working!
+
+    },
     greet: function(event) {
       alert("Hello"); 
     }
   },
-  // contains local state (separate from VueX)
+  // data() contains local state (separate from VueX)
+  /*
+  After the instance is created, the original data object can be accessed as vm.$data. 
+  The Vue instance also proxies all the properties found on the data object, 
+  so vm.a will be equivalent to vm.$data.a.
+  */
   data() {
     return {
       localCount: 4
     }
   },
+  created() {
+    // created() is run once component has been initialized
+    const obs = Observable.interval(1000)
+    obs
+      .filter((value) => value % 2 == 0)
+      .subscribe(
+      (value) => this.localCount = value
+    )
+
+    var version = Number(Vue.version.split('.')[0]);
+    Vue.$log.info(`vue version {$version}`)
+
+  }, 
   // computed: mapState({}) 
   computed: {
     // 👇 mapState pulls from src\store.ts (vuex)
     ...mapState(['count','trustMe']),
     // additional local functions: 
     countPlusLocalState (state) {
+      Vue.$log.info("ran countPlusLocalState"); // very cool! 
       return state.count + this.localCount
     },
     // countAlias: 'countPlusLocalState'
@@ -182,6 +274,7 @@ export default {
   }
 
 };
+
 </script>
 
 <style>
