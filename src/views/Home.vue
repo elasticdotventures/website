@@ -1,18 +1,10 @@
 <template>
-  <v-content id="home">
-  <div class="home">
-    <!--
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Elastic.Ventures"/>
-    -->
-    <h1>views/Home.vue</h1>
-  </div>
-
+  <v-container id="home">
   <HelloWorld msg="Elastic.Ventures" />
 
   <AboutEV />
   
-  </v-content>
+  </v-container>
 </template>
 
 <script lang="ts">

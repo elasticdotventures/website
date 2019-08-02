@@ -34,7 +34,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 let component1 = {
-  template:`<div class="title">Page 1</div>`
+  template:`<h1><div class="title">Page 1</div><h1>`
 }
 let component2 = {
   template:`<div class="title">Page 2</div>`
@@ -88,9 +88,9 @@ export default new Router({
 
     // 🦨 some test routes, these don't currently work -- 
     {
-      path: '/page1',
-      name: 'Page 1',
-      component: component1,
+      path: '/Intranet',
+      name: 'Intranet',
+      component: () => import('./views/Intranet')
     },
     {
       path: '/page2',

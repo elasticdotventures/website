@@ -1,6 +1,6 @@
 <template>
 	<!-- Section: B2Bcbd.us -->
-	<section id="b2bcbdus" class="home-section text-center">
+	<v-container id="b2bcbdus" class="home-section text-center">
 		<div class="heading-about">
 			<div class="container">
 				<div class="row">
@@ -40,5 +40,5 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</v-container>
 </template>

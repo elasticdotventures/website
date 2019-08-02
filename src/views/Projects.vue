@@ -32,17 +32,20 @@ You can even define fallbacks, to be used in case a slot prop is undefined:
 -->
 
 <template>
-<v-container id="projects" style="background: red">
-  <h1>views/Projects.vue</h1>
+<v-container id="projects">
 
 <v-container>
 </v-container>
 
   <div class="home">
+    <router-link to="/projects/b2bcbd"><v-btn>B2BCBD</v-btn></router-link>
     <router-link to="/projects/growbot"><v-btn>GrowPotBot</v-btn></router-link>
     <router-link to="/projects/cyberstream"><v-btn>CyberStream</v-btn></router-link>
     <router-link to="/projects/spinavision"><v-btn>Holographic Fan</v-btn></router-link>
   </div>
+
+  <B2bCbd v-if="showB2BCBD"></B2bCbd>
+  <GrowPotBot></GrowPotBot>
 </v-container>
 
 </template>
@@ -51,10 +54,19 @@ You can even define fallbacks, to be used in case a slot prop is undefined:
 
 import { Component, Vue } from 'vue-property-decorator';
 // import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import B2bCbd from '@/components/B2bCbd.vue'; 
+import GrowPotBot from '@/components/GrowPotBot.vue'; 
 
 @Component({
   components: {
    // HelloWorld,
+   B2bCbd,
+   GrowPotBot,
+  },
+  data: () => {
+    return({
+      showB2bCbd : false
+    })
   },
   methods: {
     greet : () => {

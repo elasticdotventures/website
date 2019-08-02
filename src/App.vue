@@ -68,20 +68,43 @@ v-btn {
         <v-btn flat >Home</v-btn>
       </router-link> 
       <v-spacer> | </v-spacer>
+
+
       <router-link active-class="active"  to="/about">
         <v-btn flat >About</v-btn>
       </router-link>
       <v-spacer> | </v-spacer>
+
+      <router-link active-class="active"  to="/intranet">
+        <v-btn v-if='trustMe' flat>Intranet</v-btn>
+      </router-link>
+      <v-spacer v-if="trustMe"> | </v-spacer>
+
       <router-link v-if="trustMe" active-class="active"  to="/projects">
         <v-btn flat >Projects</v-btn>
       </router-link>
-      <v-spacer> | </v-spacer>
+      <v-spacer v-if="trustMe"> | </v-spacer>
+
       <router-link active-class="active"  to="/contact">
         <v-btn flat>Contact</v-btn>
       </router-link>
 
-      <v-spacer v-if="$store.trustMe"> | </v-spacer>
-      <router-link v-if="$store.trustMe" active-class="active"  to="/intranet">Intranet</router-link>
+
+        <!--
+          <transition
+  v-on:before-enter="beforeEnter"
+  v-on:enter="enter"
+  v-on:after-enter="afterEnter"
+  v-on:enter-cancelled="enterCancelled"
+
+  v-on:before-leave="beforeLeave"
+  v-on:leave="leave"
+  v-on:after-leave="afterLeave"
+  v-on:leave-cancelled="leaveCancelled"
+>
+</transition>
+          -->
+
       
     </v-toolbar-items>
 
@@ -92,22 +115,22 @@ v-btn {
       <v-container fluid>
           <v-layout row wrap>
             <v-flex>
-
-    <router-view />
-    <v-btn v-on:click="greet($event)">Greet me</v-btn>
+            
+                <router-view />
 
     <!--
       note: the $emit('chat-start') appears in vue debugger events; but nothing is listening. 
       https://vuejs.org/v2/guide/events.html
     -->
+
     <v-btn v-on:click="startChat">Chat</v-btn>
 
     <v-btn @click="change_trustMe(!trustMe)">Trust Me: {{ trustMe }}</v-btn>
 
     <v-btn @click="increment()">increment {{count}} {{localCount}} {{countAlias}} {{countPlusLocalState}} </v-btn>
 
-    <v-btn v-stream:click="plus$">v-stream:click +</v-btn>
     <!-- alt-syntax 
+      <v-btn v-stream:click="plus$">v-stream:click +</v-btn>
       <button v-stream:click="{ subject: plus$, data: someData }">+</button
     -->
         </v-flex>
@@ -229,9 +252,7 @@ vm.$observables.msg.subscribe(msg => console.log(msg))
       Vue.$log.info("Hello World" + JSON.stringify(event)) // working!
 
     },
-    greet: function(event) {
-      alert("Hello"); 
-    }
+
   },
   // data() contains local state (separate from VueX)
   /*
@@ -263,7 +284,7 @@ vm.$observables.msg.subscribe(msg => console.log(msg))
     ...mapState(['count','trustMe']),
     // additional local functions: 
     countPlusLocalState (state) {
-      Vue.$log.info("ran countPlusLocalState"); // very cool! 
+      // Vue.$log.info("ran countPlusLocalState"); // very cool! 
       return state.count + this.localCount
     },
     // countAlias: 'countPlusLocalState'
@@ -278,6 +299,17 @@ vm.$observables.msg.subscribe(msg => console.log(msg))
 </script>
 
 <style>
+
+/* 
+@import "https://cnd.jsdelivr.net/npm/animate.css@3.5.1";
+.page {
+  position: fixed;
+  width: inherit; 
+}
+*/
+
+
+
 .v-btn {
   border: solid 5px #b2b;
     clip-path: polygon( 
@@ -286,7 +318,7 @@ vm.$observables.msg.subscribe(msg => console.log(msg))
     calc(100% - 5px) calc(100% - 5px), /* bottom right */
     calc(0% + 5px) calc(100% - 5px) /* bottom left */
   );
-  transition: border-width 0.6s linear;
+  transition: border-width 0.3s linear;
 }
 
 .v-btn:hover { 
@@ -295,6 +327,11 @@ vm.$observables.msg.subscribe(msg => console.log(msg))
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
-.border-button:hover { box-shadow: 0px 0px 0px 10px #FC5185; }
+/* 
+.border-button:hover { box-shadow: 1px 1px 1px 1px #FC5185; }
+*/
+
+
+
 
 </style>

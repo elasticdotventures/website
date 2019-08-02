@@ -96,10 +96,12 @@ $stroke-step: 1%;   // how long is the ant size
 </style>
 
 <template>
-  <v-container>
+  <v-container style="width: 100%; padding: 0 0 0 0; margin: 0 0 0 0;">
 
       <!-- background over the particles -->
-      <v-parallax dark height="210" src="img/background-staticflow.jpg">
+      <v-parallax 
+        style="border-radius: 10px" dark height="210" 
+        src="img/background-staticflow.jpg">
 
       <v-layout
             column
@@ -110,13 +112,11 @@ $stroke-step: 1%;   // how long is the ant size
 
           <div class="layer-z1">
             <h1 class="white--text mb-2 display-1 text-xs-center">
-            <vue-typed-js :strings="['ELASTIC.VENTURES']">
+            <vue-typed-js :strings="[evText]">
               <font class="typing header_h1">
               </font>
             </vue-typed-js>
             </h1>
-
-
             
             <div class="subheading mb-3 text-xs-center">
             <vue-typed-js :strings="['est. 2014; cybernetics and smart software']">
@@ -132,7 +132,7 @@ $stroke-step: 1%;   // how long is the ant size
           <h1>
           <svg width="700">
             <symbol id="ant-text">
-              <text class="ant-text--line1" text-anchor="left" x="0%" y="20%">ELASTIC.VENTURES</text>
+              <text class="ant-text--line1" text-anchor="left" x="0%" y="20%">{{evText}}</text>
             </symbol>
             
             <g class="g-ants">
@@ -152,18 +152,18 @@ $stroke-step: 1%;   // how long is the ant size
 
           </v-layout>
 
-         <vue-particles
+         <vue-particles 
             color="#ffffff"
             :particleOpacity="0.7"
-            linesColor="#ffffff"
+            linesColor="#b2b"
             :particlesNumber="80"
-            shapeType="circle"
+            shapeType="triangle"
             :particleSize="5"
             :linesWidth="2"
             :lineLinked="true"
             :lineOpacity="0.5"
             :linesDistance="150"
-            :moveSpeed="4"
+            :moveSpeed="5"
             :hoverEffect="true"
             hoverMode="grab"
             :clickEffect="true"
@@ -171,7 +171,7 @@ $stroke-step: 1%;   // how long is the ant size
           >
           </vue-particles>
 
-
+  
 
         </v-parallax>
 
@@ -183,22 +183,24 @@ $stroke-step: 1%;   // how long is the ant size
 
 import { Component, Vue } from 'vue-property-decorator';
 
+// create vue-particles. 
 import VueParticles from 'vue-particles';
 Vue.use(VueParticles);
 
-
 // text effects
-// 🦨 import VueTypedJs from './vue-typed-js/components/VueTypedJs.vue' 
 import { VueTypedJs } from 'vue-typed-js'; 
 Vue.use(VueTypedJs);
 
 
-
 @Component({
   name: "HelloElasticVentures",
+  data: () => {
+    return {
+      'evText':'ELASTIC.VENTURES'
+    }
+  },
   components: {
     VueTypedJs,
-    // VueParticles
   },
 })
 export default class HelloElasticVentures extends Vue {}
