@@ -23,12 +23,27 @@ import './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+// import './plugins/ev🧠'
+
 
 new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount('#app')
+
+
+// $mount 
+// $destory
+// $set
+// $delete
+// $watch
+// $on
+// $once
+// $off
+// $emit
+// $nextTick
+// $createElement
 
 // a good (or skunky?) way to fire initialization events? 
 // store.commit('increment')

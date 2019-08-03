@@ -287,7 +287,7 @@ vm.$observables.msg.subscribe(msg => console.log(msg))
     // countAlias: 'count', 🦨 ^^^ can't alias to a mapState property (didn't work?!)
     countAlias (state) {
       return state.count; 
-    }
+    },
   }
 
 };

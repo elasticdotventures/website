@@ -43,6 +43,8 @@ let component3 = {
   template:`<div class="title">Page 3</div>`
 }
 
+
+
 /*
 
 vue-router uses path-to-regexp as its path matching engine, 

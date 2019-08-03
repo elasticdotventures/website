@@ -1,5 +1,7 @@
 /*
 
+https://vuex.vuejs.org/guide/state.html
+
 Some thoughts
 * 🍰 log state mutations to update Google Analytics, verify operation. 
 
@@ -20,7 +22,7 @@ https://scotch.io/tutorials/handling-authentication-in-vue-using-vuex
 # $emit: 
 $emit in Vue is primarily used for sending custom events between 
 $emit sends ACTIONS CHILD components UPWARD TO PARENT components (or to a central level vuex store)
-Since props (i.e. data) can only flow in a unidirectional format (up)
+Since props (i.e. data) can only flow in a unidirectional format (up) from child to parent
 custom events can be used by child components notify the parent component about something.
 
 */
@@ -53,7 +55,7 @@ export default new Vuex.Store({
   */ 
   state: {
     count: 5,
-    trustMe: 1
+    trustMe: 1,     // trustLevel (0 = no tracking) 
   },
   /*
   👶 n00b: 
@@ -87,7 +89,8 @@ export default new Vuex.Store({
       state.count++
     },
     increment: state => state.count++,
-    decrement: state => state.count--
+    decrement: state => state.count--,
+    // this.$store
   },
   /* 
   Actions are similar to mutations, the differences being that:
