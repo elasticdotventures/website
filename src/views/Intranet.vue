@@ -7,8 +7,14 @@ overline {
   <v-content id="Intranet">
 
 
+    <!--
+      note: the $emit('chat-start') appears in vue debugger events; but nothing is listening. 
+      https://vuejs.org/v2/guide/events.html
+    -->
 
     <v-btn v-on:click="greet($event)">Greet me</v-btn>
+    <v-btn @click="hello_world">hello world</v-btn>
+    <p v-if="false">hello world</p>
 
   </v-content>
 </template>
@@ -24,10 +30,15 @@ import { Component, Vue } from 'vue-property-decorator';
   data: () => ({
   }),
   methods: {
+    hello_world: (event) => {
+      // 🍰👇 why doesn't this work? 
+      // this.$router.push({ path: '/projects', query: { post_slug: 'hello-world' } })
+      
+    },
     greet: function(event) {
       alert("Hello"); 
     }
   }
 })
-export default class Contact extends Vue {}
+export default class Intranet extends Vue {}
 </script>

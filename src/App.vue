@@ -117,8 +117,9 @@ v-btn {
             <v-flex>
 
             <transition name="router-anim" enter-active-class="anitmated fadeInDown"
-            leave-active-class="animated fadeOutDown"        
+            leave-active-class="animated fadeOutDown">
                 <router-view />
+            </transition>
 
     <v-btn @click="change_trustMe(!trustMe)">Trust Me: {{ trustMe }}</v-btn>
 

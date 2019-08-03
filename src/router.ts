@@ -90,7 +90,7 @@ export default new Router({
     {
       path: '/Intranet',
       name: 'Intranet',
-      component: () => import('./views/Intranet')
+      component: () => import('./views/Intranet.vue')
     },
     {
       path: '/page2',
