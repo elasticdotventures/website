@@ -115,19 +115,14 @@ v-btn {
       <v-container fluid>
           <v-layout row wrap>
             <v-flex>
-            
+
+            <transition name="router-anim" enter-active-class="anitmated fadeInDown"
+            leave-active-class="animated fadeOutDown"        
                 <router-view />
-
-    <!--
-      note: the $emit('chat-start') appears in vue debugger events; but nothing is listening. 
-      https://vuejs.org/v2/guide/events.html
-    -->
-
-    <v-btn v-on:click="startChat">Chat</v-btn>
 
     <v-btn @click="change_trustMe(!trustMe)">Trust Me: {{ trustMe }}</v-btn>
 
-    <v-btn @click="increment()">increment {{count}} {{localCount}} {{countAlias}} {{countPlusLocalState}} </v-btn>
+    <v-btn @click="increment()">💖 {{count}} {{localCount}} {{countAlias}} {{countPlusLocalState}} </v-btn>
 
     <!-- alt-syntax 
       <v-btn v-stream:click="plus$">v-stream:click +</v-btn>

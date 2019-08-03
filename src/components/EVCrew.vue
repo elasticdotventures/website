@@ -74,8 +74,8 @@ flex explanations: xs,sm,md,lg,xl  (device size)
           <v-avatar size="150" class="avatar">
             <v-img width="150" :src="who.thumb" :alt="who.name" class="img-responsive img-circle" />
           </v-avatar>
-          <v-card-title>
-            <font style="font-family: nasa">{{ who.name }}</font>
+          <v-card-title style="font-family: nasa">
+            {{ who.name }}
           </v-card-title>
           <v-card-text>
             <div :key="txt" v-for="txt in who.abouts">{{ txt }}</div>
@@ -85,12 +85,10 @@ flex explanations: xs,sm,md,lg,xl  (device size)
 
         <!-- to="" will designate the component tag to router-link --> 
         <v-card v-if="who.isAdvisor" hover to="" :key="who.name" class="svg-wrapper">        
-
-
           <v-avatar size="75" class="avatar">
             <v-img width="75" :src="who.thumb" :alt="who.name" class="img-responsive img-circle" />
           </v-avatar>
-          <v-card-title style="font-family: nasa">>
+          <v-card-title style="font-family: nasa">
           {{ who.name }}
           </v-card-title>
           <v-card-text>

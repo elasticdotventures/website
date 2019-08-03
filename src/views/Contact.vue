@@ -2,11 +2,12 @@
 overline {
     font-family: nasa;
 }
+
 </style>
 <template>
-  <v-content id="contact">
+  <v-container id="contact">
 
-      <v-parallax alt="airstream" dark height="375" 
+      <v-parallax alt="airstream" dark height="375" style="border-radius: 10px"
         src="img/discorocket_toaster_dereksamatha.jpg" 
       >
 
@@ -39,7 +40,7 @@ overline {
 
     <ContactForm sendto="ops+hello@elastic.ventures"></ContactForm>
 
-  </v-content>
+  </v-container>
 </template>
 
 <script lang="ts">

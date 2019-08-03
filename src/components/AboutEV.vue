@@ -109,9 +109,9 @@ The size controls the increment of the property:
       <h2><font style="font-family: nasa">About EV</font></h2>
 
       <v-flex xs12 text-sm-left>
-          Elastic Ventures, Inc. "EV" is a California S Corp was established in 2014 as a professional consulting and AI services company (autonomous robotics). 
-          Since 2019 we have expanded globally to offer engineering, software, fabrication, prototyping, manufacturing through partners in USA, China, and Malaysia.
-          Focusing primarily on our own products and those of our partners; you are accessing the early access release of @eva our autonomous sales system. 
+          Elastic Ventures, Inc. "EV" was established in 2014 as a professional consulting corporation in San Diego, California. 
+          Since 2019 offers mechatronic reverse engineering, app &amp; ai software, fabrication, prototyping, 
+          and manufacturing expertise through partners in USA, China, and Malaysia.
 
           <v-hover>
             <a @click="emitClick">🤓</a>

@@ -1,32 +1,23 @@
 <template>
-  <v-content class="about">
-    <h1>About.vue</h1>
-    <h1>This is an about page</h1>
-
+  <v-container class="about">
+  
     <EVCrew />
-
+ 
 <!--
-
-      <v-container>
-
-        <v-divider />
-      </v-container>      <v-divider />
-      <GrowPotBot />
       <Robotics />
-
-      <v-divider />
       <Ubuntu />
 -->
 
 
 
 
-  </v-content>
+  </v-container>
 </template>
 
 <script type="ts">
 import AboutEV from "../components/AboutEV.vue";
 import EVCrew from "../components/EVCrew.vue";
+import Ubuntu from "../components/Ubuntu.vue";
 
 import { Component, Vue } from 'vue-property-decorator';
 
@@ -45,6 +36,7 @@ import Careers from './components/Careers.vue';
    // HelloWorld,
     AboutEV,    // adaptive content
     EVCrew,     // yei directory (loading from file, etc.)
+    // Ubuntu,
   },
 })
 export default class About extends Vue {}
