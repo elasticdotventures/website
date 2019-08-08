@@ -76,14 +76,14 @@ v-btn {
       <v-spacer> | </v-spacer>
 
       <router-link active-class="active"  to="/intranet">
-        <v-btn v-if='trustMe' flat>Intranet</v-btn>
+        <v-btn v-if='trustMe>1' flat>Intranet</v-btn>
       </router-link>
-      <v-spacer v-if="trustMe"> | </v-spacer>
+      <v-spacer v-if="trustMe>1"> | </v-spacer>
 
-      <router-link v-if="trustMe" active-class="active"  to="/projects">
+      <router-link active-class="active"  to="/projects">
         <v-btn flat >Projects</v-btn>
       </router-link>
-      <v-spacer v-if="trustMe"> | </v-spacer>
+      <v-spacer> | </v-spacer>
 
       <router-link active-class="active"  to="/contact">
         <v-btn flat>Contact</v-btn>
@@ -121,9 +121,11 @@ v-btn {
                 <router-view />
             </transition>
 
+    <!--
     <v-btn @click="change_trustMe(!trustMe)">Trust Me: {{ trustMe }}</v-btn>
 
     <v-btn @click="increment()">💖 {{count}} {{localCount}} {{countAlias}} {{countPlusLocalState}} </v-btn>
+    -->
 
     <!-- alt-syntax 
       <v-btn v-stream:click="plus$">v-stream:click +</v-btn>
@@ -148,7 +150,7 @@ import Footer from "./components/Footer.vue";
 // import store from 'vuex';
 // 🦨 import { store } from './store'  
 // import { mapState, mapGetters, Store } from 'vuex'     // https://vuex.vuejs.org/guide/state.html
-import Vuex, { mapState, mapMutations, Store } from 'vuex'; 
+import Vuex, { mapState, mapMutations } from 'vuex'; 
 // 👆 https://scrimba.com/p/pnyzgAP/ckMZp4HN
 
 
@@ -267,11 +269,13 @@ vm.$observables.msg.subscribe(msg => console.log(msg))
     obs
       .filter((value) => value % 2 == 0)
       .subscribe(
-      (value) => this.localCount = value
+      (value) => {
+        this.localCount = value
+      }
     )
 
     var version = Number(Vue.version.split('.')[0]);
-    Vue.$log.info(`vue version {$version}`)
+    Vue.$log.info(`vue version ${version}`)
 
   }, 
   // computed: mapState({}) 

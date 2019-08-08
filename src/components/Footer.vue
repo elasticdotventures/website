@@ -3,7 +3,8 @@
     <!--
 	icons https://material.io/tools/icons/?style=outline
     -->
-    &nbsp; <v-icon>copyright</v-icon>
+    <!-- the click event will be triggered at most once -->
+    <a v-on:click="intranetWelcome">&nbsp; <v-icon>copyright</v-icon></a>
 2019 - Elastic Ventures, Inc.
     <!--
 	<v-icon>facebook</v-icon>
@@ -80,12 +81,22 @@ Originally posted by @YuqiaoS in #6823 (comment)
 
 <script>
 // import EVTermsOfService from "./_Dataphiles/EVTermsOfService.vue";
+import Vue from 'vue'
 import EVPrivacyPolicy from "./_Dataphiles/EVPrivacyPolicy.vue";
+import VueLogger from 'vuejs-logger';
+import Vuex, { mapState, mapMutations } from 'vuex'; 
 
 export default {
   components: {
     // EVTermsOfService,
     EVPrivacyPolicy
+  },
+  methods: {
+    ...mapState(['change_trustMe']), 
+    intranetWelcome : () => {
+      Vue.$log.info('log from function outside component.'); 
+      Vue.$store.change_trustMe(2);
+    }
   },
   data() {
     return {

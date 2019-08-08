@@ -41,6 +41,11 @@ flex explanations: xs,sm,md,lg,xl  (device size)
         grid-list-xl
         align-start
     -->
+    <!--
+    <font style="courier">
+    isLoading: {{ isLoading }} 
+    </font>
+    -->
 
 
     <v-subheader>
@@ -54,10 +59,10 @@ flex explanations: xs,sm,md,lg,xl  (device size)
           align-center:   align items to the center
           justify-center:  justify-content to center
       -->
-      <v-flex xs12 sm4 d-flex v-if="!humans.length">
+      <v-flex d-none xs12 sm4 d-flex v-if="!humans.length">
           <v-card>
-          <font color="red">No humans</font>
-          <button v-on:click="alert('hello');">load</button>
+          <font color="red">No humans found</font>
+          <button v-on:click="alert('hello');">look again</button>
           </v-card>
       </v-flex>
 
@@ -69,6 +74,8 @@ flex explanations: xs,sm,md,lg,xl  (device size)
           xs12 sm6 md4 child-flex
           color="blue-grey" dark tile flat
         -->
+
+        <!-- should add some transition effect here -->
 
         <v-card v-if="!who.isAdvisor" hover to="" :key="who.name">        
           <v-avatar size="150" class="avatar">
@@ -110,112 +117,6 @@ flex explanations: xs,sm,md,lg,xl  (device size)
 // review jest
 // develop unit test for human file (is present, has json)
 // 
-let humans = [
-  {
-    name: "Brian Horakh",
-    channel: "#cyberpunks",
-    thumb: "img/team/brianh.png",
-    location: "Melbourne, Australia",
-    abouts: [
-      "Fearless Leader",
-      "Fullstack Dev & Engineer",
-      "Business Tooling & Networking"
-      // 'LinkedIn: https://www.linkedin.com/company/elasticdotventures'
-    ]
-  },
-  {
-    name: "Fabio Checchin",
-    channel: "#salesvikings",
-    thumb: "img/team/fabio2-300x300-whitebg.png",
-    abouts: [
-        "VP of Worldwide Sales",
-        "Business Development",
-        "Client Relationship"
-        ],
-    location: "Washington, CA. USA"
-  },
-  {
-    name: "Margaret Woodfield",
-    channel: "#ops",
-    thumb: "img/team/margaret-v1-300x300-whitebg.png",
-    abouts: [
-        "VP of Operations", 
-        "#human resources",
-        "Organizational Process"
-        ],
-    location: "Washington, CA. USA"
-  },
-  {
-    name: "Jay Shore",
-    isAdvisor: true,
-    thumb: "img/team/jay-200x200-whitebg.png",
-    company: "MarketMakers",
-    url: "http://710decibels.com",
-    abouts: [
-        "Limited Partnerships",
-        "Concept Engineering & Formulation",
-        "Business Development",
-        "Cannabis & CBD Markets", 
-        ],
-    location: "San Diego, CA. USA"
-  },
-  {
-    name: "Colin Hankins",
-    channel: "#Touit",
-    isAdvisor: true,
-    url: "http://touit.com",
-    thumb: "img/team/colinhankins-780x780-whitebg.png",
-    abouts: [
-      "Design Review and Validation",
-      "Electronics &amp; Sensor Design",
-      "Embedded Systems Software",
-      "PCB, VSLI, signal processing"
-    ],
-     location: "San Diego, CA. USA"
-  },
-  {
-    name: "Tamara Hartenthaler",
-    isAdvisor: true,
-    thumb: "img/team/tamara-730x730.png",
-    abouts: [
-        "Innovation Consultant", 
-        "Process Analyst",
-        "Documentation Writing & Review"
-        ],
-    location: "Indonesia"
-  },
-  {
-    name: "TroubleMaker.site",
-    channel: "#troublemaker",
-    thumb: "/img/team/TM-LOGO_WHITE-EDGE_250x250px.png",
-    url: "https://troublemaker.site",
-    isAdvisor: true,
-    abouts: [
-      'Fabrication','Manufacturing','China Logistics'
-    ],
-    location: "Shenzhen, CN."
-  },
-  {
-    name:"EV Assistant",
-    channel: "#bot_eva",
-    isAdvisor: true, 
-    thumb: "/img/team/eva-southpark-v1-200x200-whitebg.png",
-    abouts: [
-      'Metrics & CI Delivery',
-      'Async Meeting Facilitator',
-      'AR Video Plugin (In Development)'
-    ]
-  },
-  {
-    name: "PJ Peckham",
-    isAdvisor: true,
-    thumb: "/img/team/pj-720x720-transparent.png",
-    abouts: [
-      'Fabricator',
-      'Electrician',
-      'Construction'
-    ]
-  }];
 
   /* 
 
@@ -237,8 +138,6 @@ let humans = [
   {
 
 import Vue from 'vue'
-
-// 
 import axios from 'axios'
 // import VueAxios from 'vue-axios'
 // Vue.use(VueAxios, axios)
@@ -246,10 +145,6 @@ import axios from 'axios'
 // let humans = require('./assets/crew.json');
 // import VueTypedJs from '../vue-typed-js/components/VueTypedJs.vue' 
 let humans = [];
-
-import VueLog from '@dreipol/vue-log';
-Vue.use(VueLog);
-const Log = Vue.log();
 
 // const axios = require('axios');
 
@@ -292,16 +187,10 @@ function isJson(str) {
     }
     return true;
 }
- 
+*/ 
 
-/*
+// humans = ax.get('/c0re/crew.json')
 const axios = require('axios');
-const ax = axios.create({
-  baseURL: 'http://localhost:3000'
-})
-humans = ax.get('/c0re/crew.json')
-*/
-
 
 export default {
   components: {
@@ -309,9 +198,97 @@ export default {
   },
   data() {
     return {
-      humans
+      gotError : null,
+      isLoading: true,
+      humans : []
     };
+  },
+  mounted () {
+    // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+    // The Fetch API provides an interface for fetching 
+    // resources (including across the network). 
+    // Fetch is similiar to XMLHttpRequest, 
+    // but the new API provides a better feature set.
+
+    // fetch('crew.json').then( r => r.json )
+    // instead we will do axios .. and our own file.
+    // just for the experience. we can always refer back to
+    // fetch(), but I like having a bit more bare metal error
+    // handling which we can send to our own crash reporting system
+    // stuff that happens outside our code may/may not notify EV. 
+    fetch('/crew.json')
+      .then( r => r.json() )
+      .catch( () => {
+        this.$log.error('FAILED jsonparse of crew.json')        
+      })
+      .then( (json) => {
+        this.$data.humans = json 
+        })
+      .catch( () => {
+        this.$log.error('FAILED human update from crew.json')        
+      })
+      .then( () => {
+        this.$log.info('EVCrew fetch crew.json success') 
+        // this.$data.humans = [ { "name":"Brian"} ]
+      })
+      .catch( () => {
+        this.$log.error('FAILED crew.json unknown')        
+      })
+      .finally( () => {
+        // turn off the loading
+        this.isLoading = false; 
+      })
+  },
+  created: function() {
+    this.$log.info("EVCrew created")
+
+    /* 
+    // 🦨👇 does not work. 
+    // https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html
+    const ax = axios.create({
+      baseURL: 'http://localhost:3000'
+    })
+
+    this.isLoading = true; 
+    ax.get('http://localhost:3000/c0re/crew.json', {
+        responseType: 'blob',
+        'Content-Encoding': undefined
+    })
+      .then(function (response) {
+        // handle success
+        // !why does response.data become garbled in the browser. ?? 🚀🍰😣
+        // but work in axios.js
+        // 👆 works in vscode. 
+        this.$log.debug(JSON.stringify(response.data));    
+        this.$data.humans = JSON.parse(response.data);
+        //  this.$data.humans = json;
+        this.$log.info('finished load evcrew')
+        // this.$log.info('axios success')
+      })
+      .catch(error => {
+        this.gotError = true
+        this.$log.info('axios caught error')
+        this.$log.error( error )
+      // handle error
+     // this.$log.info(' axios err' + error)
+      //.$log.error(error);
+      // emit('error ', error)
+    })
+      .finally( () => this.isLoading = false )
+      */
   }
+
 };
+
+
+function isJson(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+
 </script>
 

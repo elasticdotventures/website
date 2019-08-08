@@ -17,6 +17,11 @@ Vue.use(VueAnalytics, {
   id: 'UA-54542129-1'
 })
 
+// vuelidate has a nice pattern,  need to see i18n
+// https://vuelidate.netlify.com/#sub-basic-usage
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
+
 Vue.config.productionTip = false
 
 import './plugins/vuetify'
