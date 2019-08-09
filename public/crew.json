@@ -1,0 +1,105 @@
+[{
+    "name": "Brian Horakh",
+    "channel": "#cyberpunks",
+    "thumb": "img/team/brianh.png",
+    "location": "Melbourne, Australia",
+    "abouts": [
+      "Fearless Leader",
+      "Fullstack Dev & Engineer",
+      "Business Tooling & Networking"
+    ]
+  },
+  {
+    "name": "Fabio Checchin",
+    "channel": "#salesvikings",
+    "thumb": "img/team/fabio2-300x300-whitebg.png",
+    "abouts": [
+        "VP of Worldwide Sales",
+        "Business Development",
+        "Client Relationship"
+        ],
+    "location": "Washington, CA. USA"
+  },
+  {
+    "name": "Margaret Woodfield",
+    "channel": "#ops",
+    "thumb": "img/team/margaret-v1-300x300-whitebg.png",
+    "abouts": [
+        "VP of Operations", 
+        "#human resources",
+        "Organizational Process"
+        ],
+    "location": "Washington, CA. USA"
+  },
+  {
+    "name": "Jay Shore",
+    "isAdvisor": true,
+    "thumb": "img/team/jay-200x200-whitebg.png",
+    "company": "MarketMakers",
+    "url": "http://710decibels.com",
+    "abouts": [
+        "Limited Partnerships",
+        "Concept Engineering & Formulation",
+        "Business Development",
+        "Cannabis & CBD Markets"
+        ],
+    "location": "San Diego, CA. USA"
+  },
+  {
+    "name": "Colin Hankins",
+    "channel": "#Touit",
+    "isAdvisor": true,
+    "url": "http://touit.com",
+    "thumb": "img/team/colinhankins-780x780-whitebg.png",
+    "abouts": [
+      "Design Review and Validation",
+      "Electronics &amp; Sensor Design",
+      "Embedded Systems Software",
+      "PCB, VSLI, signal processing"
+    ],
+     "location": "San Diego, CA. USA"
+  },
+  {
+    "name": "Tamara Hartenthaler",
+    "isAdvisor": true,
+    "thumb": "img/team/tamara-730x730.png",
+    "abouts": [
+        "Innovation Consultant", 
+        "Process Analyst",
+        "Documentation Writing & Review"
+        ],
+    "location": "Indonesia"
+  },
+  {
+    "name": "TroubleMaker.site",
+    "channel": "#troublemaker",
+    "thumb": "/img/team/TM-LOGO_WHITE-EDGE_250x250px.png",
+    "url": "https://troublemaker.site",
+    "isAdvisor": true,
+    "abouts": [
+      "Fabrication","Manufacturing","China Logistics"
+    ],
+    "location": "Shenzhen, CN."
+  },
+  {
+    "name":"EV Assistant",
+    "channel": "#bot_eva",
+    "isAdvisor": true, 
+    "thumb": "/img/team/eva-southpark-v1-200x200-whitebg.png",
+    "abouts": [
+      "Metrics & CI Delivery",
+      "Async Meeting Facilitator",
+      "AR Video Plugin (In Development)"
+    ]
+  },
+  {
+    "name": "PJ Peckham",
+    "isAdvisor": true,
+    "thumb": "/img/team/pj-720x720-transparent.png",
+    "abouts": [
+      "Fabricator",
+      "Electrician",
+      "Construction"
+    ]
+  }]
+  

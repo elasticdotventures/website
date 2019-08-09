@@ -4,7 +4,7 @@
 	icons https://material.io/tools/icons/?style=outline
     -->
     <!-- the click event will be triggered at most once -->
-    <a v-on:click="intranetWelcome">&nbsp; <v-icon>copyright</v-icon></a>
+    <router-link to="/intranet">&nbsp; <v-icon>copyright</v-icon></router-link>
 2019 - Elastic Ventures, Inc.
     <!--
 	<v-icon>facebook</v-icon>
@@ -92,11 +92,6 @@ export default {
     EVPrivacyPolicy
   },
   methods: {
-    ...mapState(['change_trustMe']), 
-    intranetWelcome : () => {
-      Vue.$log.info('log from function outside component.'); 
-      Vue.$store.change_trustMe(2);
-    }
   },
   data() {
     return {

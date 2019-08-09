@@ -34,18 +34,19 @@ You can even define fallbacks, to be used in case a slot prop is undefined:
 <template>
 <v-container id="projects">
 
-<v-container>
-</v-container>
-
   <div class="home">
-    <router-link to="/projects/b2bcbd"><v-btn>B2BCBD</v-btn></router-link>
-    <router-link to="/projects/growbot"><v-btn>GrowPotBot</v-btn></router-link>
-    <router-link to="/projects/cyberstream"><v-btn>CyberStream</v-btn></router-link>
-    <router-link to="/projects/spinavision"><v-btn>Holographic Fan</v-btn></router-link>
+    <router-link to="/projects/B2bCbd"><v-btn>B2BCBD</v-btn></router-link>
+    <router-link to="/projects/GrowPotBot"><v-btn>GrowPotBot</v-btn></router-link>
+    <router-link to="/projects/CyberStream"><v-btn>CyberStream</v-btn></router-link>
+    <!--
+      <router-link to="/projects/spinavision"><v-btn>Holographic Fan</v-btn></router-link>
+    -->
   </div>
 
-  <B2bCbd v-if="showB2BCBD"></B2bCbd>
-  <GrowPotBot></GrowPotBot>
+  <B2bCbd v-if="showB2bCbd"></B2bCbd>
+  <GrowPotBot v-if="showGrowPotBot"></GrowPotBot>
+  <CyberStream v-if="showCyberStream"></CyberStream>
+
 </v-container>
 
 </template>
@@ -53,26 +54,51 @@ You can even define fallbacks, to be used in case a slot prop is undefined:
 <script lang="ts">
 
 import { Component, Vue } from 'vue-property-decorator';
+// import VueLogger from 'vuejs-logger';
+// import Vuex, { mapState, mapMutations } from 'vuex'; 
+
 // import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import B2bCbd from '@/components/B2bCbd.vue'; 
 import GrowPotBot from '@/components/GrowPotBot.vue'; 
+import CyberStream from '@/components/CyberStream.vue';
+//import SpinAVision from '@/components/SpinAVision.vue';
 
 @Component({
   components: {
    // HelloWorld,
    B2bCbd,
    GrowPotBot,
+   CyberStream,
+   // SpinAVision
   },
   data: () => {
     return({
-      showB2bCbd : false
+      showB2bCbd : false,   // 🍰 can't figure out how to set these from the $route notification.
+      showGrowPotBot : false,
+      showCyberStream : false,  //
+      showSpinAVision : false
     })
   },
   methods: {
     greet : () => {
       alert('hello');
     }
+  },
+  watch: {
+    // how does 'watch' work 🤔 -- but the route itself is in router.ts
+    '$route.params.topic'  : {
+      handler: function(topic) {
+        Vue.$log.info("got topic: ", topic);
+        switch (topic) {
+          case "B2bCbd" : this.showB2bCbd = true; break; 
+          case "GrowPotBot" : this.showGrowPotBot = true; break;
+          case "CyberStream" : this.showCyberStream = true; break;
+        }
+      }
+    }
   }
+  
 })
 export default class Home extends Vue {}
 </script>
+

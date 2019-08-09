@@ -42,10 +42,6 @@ Minimum and Viable Styling for state
 
 <template>
 	<v-container id="ContactForm">
-    <!--
-      			<h1>Contact Us</h1>
-
-      -->
 
 		<v-layout wrap justify-space-between>
 			<v-flex xs12 md4>

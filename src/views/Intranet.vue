@@ -7,6 +7,8 @@ overline {
   <v-content v-on:enlarge="postFontSize += 0.1" :style="{ fontSize: postFontSize + 'em' }" id="Intranet">
     !todo https://blog.logrocket.com/vuex-showdown-mutations-vs-actions-f48f2f7df54b/
 some random text
+!todo watch redis timeseries https://www.youtube.com/watch?v=j9-QIwJ0woE
+
 
     <!--
       note: the $emit('chat-start') appears in vue debugger events; but nothing is listening. 
@@ -21,7 +23,9 @@ some random text
     <p v-if="false">hello world</p>
 
     <v-btn @click="$emit('enlarge'); postFontSize++;">enlarge</v-btn>
-    <button-counter></button-counter>
+    <!--
+      <button-counter></button-counter>
+    -->
 
     <!-- the click event's propagation will be stopped -->
     <a v-on:click.stop="doThis"></a>
@@ -43,7 +47,9 @@ some random text
     <!-- i.e. not from a child element -->
     <div v-on:click.self="doThat">...</div>
 
-    <myBrain>🧠</myBrain>
+    <!--
+      <myBrain>🧠</myBrain>
+    -->
   </v-content>
 </template>
 
@@ -70,46 +76,20 @@ import { Vue, Component, Emit } from 'vue-property-decorator';
 Mixins (the helper function named mixins provided by vue-class-component)
 */
 
-/*
-// components is it's own template
-Since components are reusable Vue instances, 
-they accept the same options as new Vue, 
-such as data, computed, watch, methods, and lifecycle hooks. 
-The only exceptions are a few root-specific options like el.
-
-let myBrain = Vue.component('myBrain', {
-  template: '<button @click="count++">{{count}}</button>' , 
-  data () {
-    return {
-    count : 0
-    }
-  }
-});
-*/
-
-const myBrain = Vue.component('myBrain', {
-
-});
-
-// Define a new component called button-counter
-const bc = Vue.component('button-counter', {
-  data: function () {
-    return {
-      count: 0
-    }
-  },
-  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
-})
+import Chart from './v-chart-plugin.js'
+Vue.use(Chart);
 
 @Component({
   components: {
-    'button-counter': bc, 
-    'myBrain' : myBrain
+  //  'button-counter': bc, 
+  //  'myBrain' : myBrain
   },
   data: () => ({
         postFontSize : 1
   }),
 })
+
+
 export default class Intranet extends Vue {
   // Class-Style Vue Components
   // https://vuejs.org/v2/guide/typescript.html

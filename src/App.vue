@@ -60,7 +60,7 @@ v-btn {
       v-toolbar-title
       v-toolbar-items
     -->
-    <h2>EV.BetaSite</h2>
+    <h2>{{getCompanyName}}</h2>
     <!-- v-spacer consumes all available horizontal space -->
     <v-spacer />
     <v-toolbar-items>
@@ -203,34 +203,7 @@ export default {
   //  inheritAttributes: false, 
   */
   name: "App",
-  /*
-  RX JS offers "observables"
-  provide Rx observables with the `subscriptions` option
-  
-https://www.youtube.com/watch?v=0Jo_Q8NYd3I
 
-import { Observable } from 'rxjs'
-
-Vue.component('foo', {
-  subscriptions: function () {
-    return {
-      msg: new Observable(...)
-    }
-  }
-})
-
-const vm = new Vue({
-  subscriptions: {
-    msg: messageObservable
-  }
-})
-
-vm.$observables.msg.subscribe(msg => console.log(msg))
-
-   subscriptions: {
-    msg: messageObservable
-  },
-  */ 
   components: {
     Footer      // #compliance
   },
@@ -260,7 +233,9 @@ vm.$observables.msg.subscribe(msg => console.log(msg))
   */
   data() {
     return {
-      localCount: 4
+      localCount: 0,
+      company_name : ['elastic.ventures','Elastic.Ventures']
+
     }
   },
   created() {
@@ -292,6 +267,10 @@ vm.$observables.msg.subscribe(msg => console.log(msg))
     countAlias (state) {
       return state.count; 
     },
+    getCompanyName (state) {
+      var chooseName = (Date.now() % this.company_name.length);
+      return this.company_name[ chooseName ];
+    }
   }
 
 };

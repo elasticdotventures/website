@@ -1,0 +1,65 @@
+  <!--
+
+
+        original form form: 
+        https://012.vuejs.org/guide/forms.html
+      -->
+
+<form d-none id="demo">
+  <!-- text -->
+  <!-- validation 
+  https://baianat.github.io/vee-validate/api/directive.html
+  -->
+
+  <!--
+  <v-text-field
+            v-model="email"
+            :counter="65"
+            label="Email"
+          />
+  <div class="error" v-if="!$v.email.required">Field is required</div>
+  <div class="error" v-if="!$v.email.minLength">Name must have at least {{$v.name.$params.minLength.min}} letters.</div>
+
+    
+          
+  <p>
+    <input type="text" v-model="msg">
+    {{msg}}
+  </p>
+  <!-- checkbox -->
+  <p>
+    <input type="checkbox" v-model="checked">
+    {{checked ? "yes" : "no"}}
+  </p>
+  <!-- radio buttons -->
+  <p>
+    <input type="radio" name="picked" value="one" v-model="picked">
+    <input type="radio" name="picked" value="two" v-model="picked">
+    {{picked}}
+  </p>
+  <!-- select -->
+  <p>
+    <select v-model="selected">
+      <option>one</option>
+      <option>two</option>
+    </select>
+    {{selected}}
+  </p>
+  <!-- multiple select -->
+  <p>
+    <select v-model="multiSelect" multiple>
+      <option>one</option>
+      <option>two</option>
+      <option>three</option>
+    </select>
+    {{multiSelect}}
+  </p>
+  <!--
+    since vue 2.0 
+    https://forum.vuejs.org/t/data-json-is-not-valid-in-2-0/451
+
+  -->
+  <p><pre>data: {{ $data }}</pre></p>
+</form>
+        </v-form>
+

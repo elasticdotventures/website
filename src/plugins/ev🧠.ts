@@ -9,3 +9,11 @@ declare module 'vue/types/vue' {
     $myBrain: string
   }
 }
+
+
+
+/* 
+const myBrain = Vue.component('myBrain', {
+
+});
+*/

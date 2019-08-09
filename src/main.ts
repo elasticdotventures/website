@@ -19,8 +19,8 @@ Vue.use(VueAnalytics, {
 
 // vuelidate has a nice pattern,  need to see i18n
 // https://vuelidate.netlify.com/#sub-basic-usage
-import Vuelidate from 'vuelidate'
-Vue.use(Vuelidate)
+// import Vuelidate from 'vuelidate'
+// Vue.use(Vuelidate)
 
 Vue.config.productionTip = false
 
