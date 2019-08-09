@@ -88,17 +88,17 @@ import CyberStream from '@/components/CyberStream.vue';
     // how does 'watch' work 🤔 -- but the route itself is in router.ts
     '$route.params.topic'  : {
       handler: function(topic) {
-        Vue.$log.info("got topic: ", topic);
+        // ?? Vue.$log.info("got topic: ", topic);
         switch (topic) {
-          case "B2bCbd" : this.showB2bCbd = true; break; 
-          case "GrowPotBot" : this.showGrowPotBot = true; break;
-          case "CyberStream" : this.showCyberStream = true; break;
+          case "B2bCbd" : this.$data.showB2bCbd = true; break; 
+          case "GrowPotBot" : this.$data.showGrowPotBot = true; break;
+          case "CyberStream" : this.$data.showCyberStream = true; break;
         }
       }
     }
   }
   
 })
-export default class Home extends Vue {}
+export default class Projects extends Vue {}
 </script>
 

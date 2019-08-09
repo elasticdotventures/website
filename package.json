@@ -32,6 +32,7 @@
     "vue-rx": "^6.2.0",
     "vue-text-glitch": "^1.0.1",
     "vue-typed-js": "^0.1.2",
+    "vue2-frappe": "^1.0.28",
     "vuejs-logger": "^1.5.3",
     "vuelidate": "^0.7.4",
     "vuetify": "^1.5.5",

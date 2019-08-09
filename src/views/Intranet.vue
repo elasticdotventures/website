@@ -4,11 +4,29 @@ overline {
 }
 </style>
 <template>
+  <v-container>
   <v-content v-on:enlarge="postFontSize += 0.1" :style="{ fontSize: postFontSize + 'em' }" id="Intranet">
-    !todo https://blog.logrocket.com/vuex-showdown-mutations-vs-actions-f48f2f7df54b/
-some random text
-!todo watch redis timeseries https://www.youtube.com/watch?v=j9-QIwJ0woE
 
+<!--
+!todo https://blog.logrocket.com/vuex-showdown-mutations-vs-actions-f48f2f7df54b/
+!todo watch redis timeseries https://www.youtube.com/watch?v=j9-QIwJ0woE
+-->
+
+
+  <v-flex>
+    <vue-frappe 
+            id="test"
+            :labels="[
+                '12am-3am', '3am-6am', '6am-9am', '9am-12pm',
+                '12pm-3pm', '3pm-6pm', '6pm-9pm', '9pm-12am'
+            ]"
+            title="My Awesome Chart"
+            type="axis-mixed"
+            :height="300"
+            :colors="['purple', '#ffa3ef', 'light-blue']"
+            :dataSets="this.data">
+        </vue-frappe>
+      </v-flex>
 
     <!--
       note: the $emit('chat-start') appears in vue debugger events; but nothing is listening. 
@@ -27,30 +45,8 @@ some random text
       <button-counter></button-counter>
     -->
 
-    <!-- the click event's propagation will be stopped -->
-    <a v-on:click.stop="doThis"></a>
-
-    <!-- the submit event will no longer reload the page -->
-    <form v-on:submit.prevent="onSubmit"></form>
-
-    <!-- modifiers can be chained -->
-    <a v-on:click.stop.prevent="doThat"></a>
-
-    <!-- just the modifier -->
-    <form v-on:submit.prevent></form>
-
-    <!-- use capture mode when adding the event listener -->
-    <!-- i.e. an event targeting an inner element is handled here before being handled by that element -->
-    <div v-on:click.capture="doThis">...</div>
-
-    <!-- only trigger handler if event.target is the element itself -->
-    <!-- i.e. not from a child element -->
-    <div v-on:click.self="doThat">...</div>
-
-    <!--
-      <myBrain>🧠</myBrain>
-    -->
   </v-content>
+  </v-container>
 </template>
 
 
@@ -76,8 +72,9 @@ import { Vue, Component, Emit } from 'vue-property-decorator';
 Mixins (the helper function named mixins provided by vue-class-component)
 */
 
-import Chart from './v-chart-plugin.js'
-Vue.use(Chart);
+import Chart from 'vue2-frappe'
+ Vue.use(Chart)
+
 
 @Component({
   components: {
@@ -85,9 +82,23 @@ Vue.use(Chart);
   //  'myBrain' : myBrain
   },
   data: () => ({
-        postFontSize : 1
+        postFontSize : 1, 
+            data: [{
+                    name: "Some Data", chartType: 'bar',
+                    values: [25, 40, 30, 35, 8, 52, 17, -4]
+                },
+                {
+                    name: "Another Set", chartType: 'bar',
+                    values: [25, 50, -10, 15, 18, 32, 27, 14]
+                },
+                {
+                    name: "Yet Another", chartType: 'line',
+                    values: [15, 20, -3, -15, 58, 12, -17, 37]
+                }]        
   }),
 })
+
+
 
 
 export default class Intranet extends Vue {
