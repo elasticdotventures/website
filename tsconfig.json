@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
+    // 👇 esnext vs es2015 the difference is that import() expressions are understood in esnext, but not in es2015
     "target": "esnext",
     "module": "esnext",
+     // this enables stricter inference for data properties on `this`
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
+    // 👇 https://www.typescriptlang.org/docs/handbook/decorators.html
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

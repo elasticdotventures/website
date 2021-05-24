@@ -3,8 +3,9 @@
     <!--
 	icons https://material.io/tools/icons/?style=outline
     -->
-    &nbsp; <v-icon>copyright</v-icon>
-2019 - Elastic Ventures, Inc.
+    <!-- the click event will be triggered at most once -->
+    <router-link to="/intranet">&nbsp; <v-icon>copyright</v-icon></router-link>
+2021 - Elastic Ventures, Inc.
     <!--
 	<v-icon>facebook</v-icon>
 	<v-icon>twitter</v-icon>
@@ -80,12 +81,17 @@ Originally posted by @YuqiaoS in #6823 (comment)
 
 <script>
 // import EVTermsOfService from "./_Dataphiles/EVTermsOfService.vue";
+import Vue from 'vue'
 import EVPrivacyPolicy from "./_Dataphiles/EVPrivacyPolicy.vue";
+import VueLogger from 'vuejs-logger';
+import Vuex, { mapState, mapMutations } from 'vuex'; 
 
 export default {
   components: {
     // EVTermsOfService,
     EVPrivacyPolicy
+  },
+  methods: {
   },
   data() {
     return {

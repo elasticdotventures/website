@@ -5,34 +5,6 @@ Created: 201907
 
 notes:
 
--->
-<script>
-
-
-var methods = {
-    emitClick: function() {
-        this.$emit("click");
-        
-    }
-};
-
-/*
-
-🏫 https://blog.bitsrc.io/how-to-build-vue-components-like-a-pro-fd89fd4d524d
-vue-class-component reduces the component development process by allowing developers to add data properties and handlers directly as properties to the class
-
-
-*/
-
-export default {
-    methods
-};
-
-
-</script>
-
-<template>
-  <!--
     vuetify-spacing notes:
     https://vuetifyjs.com/en/framework/spacing
 
@@ -81,7 +53,9 @@ The size controls the increment of the property:
     4 - sets the spacing to $spacer * 1.5
     5 - sets the spacing to $spacer * 3
 
-  -->
+-->
+
+<template>
 
   <v-container fluid>
 
@@ -132,21 +106,45 @@ The size controls the increment of the property:
     fluid Removes viewport size breakpoints      
     -->
     <v-layout xs12 row wrap>
-      <h2><font style="font-family: nasa">About EV</font></h2>
+      <h2><font class="underlined underlined--gradient" style="font-family: nasa">About EV</font></h2>
 
       <v-flex xs12 text-sm-left>
-          Elastic Ventures, Inc. "EV" is a California S Corp was established in 2014 as a professional consulting and services company.
-          Since 2019 we have expanded globally to offer engineering, software, fabrication, prototyping, manufacturing with partnerships in USA, China, and Malaysia.
-          Focusing on planetary scale projects with an emphasis on renewable resources and improving the durability and quality of life through distribution partnerships.
-
-          <v-hover>
-            <a @click="emitClick">🤓</a>
-          </v-hover>
         
+          Elastic Ventures, Inc. "EV" was established in 2014 as a professional consulting corporation in San Diego, California. 
+          Since 2019 offers mechatronic reverse engineering, app &amp; ai software, fabrication, prototyping, 
+          and manufacturing expertise through partners in USA, China, and Malaysia.
+
+
+          EV offers our partners access to an experienced inter-disciplinary crew for collaboration on projects,
+          trends, best practices and data sharing arrangements. 
+
+          future biased cloud based neural state machine "generalized self-learning algorithm"s and other closed 
+          circuit electronics, fault tolerance suitable for controlled mechatronic industrial manufacturing &amp; 
+          urban farming. 
+
+<!--
+  https://codepen.io/tmrDevelops/pen/yyprGq/
+  SVG typing: 
+          <v-content>
+            <svg width="100%" height="100%" viewBox="0 50 600 500" xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+ <path id="mypath">
+		<animate attributeName="d" from="m0,110 h0" to="m0,110 h1100" dur="6.8s" begin="0s" repeatCount="indefinite"/>
+	</path>
+	<text font-size="15" font-family="cevtauri" fill='hsla(36, 95%, 85%, 1)'>
+		<textPath xlink:href="#mypath">I'm An Animated Typing Example && I'm All SVG.
+    </textPath>
+	</text>
+</svg>
+--> 
+
+
+
+
       </v-flex>
 
       <!--
-      adaptive-content notes:
+    
 
         <div v-if="Math.random() > 0.5">
   Now you see me
@@ -189,10 +187,14 @@ The size controls the increment of the property:
         -->
 
         <v-flex xs12 d-none>
-          The business plan (broadly): 🤓🙏🌎😁💖🤖
+        <!--
+        <vue-typed-js :strings="['blabla']">          
+          <font class="typed"> The business plan (broadly): 🤓🙏🌎😁💖🤖</font>
           EV practices concious engineering, only projects that don't hurt people or the planet.
           Frequently ideas that are universal 'no brainers' using enviroment sustainability 
           "leave no trace" or ideally better than before yei (we all of us, even the machines) arrived.
+        </vue-typed-js>
+        -->
         </v-flex>
 
         <v-flex d-none>
@@ -222,3 +224,40 @@ The size controls the increment of the property:
     </v-layout>
   </v-container>
 </template>
+
+<style>
+</style>
+
+
+<script>
+
+
+var methods = {
+    emitClick: function() {
+        this.$emit("click");
+        
+    }
+};
+
+/*
+
+🏫 https://blog.bitsrc.io/how-to-build-vue-components-like-a-pro-fd89fd4d524d
+vue-class-component reduces the component development process by allowing developers to add data properties and handlers directly as properties to the class
+
+
+*/
+
+
+// import VueTypedJs from '../vue-typed-js/components/VueTypedJs.vue' 
+
+export default {
+    components: {
+      // 'vue-typed-js': VueTypedJs
+    },
+    methods
+};
+
+
+</script>
+
+
