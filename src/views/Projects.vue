@@ -46,10 +46,14 @@ You can even define fallbacks, to be used in case a slot prop is undefined:
     -->
   </div>
 
-  <B2bCbd v-if="showB2bCbd"></B2bCbd>
+  <!-- 
+    <B2bCbd v-if="showB2bCbd"></B2bCbd>
+  -->
   <GrowPotBot v-if="showGrowPotBot"></GrowPotBot>
+<!-- 
   <CyberStream v-if="showCyberStream"></CyberStream>
-  <B00T v-if="showB00t"></B00T>
+-->
+  <B00T v-if="showB00T"></B00T>
   <FungibleFarm v-if="showFungibleFarm"></FungibleFarm>
 
 </v-container>
@@ -88,7 +92,7 @@ import B00T from '@/components/_b00t_.vue';
       showCyberStream : false,  //
       showSpinAVision : false,
       showB00T : false,
-      showFungible : false
+      showFungibleFarm : false
     })
   },
   methods: {
@@ -100,13 +104,14 @@ import B00T from '@/components/_b00t_.vue';
     // how does 'watch' work 🤔 -- but the route itself is in router.ts
     '$route.params.topic'  : {
       handler: function(topic) {
-        // ?? Vue.$log.info("got topic: ", topic);
+        // Vue.$log.info("got topic: ", topic);
         switch (topic) {
           // case "B2bCbd" : this.$data.showB2bCbd = true; break; 
+          case "welcome" : alert('welcome'); break;
           case "GrowPotBot" : this.$data.showGrowPotBot = true; break;
           // case "CyberStream" : this.$data.showCyberStream = true; break;
           case "_b00t_" : this.$data.showB00T = true; break;
-          case "FungibleFarm" : this.$data.showFungibleFarm = true; alert("hello"); break;
+          case "FungibleFarm" : this.$data.showFungibleFarm = true; break;
           default : alert("unknown choice"); break;
         }
       }

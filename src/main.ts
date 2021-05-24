@@ -2,7 +2,7 @@
 
 import Vue from 'vue'
 import './plugins/vuetify'
-//import './plugins/vue-logger'
+import './plugins/vuejs-logger'
 
 // vue.use docs:
 // 🤓 https://vuejs.org/v2/guide/plugins.html

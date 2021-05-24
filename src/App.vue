@@ -195,13 +195,13 @@ import Footer from "./components/Footer.vue";
 // import store from 'vuex';
 // 🦨 import { store } from './store'  
 // import { mapState, mapGetters, Store } from 'vuex'     // https://vuex.vuejs.org/guide/state.html
-import Vuex, { mapState, mapMutations } from 'vuex'; 
+// import Vuex, { mapState, mapMutations } from 'vuex'; 
 // 👆 https://scrimba.com/p/pnyzgAP/ckMZp4HN
 
 // Stream Dom events
 // https://github.com/vuejs/vue-rx
-import { Subject } from 'rxjs'
-import { map, startWith, scan } from 'rxjs/operators'
+// import { Subject } from 'rxjs'
+// import { map, startWith, scan } from 'rxjs/operators'
 
 
 export default {
@@ -235,7 +235,7 @@ export default {
     All methods will have their this context automatically bound to the Vue instance.
     */ 
     // 🦨 not used 👇, just for testing.  
-    ...mapMutations(['increment','change_trustMe']),
+    // ...mapMutations(['increment','change_trustMe']),
     startChat: function(event) {
       Vue.$log.info("Hello World" + JSON.stringify(event)) // working!
 
@@ -274,7 +274,7 @@ export default {
   // computed: mapState({}) 
   computed: {
     // 👇 mapState pulls from src\store.ts (vuex)
-    ...mapState(['count','trustMe']),
+    // ...mapState(['count','trustMe']),
     // additional local functions: 
     countPlusLocalState (state) {
       // Vue.$log.info("ran countPlusLocalState"); // very cool! 
@@ -285,7 +285,7 @@ export default {
     countAlias (state) {
       return state.count; 
     },
-    getCompanyName (state) {
+    getCompanyName () {
       var chooseName = (Date.now() % this.company_name.length);
       return this.company_name[ chooseName ];
     }

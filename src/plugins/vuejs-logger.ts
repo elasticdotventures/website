@@ -9,7 +9,7 @@ https://stackoverflow.com/questions/45547089/how-to-bind-console-log-to-l-in-vue
 */
 
 import Vue from 'vue'
-import VueLogger from 'vuejs-logger';
+// import VueLogger from 'vuejs-logger';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -23,5 +23,5 @@ const VueLoggerOptions = {
     showConsoleColors: true
 };
 
-Vue.use(VueLogger, VueLoggerOptions);
+// Vue.use(VueLogger, VueLoggerOptions);
 

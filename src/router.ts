@@ -33,13 +33,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
-let component1 = {
+const component1 = {
   template:`<h1><div class="title">Page 1</div><h1>`
 }
-let component2 = {
+const component2 = {
   template:`<div class="title">Page 2</div>`
 }
-let component3 = {
+const component3 = {
   template:`<div class="title">Page 3</div>`
 }
 

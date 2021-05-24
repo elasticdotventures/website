@@ -5,13 +5,13 @@
 
 	<!-- Section: Fungible -->
 
-								<v-img style="width:50%" src="" />
+								<v-img style="width:50%" src="img/logos/FungibleFarm-v1.png" />
 								
 								<h2>Project: 
 									<a target="_blank" href="http://fungible.farm">Fungible.farm</a>
 								</h2>
 								
-								<h4>The Indoor Garden Appliance</h4>
+								<h4>Robotic Cultivation of Fungi</h4>
 								A industrial "smart" (sensor integrated) robotic cultivator of mushrooms &amp; fungi. 
 
 									<p>
