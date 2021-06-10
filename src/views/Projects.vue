@@ -107,7 +107,7 @@ import B00T from '@/components/_b00t_.vue';
         // Vue.$log.info("got topic: ", topic);
         switch (topic) {
           // case "B2bCbd" : this.$data.showB2bCbd = true; break; 
-          case "welcome" : alert('welcome'); break;
+          case "welcome" : break;
           case "GrowPotBot" : this.$data.showGrowPotBot = true; break;
           // case "CyberStream" : this.$data.showCyberStream = true; break;
           case "_b00t_" : this.$data.showB00T = true; break;
