@@ -1,5 +1,6 @@
 module.exports = {
   publicPath: '/',
+  lintOnSave: process.env.NODE_ENV !== 'production', // Disable ESLint for production
   chainWebpack: (config) => {
         config.resolve.symlinks(false)
   },
