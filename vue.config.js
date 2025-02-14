@@ -7,5 +7,6 @@ module.exports = {
     clientLogLevel: 'debug',
     compress: false,
     contentBase: './dist'
-  }
+  },
+  transpileDependencies: [], //
 }
