@@ -1,0 +1,23 @@
+[{
+    "name": "Brian Horakh",
+    "channel": "#cyberpunks",
+    "thumb": "img/team/brianh.png",
+    "location": "Melbourne, Australia",
+    "abouts": [
+      "http://bit.ly/resume-brianhorakh"
+    ],
+    "social": [
+    ]
+  },
+  {
+    "name": "TroubleMaker.site",
+    "channel": "#troublemaker",
+    "thumb": "/img/team/TM-LOGO_WHITE-EDGE_250x250px.png",
+    "url": "https://troublemaker.site",
+    "isAdvisor": true,
+    "abouts": [
+      "Fabrication","Manufacturing","China Logistics"
+    ],
+    "location": "Shenzhen, CN."
+  }
+]
