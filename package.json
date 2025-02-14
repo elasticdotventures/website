@@ -39,7 +39,7 @@
     "vue-cli": "^2.9.6",
     "vue-logger": "0.0.4",
     "vue-property-decorator": "^8.1.0",
-    "vue-router": "^3.0.3",
+    "vue-router": "^3.6.5",
     "vue-router-sitemap": "0.0.4",
     "vue-router-tab": "^1.2.6",
     "vue-rx": "^6.2.0",
