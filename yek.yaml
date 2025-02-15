@@ -2,6 +2,11 @@
 ignore_patterns:
   - "ai-promots/**"
   - "__generated__/**"
+  - "tests/*"
+  - "*.ignore"
+  - "*.map"
+  - "*.lock"
+  - "*.svg"
 
 # Configure Git-based priority boost (optional)
 git_boost_max: 50 # Maximum score boost based on Git history (default: 100)
@@ -23,9 +28,10 @@ binary_extensions:
   - ".fbx" # 3D model files
   - ".max" # 3ds Max files
   - ".psd" # Photoshop files
+  - ".svg"
 
 # Define output directory
-output_dir: /tmp/yek
+# output_dir: /tmp/yek
 
 # Define output template.
 # FILE_PATH and FILE_CONTENT are expected to be present in the template.
