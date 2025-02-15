@@ -21,10 +21,10 @@
 </div>
 
     -->
-  
+
     <div class="text-xs-center">
-   <v-btn href="https://github.com/elasticdotventures/eva.c0re">
-      <v-icon>bookmark</v-icon>      
+   <v-btn href="https://github.com/elasticdotventures/">
+      <v-icon>bookmark</v-icon>
       github
     </v-btn>
     </div>
@@ -34,16 +34,16 @@
 
         <template v-slot:activator="{ on }">
           <!--
-          😉 v-slot:activator 
-          ^^^ NOT WELL DOCUMENTED.  FIX! 
+          😉 v-slot:activator
+          ^^^ NOT WELL DOCUMENTED.  FIX!
           https://github.com/vuetifyjs/vuetify/issues/6866
 
           https://vuejs.org/v2/guide/components-slots.html#Scoped-Slots
           https://vuejs.org/v2/api/#v-on
 
-          the activator slot in the component binds the data object from the render function so that its 
-          available in the parent scope. 
-      
+          the activator slot in the component binds the data object from the render function so that its
+          available in the parent scope.
+
 https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth
 
 Originally posted by @YuqiaoS in #6823 (comment)
@@ -52,7 +52,7 @@ Originally posted by @YuqiaoS in #6823 (comment)
             <!--
               v-on: Listen for a custom event on the current vm. Events can be triggered by vm.$emit. The callback will receive all the additional arguments passed into these event-triggering methods.
             -->
-      
+
             <v-icon>bookmark</v-icon>Terms of Service &amp; Privacy Policy
           </v-btn>
         </template>
@@ -84,7 +84,7 @@ Originally posted by @YuqiaoS in #6823 (comment)
 import Vue from 'vue'
 import EVPrivacyPolicy from "./_Dataphiles/EVPrivacyPolicy.vue";
 import VueLogger from 'vuejs-logger';
-import Vuex, { mapState, mapMutations } from 'vuex'; 
+import Vuex, { mapState, mapMutations } from 'vuex';
 
 export default {
   components: {
