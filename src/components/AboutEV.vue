@@ -110,17 +110,17 @@ The size controls the increment of the property:
 
       <v-flex xs12 text-sm-left>
         
-          Elastic Ventures, Inc. "EV" was established in 2014 as a professional consulting corporation in San Diego, California. 
-          Since 2019 offers mechatronic reverse engineering, app &amp; ai software, fabrication, prototyping, 
-          and manufacturing expertise through partners in USA, China, and Malaysia.
+          Elastic Ventures, "EV" was established in 2014 as a professional consulting corporation in San Diego, California.
+to pursue research and develop non-commercial expertise with emergent & state of the art technology
+based on the latest academic research & open-source libraries.  
 
-
-          EV offers our partners access to an experienced inter-disciplinary crew for collaboration on projects,
-          trends, best practices and data sharing arrangements. 
-
-          future biased cloud based neural state machine "generalized self-learning algorithm"s and other closed 
-          circuit electronics, fault tolerance suitable for controlled mechatronic industrial manufacturing &amp; 
-          urban farming. 
+<ul>
+<li> software development principally in Python, Rust, Typescript </li>
+<li> multicloud: k8s, terraform, cloudfront, azure, google & aws
+<li> mechatronic prototyping, 3d printing, pcb design & fabrication, embedded systems & zephyr-rtos</li>
+<li> machine vision & generative ai (RAG + agentic systems)</li>
+</ul>
+      
 
 <!--
   https://codepen.io/tmrDevelops/pen/yyprGq/
