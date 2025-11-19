@@ -55,14 +55,3 @@ export default createRouter({
     }
   ]
 })
-    },
-    {
-      path: '/page3',
-      name: 'Page Three',
-      component: component3,
-    },
-    // this will globally redirect all unknowns. 
-    // 🍰 really want to log all bad routes, need to dive deeper into routing later. 
-    // { path: '*', redirect: '/' }
-  ]
-})
