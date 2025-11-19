@@ -59,18 +59,8 @@ Minimum and Viable Styling for state
 </template>
 
 <script>
-
-import Vue from 'vue'
-import { required, minLength, between } from 'vuelidate/lib/validators'
-
-
-// import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
-// USELESS: https://medium.com/js-dojo/vue-js-components-based-on-decorators-with-typescript-13e89f626336
-// https://github.com/vuejs/vue-class-component
-
-// import { Component, Vue } from 'vue-property-decorator';
-// @Component({
+import { required, minLength } from '@vuelidate/validators'
+import { useVuelidate } from '@vuelidate/core'
 
 /**
 Author: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
@@ -87,34 +77,36 @@ function isEmailValid(email) {
 // const Log = Vue.log();
 
 export default {
-  data: () => {
-      return{
-    email : null,
-    msg      : 'hi!',
-    checked  : true,
-    picked   : 'one',
-    selected : 'two',
-    multiSelect: ['one', 'three']        
-      }
+export default {
+  name: 'ContactForm',
+  setup() {
+    return { v$: useVuelidate() }
   },
-  validations : {
-    email : {
-      required,
-      minLength: minLength(4)
+  data() {
+    return {
+      email: null,
+      msg: 'hi!',
+      checked: true,
+      picked: 'one',
+      selected: 'two',
+      multiSelect: ['one', 'three']        
+    }
+  },
+  validations() {
+    return {
+      email: {
+        required,
+        minLength: minLength(4)
+      }
     }
   }, 
-  methods : {
+  methods: {
 
   },
   mounted() {
-    // https://github.com/dreipol/vue-log
-        this.$log.debug('ContactForm mounted!');
+    console.log('ContactForm mounted!')
   }
-
 }
-// export default class ContactForm extends Vue {
-// }
-
 </script>
 
 
