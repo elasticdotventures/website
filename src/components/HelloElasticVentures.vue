@@ -203,10 +203,7 @@ $stroke-step: 1%;   // how long is the ant size
 // https://en.wikipedia.org/wiki/OpenSimplex_noise
 // const ctv2jf = require("../CanvasTemplatev2_JacobFoster.js");
 
-
-var SimplexNoise = require('simplex-noise'),
-    noise = new SimplexNoise(Math.random),
-    value2d = noise.noise2D(100, 200);
+// SimplexNoise imported in script section below
 
 
 /*
