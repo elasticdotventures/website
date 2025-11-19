@@ -334,62 +334,38 @@ var interval = setInterval(function() {
 // https://gridsome.org https://www.gatsbyjs.org/
 // RxJS v6+
 import { timer } from 'rxjs';
-
-import { Component, Vue } from 'vue-property-decorator';
-
+import SimplexNoise from 'simplex-noise';
 
 // create vue-particles. 
 import VueParticles from 'vue-particles';
-Vue.use(VueParticles);
 
 // text effects
 import { VueTypedJs } from 'vue-typed-js'; 
-Vue.use(VueTypedJs);
 
-// 🦨 TODO: vuejs-logger broken in present typescript. 
-// import VueLogger from 'vuejs-logger';
-// Vue.use(VueLogger);
-
-
-
-@Component({
+export default {
   name: "HelloElasticVentures",
-  data: () => {
+  data() {
     return {
-      'evText':'ELASTIC.VENTURES'
+      evText: 'ELASTIC.VENTURES',
+      msg: 123
     }
   },
   components: {
     VueTypedJs,
-  //  VueLeetish
   },
-
-})
-export default class HelloElasticVentures extends Vue {
-
-// background effects:
-// https://codepen.io/collection/ABNwxq/
-
-msg = 123
-
-mounted() {
-
-
-
-  async function firstAsync() {
-    let promise = new Promise((res, rej) => {
+  mounted() {
+    async function firstAsync() {
+      let promise = new Promise((res, rej) => {
         setTimeout(() => res("Now it's done!"), 1000)
-    });
-    // wait until the promise returns us a value
-    let result = await promise; 
-    //  alert(result);    // outputs 
-    let noise = new SimplexNoise();
+      });
+      // wait until the promise returns us a value
+      let result = await promise; 
+      //  alert(result);    // outputs 
+      let noise = new SimplexNoise();
     }
 
-firstAsync();
-
-}
-
+    firstAsync();
+  }
 }
 
 
