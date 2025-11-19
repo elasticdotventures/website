@@ -9,7 +9,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "core-js": "^2.6.5",
+    "core-js": "^3.0.0",
     "d3": "^5.9.7",
     "typed.js": "^2.0.10",
     "vue": "^2.6.10",

@@ -7,17 +7,15 @@
   </v-container>
 </template>
 
-<script lang="ts">
-
-import { Component, Vue } from 'vue-property-decorator';
+<script>
 import HelloWorld from '@/components/HelloElasticVentures.vue'; 
 import AboutEV from '@/components/AboutEV.vue'; 
 
-@Component({
+export default {
+  name: 'Home',
   components: {
-   AboutEV, 
-   HelloWorld
-  },
-})
-export default class Home extends Vue {}
+    AboutEV, 
+    HelloWorld
+  }
+}
 </script>

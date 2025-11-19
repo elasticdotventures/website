@@ -43,25 +43,23 @@ overline {
   </v-container>
 </template>
 
-<script lang="ts">
-
-import { Component, Vue } from 'vue-property-decorator';
-// import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
+<script>
 import ContactForm from "../components/ContactForm.vue";
 
-@Component({
+export default {
+  name: 'Contact',
   components: {
-      ContactForm
+    ContactForm
   },
-  data: () => ({
+  data() {
+    return {
       socials: [
-          { icon:"mdi-facebook", alt:"Facebook", link:"http://fb.com/elastic.ventures" },
-          { icon:'mdi-linkedin', alt:'LinkedIn', link:"http://linked.in/company/elasticdotventures" },
-          { icon:'mdi-microsoft', alt:'GitHub', link:'http://github.com/elasticdotventures'},
-          { icon:'mdi-wechat', alt:'WeChat', link:'wechat://elastic_ventures'}
+        { icon:"mdi-facebook", alt:"Facebook", link:"http://fb.com/elastic.ventures" },
+        { icon:'mdi-linkedin', alt:'LinkedIn', link:"http://linked.in/company/elasticdotventures" },
+        { icon:'mdi-microsoft', alt:'GitHub', link:'http://github.com/elasticdotventures'},
+        { icon:'mdi-wechat', alt:'WeChat', link:'wechat://elastic_ventures'}
       ]
-  })
-})
-export default class Contact extends Vue {}
+    }
+  }
+}
 </script>

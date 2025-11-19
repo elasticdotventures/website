@@ -2,16 +2,26 @@
 
 elasticdotventures/website
 
+## Archive Notice
 
-this is a test readme.
+**This is an archived website for Elastic Ventures, a consulting corporation that operated from 2014-2020 in San Diego, California.**
 
-We have organizationally adopted a number of forward thinking "post scarcity economic" organizational models. 
-Please review them below. 
+The company ceased US operations in 2020. This archive is maintained to document the organization's work in emergent technologies, cybernetics, and open-source development.
 
-# 💀 Safety First
-Safety First is rule 1. #compliance at Elastic.Ventures. 
-GIT: Please test your changes and submit them on a branch or as a pull request.
-@b runs the ./sync.sh while @eva is down; but the long term goal is to have a three 🍰 and it ships mentality. 
+### Current Status (2025)
+
+Any commissions or consulting inquiries are now directed toward supporting the free & open source work of [_b00t_](https://github.com/b00t).
+
+The organization may potentially emerge as a multi-national Australian & US DAO (Decentralized Autonomous Organization) joint venture in collaboration with [PromptExecution.com.au](https://promptexecution.com.au).
+
+## Technology Stack
+
+This site has been updated (November 2025) to use modern frameworks:
+- Vue 3.5
+- Vuetify 3.7
+- Vite 5.4
+- TypeScript 5.6
+- Pinia (state management) 
 
 # Layout
 src/

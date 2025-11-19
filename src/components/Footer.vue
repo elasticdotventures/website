@@ -4,8 +4,8 @@
 	icons https://material.io/tools/icons/?style=outline
     -->
     <!-- the click event will be triggered at most once -->
-    <router-link to="/intranet">&nbsp; <v-icon>copyright</v-icon></router-link>
-2021 - Elastic Ventures, Inc.
+    <router-link to="/about">&nbsp; <v-icon>copyright</v-icon></router-link>
+2014-2020 - Elastic Ventures, Inc. (Archive) | Supporting <a href="https://github.com/b00t" target="_blank" style="color: inherit;">_b00t_</a> FOSS work
     <!--
 	<v-icon>facebook</v-icon>
 	<v-icon>twitter</v-icon>
@@ -81,10 +81,7 @@ Originally posted by @YuqiaoS in #6823 (comment)
 
 <script>
 // import EVTermsOfService from "./_Dataphiles/EVTermsOfService.vue";
-import Vue from 'vue'
 import EVPrivacyPolicy from "./_Dataphiles/EVPrivacyPolicy.vue";
-import VueLogger from 'vuejs-logger';
-import Vuex, { mapState, mapMutations } from 'vuex';
 
 export default {
   components: {

@@ -124,11 +124,14 @@ v-btn {
       <router-link active-class="active"  to="/projects/welcome">
         <v-btn flat >Projects</v-btn>
       </router-link>
-      <v-spacer> | </v-spacer>
 
+      <!-- Contact disabled - company ceased operations in 2020 -->
+      <!--
+      <v-spacer> | </v-spacer>
       <router-link active-class="active"  to="/contact">
         <v-btn flat>Contact</v-btn>
       </router-link>
+      -->
 
 
         <!--
@@ -189,20 +192,8 @@ v-btn {
   </v-app>
 </template>
 
-<script type="ts">
-import Vue from 'vue'
+<script>
 import Footer from "./components/Footer.vue";
-// import store from 'vuex';
-// 🦨 import { store } from './store'  
-// import { mapState, mapGetters, Store } from 'vuex'     // https://vuex.vuejs.org/guide/state.html
-// import Vuex, { mapState, mapMutations } from 'vuex'; 
-// 👆 https://scrimba.com/p/pnyzgAP/ckMZp4HN
-
-// Stream Dom events
-// https://github.com/vuejs/vue-rx
-// import { Subject } from 'rxjs'
-// import { map, startWith, scan } from 'rxjs/operators'
-
 
 export default {
   /*

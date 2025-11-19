@@ -123,7 +123,7 @@ $stroke-step: 1%;   // how long is the ant size
             </h1>
             
             <div class="subheading mb-3 text-xs-center">
-            <vue-typed-js :strings="['est. 2014; cybernetics and smart software']">
+            <vue-typed-js :strings="['est. 2014 - 2020; cybernetics and smart software']">
               <h3 class="typing" style="color: #bbd; font-family: ev_timer, nasa, forgetica; font-size: 16pt;"></h3>
             </vue-typed-js>    
             </div>
@@ -203,10 +203,7 @@ $stroke-step: 1%;   // how long is the ant size
 // https://en.wikipedia.org/wiki/OpenSimplex_noise
 // const ctv2jf = require("../CanvasTemplatev2_JacobFoster.js");
 
-
-var SimplexNoise = require('simplex-noise'),
-    noise = new SimplexNoise(Math.random),
-    value2d = noise.noise2D(100, 200);
+// SimplexNoise imported in script section below
 
 
 /*
@@ -334,62 +331,39 @@ var interval = setInterval(function() {
 // https://gridsome.org https://www.gatsbyjs.org/
 // RxJS v6+
 import { timer } from 'rxjs';
-
-import { Component, Vue } from 'vue-property-decorator';
-
+import { createNoise2D } from 'simplex-noise';
 
 // create vue-particles. 
 import VueParticles from 'vue-particles';
-Vue.use(VueParticles);
 
 // text effects
 import { VueTypedJs } from 'vue-typed-js'; 
-Vue.use(VueTypedJs);
 
-// 🦨 TODO: vuejs-logger broken in present typescript. 
-// import VueLogger from 'vuejs-logger';
-// Vue.use(VueLogger);
-
-
-
-@Component({
+export default {
   name: "HelloElasticVentures",
-  data: () => {
+  data() {
     return {
-      'evText':'ELASTIC.VENTURES'
+      evText: 'ELASTIC.VENTURES',
+      msg: 123
     }
   },
   components: {
     VueTypedJs,
-  //  VueLeetish
   },
-
-})
-export default class HelloElasticVentures extends Vue {
-
-// background effects:
-// https://codepen.io/collection/ABNwxq/
-
-msg = 123
-
-mounted() {
-
-
-
-  async function firstAsync() {
-    let promise = new Promise((res, rej) => {
+  mounted() {
+    async function firstAsync() {
+      let promise = new Promise((res, rej) => {
         setTimeout(() => res("Now it's done!"), 1000)
-    });
-    // wait until the promise returns us a value
-    let result = await promise; 
-    //  alert(result);    // outputs 
-    let noise = new SimplexNoise();
+      });
+      // wait until the promise returns us a value
+      let result = await promise; 
+      //  alert(result);    // outputs 
+      const noise2D = createNoise2D();
+      const value = noise2D(100, 200);
     }
 
-firstAsync();
-
-}
-
+    firstAsync();
+  }
 }
 
 
