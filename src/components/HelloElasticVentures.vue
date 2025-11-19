@@ -331,7 +331,7 @@ var interval = setInterval(function() {
 // https://gridsome.org https://www.gatsbyjs.org/
 // RxJS v6+
 import { timer } from 'rxjs';
-import SimplexNoise from 'simplex-noise';
+import { createNoise2D } from 'simplex-noise';
 
 // create vue-particles. 
 import VueParticles from 'vue-particles';
@@ -358,7 +358,8 @@ export default {
       // wait until the promise returns us a value
       let result = await promise; 
       //  alert(result);    // outputs 
-      let noise = new SimplexNoise();
+      const noise2D = createNoise2D();
+      const value = noise2D(100, 200);
     }
 
     firstAsync();
