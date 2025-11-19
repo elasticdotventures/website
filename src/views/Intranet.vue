@@ -89,90 +89,52 @@ var scatterChart = new Chart(ctx, {
 
 
 
-<script lang="ts">
 
-// import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
-import { Vue, Component, Emit } from 'vue-property-decorator';
-/* 
- vue-property-decorator looks like vue-class-component
-  There are 7 decorators and 1 function (Mixin):
-
-@Prop
-@PropSync
-@Provide
-@Model
-@Watch
-@Inject
-@Provide
-@Emit
-@Component (provided by vue-class-component)
-Mixins (the helper function named mixins provided by vue-class-component)
-*/
-
-import Chart from 'vue2-frappe'
- Vue.use(Chart)
-
-
-
-@Component({
-  components: {
-  //  'button-counter': bc, 
-  //  'myBrain' : myBrain
+<script>
+export default {
+  name: 'Intranet',
+  data() {
+    return {
+      message: 'Hello',
+      count: 0,
+      postFontSize: 1,
+      Chart1data: [
+        {
+          name: "Some Data", 
+          chartType: 'bar',
+          values: [25, 40, 30, 35, 8, 52, 17, -4]
+        },
+        {
+          name: "Another Set", 
+          chartType: 'bar',
+          values: [25, 50, -10, 15, 18, 32, 27, 14]
+        },
+        {
+          name: "Yet Another", 
+          chartType: 'line',
+          values: [15, 20, -3, -15, 58, 12, -17, 37]
+        }
+      ],
+      ScatterChart2data: [
+        { x: -10, y: 0 },
+        { x: 0, y: 10 },
+        { x: 10, y: 5 }
+      ]
+    }
   },
-  data: () => ({
-        postFontSize : 1, 
-            Chart1data: [{
-                    name: "Some Data", chartType: 'bar',
-                    values: [25, 40, 30, 35, 8, 52, 17, -4]
-                },
-                {
-                    name: "Another Set", chartType: 'bar',
-                    values: [25, 50, -10, 15, 18, 32, 27, 14]
-                },
-                {
-                    name: "Yet Another", chartType: 'line',
-                    values: [15, 20, -3, -15, 58, 12, -17, 37]
-                }],
-    ScatterChart2data : [{
-                x: -10,
-                y: 0
-            }, {
-                x: 0,
-                y: 10
-            }, {
-                x: 10,
-                y: 5
-            }]
-  }),
-})
-
-
-
-
-export default class Intranet extends Vue {
-  // Class-Style Vue Components
-  // https://vuejs.org/v2/guide/typescript.html
-
-  // Initial data can be declared as instance properties
-  message : string = 'Hello';
-  count : number = 0;
-
-  @Emit()
-  addToCount(n: number = 2) {
-    this.count += n
+  methods: {
+    addToCount(n = 2) {
+      this.count += n
+      this.$emit('addToCount', n)
+    },
+    onClick() {
+      this.$router.push({ path: '/projects', query: { more:'sometopic'}})
+      this.message = 'themessage'
+      window.alert(this.message)
+    },
+    greet() {
+      alert('hello world' + this.message)
+    }
   }
-
- // Component methods can be declared as instance methods
- onClick (): void {
-   this.$router.push({ path: '/projects', query: { more:'sometopic'}})
-   this.message = 'themessage'
-   window.alert(this.message);
- } 
- 
- greet (): void {
-   alert('hello world' + this.message);
- }
-
 }
 </script>

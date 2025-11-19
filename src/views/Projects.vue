@@ -60,65 +60,46 @@ You can even define fallbacks, to be used in case a slot prop is undefined:
 
 </template>
 
-<script lang="ts">
-
-import { Component, Vue } from 'vue-property-decorator';
-// import VueLogger from 'vuejs-logger';
-// import Vuex, { mapState, mapMutations } from 'vuex'; 
-
-// import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-// import B2bCbd from '@/components/B2bCbd.vue'; 
+<script>
 import GrowPotBot from '@/components/GrowPotBot.vue'; 
 import FungibleFarm from '@/components/FungibleFarm.vue'; 
 import B00T from '@/components/_b00t_.vue'; 
-// import CyberStream from '@/components/CyberStream.vue';
-//import SpinAVision from '@/components/SpinAVision.vue';
 
-
-@Component({
+export default {
+  name: 'Projects',
   components: {
-   // HelloWorld,
-    // B2bCbd,
     GrowPotBot,
     FungibleFarm, 
     B00T
-  //  CyberStream,
-   // SpinAVision
   },
-  data: () => {
-    return({
-      showB2bCbd : false,   // 🍰 can't figure out how to set these from the $route notification.
+  data() {
+    return {
+      showB2bCbd : false,
       showGrowPotBot : false,
-      showCyberStream : false,  //
+      showCyberStream : false,
       showSpinAVision : false,
       showB00T : false,
       showFungibleFarm : false
-    })
+    }
   },
   methods: {
-    greet : () => {
-    //   alert('hello');
+    greet() {
+      // alert('hello');
     }
   },
   watch: {
-    // how does 'watch' work 🤔 -- but the route itself is in router.ts
-    '$route.params.topic'  : {
-      handler: function(topic) {
-        // Vue.$log.info("got topic: ", topic);
+    '$route.params.topic': {
+      handler(topic) {
         switch (topic) {
-          // case "B2bCbd" : this.$data.showB2bCbd = true; break; 
           case "welcome" : break;
-          case "GrowPotBot" : this.$data.showGrowPotBot = true; break;
-          // case "CyberStream" : this.$data.showCyberStream = true; break;
-          case "_b00t_" : this.$data.showB00T = true; break;
-          case "FungibleFarm" : this.$data.showFungibleFarm = true; break;
-          default : alert("unknown choice"); break;
+          case "GrowPotBot" : this.showGrowPotBot = true; break;
+          case "_b00t_" : this.showB00T = true; break;
+          case "FungibleFarm" : this.showFungibleFarm = true; break;
+          default : break;
         }
       }
     }
   }
-  
-})
-export default class Projects extends Vue {}
+}
 </script>
 
