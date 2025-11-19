@@ -81,10 +81,7 @@ Originally posted by @YuqiaoS in #6823 (comment)
 
 <script>
 // import EVTermsOfService from "./_Dataphiles/EVTermsOfService.vue";
-import Vue from 'vue'
 import EVPrivacyPolicy from "./_Dataphiles/EVPrivacyPolicy.vue";
-import VueLogger from 'vuejs-logger';
-import Vuex, { mapState, mapMutations } from 'vuex';
 
 export default {
   components: {
