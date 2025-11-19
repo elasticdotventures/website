@@ -124,11 +124,14 @@ v-btn {
       <router-link active-class="active"  to="/projects/welcome">
         <v-btn flat >Projects</v-btn>
       </router-link>
-      <v-spacer> | </v-spacer>
 
+      <!-- Contact disabled - company ceased operations in 2020 -->
+      <!--
+      <v-spacer> | </v-spacer>
       <router-link active-class="active"  to="/contact">
         <v-btn flat>Contact</v-btn>
       </router-link>
+      -->
 
 
         <!--
