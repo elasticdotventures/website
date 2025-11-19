@@ -28,35 +28,10 @@ https://router.vuejs.org/api/
 
 */
 
-import Vue from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
 
-import Router from 'vue-router'
-Vue.use(Router)
-
-const component1 = {
-  template:`<h1><div class="title">Page 1</div><h1>`
-}
-const component2 = {
-  template:`<div class="title">Page 2</div>`
-}
-const component3 = {
-  template:`<div class="title">Page 3</div>`
-}
-
-
-
-/*
-
-vue-router uses path-to-regexp as its path matching engine, 
-so it supports many advanced matching patterns such as optional dynamic segments, 
-zero or more / one or more requirements, and even custom regex patterns.
-
-notes: 
-https://github.com/pillarjs/path-to-regexp
-{ path: 'poetry/:id(\\d+)', name: 'poetrycard', component: PoetryCard }
-
-*/
-export default new Router({
+export default createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -66,38 +41,20 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('./views/About.vue')
     },
     {
       path: '/projects/:topic',
       name: 'projects',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('./views/Projects.vue')
     },
     {
       path: '/contact',
       name: 'contact',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('./views/Contact.vue')
-    },
-
-    // 🦨 some test routes, these don't currently work -- 
-    {
-      path: '/Intranet',
-      name: 'Intranet',
-      component: () => import('./views/Intranet.vue')
-    },
-    {
-      path: '/page2',
-      name: 'Page 2',
-      component: component2,
+    }
+  ]
+})
     },
     {
       path: '/page3',

@@ -110,16 +110,31 @@ The size controls the increment of the property:
 
       <v-flex xs12 text-sm-left>
         
-          Elastic Ventures, "EV" was established in 2014 as a professional consulting corporation in San Diego, California.
-to pursue research and develop non-commercial expertise with emergent & state of the art technology
-based on the latest academic research & open-source libraries.  
+          <strong>Elastic Ventures</strong> ("EV") was a professional consulting corporation established in 2014 in San Diego, California.
+The company <strong>ceased operations in the United States in 2020</strong>.
+
+<p style="margin-top: 1em;">
+During its operational years (2014-2020), EV pursued research and development in emergent technologies
+based on academic research and open-source libraries, including:
+</p>
 
 <ul>
-<li> software development principally in Python, Rust, Typescript </li>
-<li> multicloud: k8s, terraform, cloudfront, azure, google & aws
-<li> mechatronic prototyping, 3d printing, pcb design & fabrication, embedded systems & zephyr-rtos</li>
-<li> machine vision & generative ai (RAG + agentic systems)</li>
+<li> Software development in Python, Rust, and TypeScript </li>
+<li> Multicloud infrastructure: Kubernetes, Terraform, CloudFront, Azure, Google Cloud, and AWS</li>
+<li> Mechatronic prototyping, 3D printing, PCB design & fabrication, embedded systems</li>
+<li> Machine vision and early AI/ML systems</li>
 </ul>
+
+<p style="margin-top: 1em; padding: 1em; background: rgba(255,255,255,0.1); border-radius: 5px;">
+<strong>Current Status (2025):</strong><br/>
+Any commissions or consulting inquiries directed to this archive site are now put toward supporting 
+the free & open source work of <a href="https://github.com/b00t" target="_blank" style="color: #4fc3f7;"><strong>_b00t_</strong></a>.
+</p>
+
+<p style="margin-top: 1em; font-style: italic;">
+The organization may potentially emerge as a multi-national Australian & US DAO (Decentralized Autonomous Organization) 
+joint venture in collaboration with <a href="https://promptexecution.com.au" target="_blank" style="color: #4fc3f7;">PromptExecution.com.au</a>.
+</p>
       
 
 <!--

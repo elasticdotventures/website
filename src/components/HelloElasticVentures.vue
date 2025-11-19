@@ -123,7 +123,7 @@ $stroke-step: 1%;   // how long is the ant size
             </h1>
             
             <div class="subheading mb-3 text-xs-center">
-            <vue-typed-js :strings="['est. 2014; cybernetics and smart software']">
+            <vue-typed-js :strings="['est. 2014 - 2020; cybernetics and smart software']">
               <h3 class="typing" style="color: #bbd; font-family: ev_timer, nasa, forgetica; font-size: 16pt;"></h3>
             </vue-typed-js>    
             </div>
